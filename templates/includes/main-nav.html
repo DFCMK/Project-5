@@ -22,11 +22,10 @@
                 Clothing
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=activewear,essentials" class="dropdown-item">Activewear &amp; Essentials</a>
-                <a href="{% url 'products' %}?category=jeans" class="dropdown-item">Casual Wear</a>
-                <a href="{% url 'products' %}?category=shirts" class="dropdown-item">Formal Wear</a>
+                <a href="{% url 'products' %}?category=casual_wear" class="dropdown-item">Casual Wear</a>
+                <a href="{% url 'products' %}?category=formal_wear" class="dropdown-item">Formal Wear</a>
 
-                <a href="{% url 'products' %}?category=activewear,essentials,casual_wear,formal_wear" class="dropdown-item">All Clothing</a>
+                <a href="{% url 'products' %}?category=casual_wear,formal_wear" class="dropdown-item">All Clothing</a>
             </div>
         </li>
 
@@ -37,8 +36,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
                 <a href="{% url 'products' %}?category=bed_bath" class="dropdown-item">Bed &amp; Bath</a>
                 <a href="{% url 'products' %}?category=kitchen_dining" class="dropdown-item">Kitchen &amp; Dining</a>
-                <a href="{% url 'products' %}?category=kitchen_dining" class="dropdown-item">Livingroom</a>
-                <a href="{% url 'products' %}?category=kitchen_dining" class="dropdown-item">Decoration</a>
+                <a href="{% url 'products' %}?category=livingroom" class="dropdown-item">Livingroom</a>
                 <a href="{% url 'products' %}?category=bed_bath,kitchen_dining,livingroom,decoration" class="dropdown-item">All Homeware</a>
             </div>
         </li>
