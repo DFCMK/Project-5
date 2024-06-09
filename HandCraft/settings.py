@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     '8000-dfcmk-project5-empt7ixxel5.ws.codeinstitute-ide.net',
     'localhost',
     '127.0.0.1',
+    'project-5-39f95920fba3.herokuapp.com'
     ]
 
 
