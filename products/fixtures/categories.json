@@ -3,8 +3,8 @@
       "pk": 1,
       "model": "products.category",
       "fields": {
-        "name": "activewear",
-        "friendly_name": "Activewear"
+        "name": "accessories",
+        "friendly_name": "Accessories"
       }
     },
     {
@@ -19,24 +19,24 @@
       "pk": 3,
       "model": "products.category",
       "fields": {
-        "name": "clearance",
-        "friendly_name": "Clearance"
+        "name": "art",
+        "friendly_name": "Art"
       }
     },
     {
       "pk": 4,
       "model": "products.category",
       "fields": {
-        "name": "deals",
-        "friendly_name": "Deals"
+        "name": "juwelery",
+        "friendly_name": "Juwelery"
       }
     },
     {
       "pk": 5,
       "model": "products.category",
       "fields": {
-        "name": "essentials",
-        "friendly_name": "Essentials"
+        "name": "collectibles",
+        "friendly_name": "Collectibles"
       }
     },
     {

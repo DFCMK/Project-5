@@ -950,5 +950,817 @@
         "image_url": "https://img0.etsystatic.com/126/1/7711011/il_fullxfull.1007747330_ewuv.jpg",
         "image": "shower-head.avif"
       }
+    },
+    {
+      "pk": 69,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005520201",
+        "name": "Handcrafted Grey-Green Patterned Bag",
+        "description": "Discover the perfect blend of artistry and practicality with our Handcrafted Grey-Green Patterned Bag. This unique accessory features a stunning array of sewn-in patterns that add a touch of elegance and personality to your ensemble. Designed with a versatile grey-green hue, this bag effortlessly complements any outfit, making it a must-have for any fashion-forward woman. However, its stylish design and high-quality craftsmanship also make it an appealing choice for men. Ideal for both casual outings and special occasions, this bag combines functionality with a chic aesthetic, offering ample space and durability for everyday use. Elevate your style with this exquisite handmade piece that stands out in any crowd.",
+        "price": 42,
+        "category": 1,
+        "rating": 4.8,
+        "image_url": "https://i.pinimg.com/originals/7a/d4/e8/7ad4e809db9d5135dbef830fd18cfc17.jpg",
+        "image": "grey-green-pattern-bag.jpg"
+      }
+    },
+    {
+      "pk": 70,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005520205",
+        "name": "Handmade LEATHER CUFFS",
+        "description": "Experience the perfect blend of style and functionality with our Elegant Leather Cuffs. Crafted from premium quality leather, these cuffs are designed to provide both comfort and durability. The smooth finish and adjustable fit make them a versatile accessory, suitable for both casual and formal occasions. Whether you're looking to make a fashion statement or seeking reliable wrist support, these leather cuffs are an excellent choice. Enhance your wardrobe with this timeless piece that combines classic elegance with modern appeal.",
+        "price": 11.99,
+        "category": 1,
+        "rating": 4.2,
+        "image_url": "http://s7d2.scene7.com/is/image/JCPenney/0900631B8142A3AFM.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+        "image": "leather-cuffs.jpg"
+      }
+    },
+    {
+      "pk": 71,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005630545",
+        "name": "Colorful Mosaic Recycled Handbag",
+        "description": "Add a vibrant and eco-friendly touch to your wardrobe with our Colorful Mosaic Recycled Handbag. Expertly handcrafted from an array of small, multi-colored squares, this bag showcases a unique and eye-catching design. Each square is made from recycled plastic pieces, giving the purse a distinctive look while promoting sustainability. The unidentifiable origins of the recycled materials add a mysterious charm, making each bag truly one-of-a-kind. Perfect for both casual and dressy occasions, this handbag offers ample space and durability. Make a bold fashion statement while supporting the environment with this extraordinary and stylish accessory.",
+        "price": 79.99,
+        "category": 1,
+        "rating": 4.3,
+        "image_url": "https://images.saymedia-content.com/.image/t_share/MTc0NTAwNjU0OTYxMjA2NjMy/how-to-find-unique-handbags-and-purses-for-fashion-accessories.jpg",
+        "image": "mosai.jpg"
+      }
+    },
+    {
+      "pk": 72,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005630605",
+        "name": "Petal Pink Floral Purse",
+        "description": "Embrace elegance and charm with our Petal Pink Floral Purse. This delightful accessory features a soft pink hue adorned with intricate flower motifs, adding a touch of femininity and grace to your ensemble. Perfectly sized for carrying your essentials, this small purse is both stylish and practical. Ideal for day-to-day use or special occasions, it effortlessly complements a variety of outfits. Elevate your style with this beautifully crafted purse that combines delicate design with everyday functionality.",
+        "price": 40.00,
+        "category": 1,
+        "rating": 4.0,
+        "image_url": "https://i.pinimg.com/originals/26/0d/a5/260da51d173770c23b263cd60f9f227b.jpg",
+        "image": "pink-purse.jpg"
+      }
+    },
+    {
+      "pk": 73,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005630637",
+        "name": "Handmade Polka Dot Bow Tie",
+        "description": "Elevate your look with our Handmade Polka Dot Bow Tie. This stylish accessory features a classic white fabric adorned with striking black dots, creating a timeless and sophisticated design. Perfect for any occasion, this unisex bow tie effortlessly adds a touch of elegance to both men's and women's outfits. Crafted with care and attention to detail, it ensures durability and comfort. Whether you're dressing up for a formal event or adding flair to a casual ensemble, this versatile bow tie is the perfect choice to complete your look.",
+        "price": 9.99,
+        "category": 1,
+        "rating": 3.5,
+        "image_url": "https://i.pinimg.com/originals/db/af/7e/dbaf7e3f8c1049316c1158ddca6f1364.jpg",
+        "image": "polka-bow-tie.jpg"
+      }
+    },
+    {
+      "pk": 74,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005630638",
+        "name": "Chic Quilted Tote Bag Patterns",
+        "description": "Explore your creativity and craft your own unique accessory with our Chic Quilted Tote Bag Patterns. Designed for both beginners and experienced crafters, these patterns offer step-by-step instructions to create beautiful quilted tote bags. Each pattern features a variety of designs, from classic to contemporary, allowing you to tailor the bag to your personal style. Ideal for daily use, shopping, or as a thoughtful handmade gift, these tote bags combine practicality with fashion. Choose your favorite fabrics and start your quilting journey with these versatile and stylish tote bag patterns.",
+        "price": 60.00,
+        "category": 1,
+        "rating": 4.5,
+        "image_url": "https://i.pinimg.com/originals/5f/e0/df/5fe0dfa3949bf16ec6d4de813191333a.jpg",
+        "image": "chic-bag.jpg"
+      }
+    },
+    {
+      "pk": 75,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005650677",
+        "name": "Handcrafted and Hand-Painted Cap",
+        "description": "Add a touch of artisanal charm to your wardrobe with our Handcrafted and Hand-Painted Cap. Each cap is meticulously made by skilled artisans and features unique hand-painted designs that showcase individuality and creativity. Whether you prefer bold, vibrant patterns or subtle, intricate details, this cap offers a stylish and personalized accessory for any outfit. Perfect for both casual and semi-formal occasions, this one-of-a-kind cap not only provides sun protection but also makes a statement of artistic expression. Embrace the blend of craftsmanship and style with this exceptional hand-painted cap.",
+        "price": 18.99,
+        "category": 1,
+        "rating": 3.8,
+        "image_url": "https://i.pinimg.com/originals/cb/9f/9d/cb9f9d78878ecdbcf4bb778d391c81d5.jpg",
+        "image": "hand-painted-cap.jpg"
+      }
+    },
+    {
+      "pk": 76,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005700140",
+        "name": "Handcrafted African Tie and Pocket Square Set",
+        "description": "Handcrafted by skilled artisans from the heart of Africa, each piece embodies a kaleidoscope of colors, including vivid blues, fiery oranges, crisp whites, deep blacks, and sunlit yellows, interwoven with intricate patterns inspired by traditional African motifs.",
+        "price": 44.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "https://i.pinimg.com/originals/8f/38/bf/8f38bfc0eac23fcc5cf5c4419ebc7328.jpg",
+        "image": "african-tie.jpg"
+      }
+    },
+    {
+      "pk": 77,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005740430",
+        "name": "Handcrafted Silver Long Fashion Earrings",
+        "description": "Indulge in the timeless allure of our Ethereal Elegance earrings, meticulously handcrafted to captivate with their delicate beauty. Crafted from sterling silver by skilled artisans, these earrings exude a sense of refined luxury.",
+        "price": 45.99,
+        "category": 1,
+        "rating": 4.4,
+        "image_url": "https://img0.etsystatic.com/164/1/10586930/il_570xN.1098031886_e3jk.jpg",
+        "image": "handmade-fashion-earrings.webp"
+      }
+    },
+    {
+      "pk": 78,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005740561",
+        "name": "Fashion Ethnic Colorful Long Feather Bohemian Handmade Earrings",
+        "description": "Step into a world of vibrant elegance with our Fashion Ethnic Colorful Long Feather Bohemian Handmade Earrings. Each pair is a masterpiece, meticulously crafted to embody the free-spirited essence of bohemian style. With their bold colors, intricate designs, and graceful movement, these earrings are the perfect accessory to express your individuality and add a touch of whimsy to any outfit. Handmade with care and attention to detail, they're more than just earrings; they're a celebration of artistry and self-expression. Explore our collection and discover the perfect pair to elevate your look today!",
+        "price": 14.99,
+        "category": 1,
+        "rating": 4.1,
+        "image_url": "https://ae01.alicdn.com/kf/HTB1v1FWp9BYBeNjy0Feq6znmFXae/Korean-Fashion-Jewelry-earrings-for-women-earrings-Rhinestone-Crystal-opal-flower-ear-studs-earrings-Tassel-long.jpg",
+        "image": "fashion-ethnic-earrings.webp"
+      }
+    },
+    {
+      "pk": 79,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005740634",
+        "name": "Handcrafted Feather Headband with Beads",
+        "description": "Crafted with care and attention to detail, this headband features a stunning array of feathers, each meticulously selected for its quality and unique charm. Adorned with delicate beads, it adds a touch of elegance to any ensemble, whether you're strolling through a music festival or attending a garden party. Embrace your free spirit and make a statement with this high-quality fashion accessory that effortlessly combines style and craftsmanship.",
+        "price": 10.99,
+        "category": 1,
+        "rating": 4.5,
+        "image_url": "https://www.sadoun.com/wp-content/uploads/2019/04/AWAYTR-Fashion-Boho-Style-Feather-Headband-Hairpiece-Beads-Feather-Headdress-Handmade-Girls-Hair-Accessories-High-Quality-3.jpg",
+        "image": "headband.webp"
+      }
+    },
+    {
+      "pk": 80,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005760088",
+        "name": "Red Hand-Ticked Purse with Butterfly Embellishments and Faux Bird Accent",
+        "description": "The iconic arcuate logo gets a geo-patterned upgrade on this heathered crewneck tee from Levis. crewneck short sleeves cotton/polyester washable imported ",
+        "price": 14.99,
+        "category": 1,
+        "rating": 3.9,
+        "image_url": "https://img1.etsystatic.com/109/0/7461470/iss_640x640.6337617_e5xv2xwk.jpg",
+        "image": "iss.webp"
+      }
+    },
+    {
+      "pk": 81,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005810108",
+        "name": "Party Crown Handmade Hair Prom",
+        "description": "Vintage wedding hair decoration and accessories for women and girls. Classic crown shape design, also a great gift for your female friends. Professional photo props and accessories, you can take different style of picture using this headdress",
+        "price": 11.99,
+        "category": 1,
+        "rating": 2.9,
+        "image_url": "https://i.ebayimg.com/images/g/2hEAAOSwjd9mXl5n/s-l500.jpg",
+        "image": "s-l500.jpg"
+      }
+    },
+    {
+      "pk": 82,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005820197",
+        "name": "Hand-Knitted Rainbow Handbag",
+        "description": "This hand-knitted rainbow handbag is a vibrant and stylish accessory perfect for adding a pop of color to any outfit. Crafted with care and attention to detail, this unique handbag features a rainbow pattern that exudes positivity and charm. With its spacious interior and sturdy construction, it's both fashionable and functional, making it the ideal companion for any adventure. Handmade with love, it's a testament to artisanal craftsmanship and individuality.",
+        "price": 28.99,
+        "category": 1,
+        "rating": 4.5,
+        "image_url": "https://www.facebook.com/photo.php?fbid=670663968399241&set=a.670663948399243&type=3&from_lookaside=1",
+        "image": "rainbow-bag.png"
+      }
+    },
+    {
+      "pk": 83,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005840598",
+        "name": "Handmade Floral Dress FOR Silkstone Reproduction/Vintage Barbie Doll",
+        "description": "Handmade for Silkstone Reproduction/Vintage Barbie or similar dolls.",
+        "price": 19.99,
+        "category": 1,
+        "rating": 4.0,
+        "image_url": "https://i.ebayimg.com/images/g/YTsAAOSwmlRmZvnf/s-l500.png",
+        "image": "barbie-dress.png"
+      }
+    },
+    {
+      "pk": 84,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005840776",
+        "name": "Handmade Beaded Wristlet",
+        "description": "Indulge in the convenience of our handcrafted wristlet for keys! Effortlessly hands-free, it easily slips over your wrist for a delightful, fuss-free experience",
+        "price": 9.99,
+        "category": 1,
+        "rating": 3.8,
+        "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0717201517041911M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+        "image": "DP0717201517041911M.jpg"
+      }
+    },
+    {
+      "pk": 85,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005850180",
+        "name": "Lights and Shadows of Amsterdam by Leonid Afremov",
+        "description": "Looking at this fine painting by Leonid Afremov, we see the great city of Amsterdam. It is night, and the sky is covered with black linen. A wide canal is bearing its slow water through the sieve of the stone bridge. No person is seen on the embankment, so that nobody and nothing prevents you from enjoying this charming city, with its multitudinous canals, exquisite buildings and romantic atmosphere. The windows of the houses you can see are all yellow, and the light you see in the rooms is warm and affable, and the grandiose salute behind the smart buildings makes you feel happy that you are in this city now and have an opportunity to see the bewitching lights and flashes turning the darkness of the night into the birth of an artificial galaxy.",
+        "price": 249.99,
+        "category": 3,
+        "rating": 4.6,
+        "image_url": "http://www.feedinspiration.com/wp-content/uploads/2015/04/LIGHTS-AND-SHADOWS-OF-AMSTERDAM.jpeg",
+        "image": "abstract-1.jpeg"
+      }
+    },
+    {
+      "pk": 86,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005851218",
+        "name": "'The Golden Afternoon' by Michael Cheval",
+        "description": "This painting is by Michael Cheval, a contemporary artist known for his surreal and fantastical artworks. His distinctive style often features whimsical and dreamlike scenes, and this piece is a beautiful example of his talent for blending realistic portraits with imaginative and intricate details.",
+        "price": 999.99,
+        "category": 3,
+        "rating": 5,
+        "image_url": "http://www.feedinspiration.com/wp-content/uploads/2015/04/surrealism-painting-568.jpg",
+        "image": "surrealism-painting-568.jpg"
+      }
+    },
+    {
+      "pk": 87,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005860175",
+        "name": "Cheval, Michael Cheval Fantasy Oil Painting",
+        "description": "Born in 1966 in the USSR, later settled in Germany, considered one of the worlds leading Absurdist painters. Oil on canvas, entitled Honey Sweet Serenade II on rear in artist hand in graphite with signature lower left on front and above title on rear, dated 2010, artist used daughter as model, 24 x 36' framed, 36 x 48'. Condition Fine.",
+        "price": 1499.99,
+        "category": 3,
+        "rating": 5,
+        "image_url": "https://image.invaluable.com/housePhotos/forsythes/57/713257/H1084-L272858312.jpg",
+        "image": "H1084.jpg"
+      }
+    },
+    {
+      "pk": 88,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005860263",
+        "name": "Vintage 1987 Avon Gold Rush Stein Handcrafted in Brazil.",
+        "description": "Offering extra coverage with its high-top design, these water-resistant boots keep you looking good while you accomplish the task at hand. technology Flexa-stride memory foam insole construction synthetic upper rubber sole details lace up padded tongue and collar",
+        "price": 175,
+        "category": 5,
+        "rating": 4.9,
+        "image_url": "https://i.pinimg.com/originals/4f/6b/2a/4f6b2a4636d9816b2f91a5c41f4d876e.jpg",
+        "image": "bier-krug-mit-goldenem-deckel.jpg"
+      }
+    },
+    {
+      "pk": 89,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005870183",
+        "name": "Blue Floral Zip-Top Purse with Pink Accents",
+        "description": "Layer our moisture-wicking mesh jacket over a tee or tank for breathable comfort all day long. Quick-Dri moisture-wicking fabric helps keep you dry front pockets approx. 27\" - 28\" length polyester washable imported",
+        "price": 34.99,
+        "category": 1,
+        "rating": 4.5,
+        "image_url": "https://madeitbyhand.com/wp-content/uploads/2020/04/isla_fullxfull.30992121_nhq4x8ix.jpgversion0-2048x2048.jpg",
+        "image": "blue-purse-with-flower-patterns.webp"
+      }
+    },
+    {
+      "pk": 90,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005870599",
+        "name": "Give me wings (2020) Oil painting by Viktoria Lapteva",
+        "description": "Painting woman figurative - Give me wings - Artwork created by artist Viktoria Lapteva oil paints. Painting signed by the author on the front and the back.",
+        "price": 1299.99,
+        "category": 3,
+        "rating": 4.8,
+        "image_url": "https://i.pinimg.com/originals/03/55/09/035509d8f596d88eea7b74f701263fce.jpg",
+        "image": "give-me-wings.jpg"
+      }
+    },
+    {
+      "pk": 91,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005870638",
+        "name": "Unique Handmade Royal International Brass Chess with Wooden Base - Deluxe Chess Set of India",
+        "description": "Embellish home & office space with extremely elegant looking pieces of decor. A perfect gift on all occasions, for mother, brother, father, sister, in-laws, boss or friends, Decorative item wherever placed, are sure to beautify the surroundings, gift to someone special & assure a brightest smiles on his face, telling how much gift & thoughtfulness has been appreciated. Add distinction to decor with a genuine handmade craft unlike anything you've seen before.",
+        "price": 5530.00,
+        "category": 5,
+        "rating": 5,
+        "image_url": "https://www.ashopi.com/product_image/2734.JPG",
+        "image": "2734.JPG"
+      }
+    },
+    {
+      "pk": 92,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005910565",
+        "name": "Handcrafted Leather Shoulder Bag for Women",
+        "description": "Elevate your style with our exquisite handmade leather shoulder bag, meticulously crafted for the modern woman who values both fashion and functionality. Each bag is a testament to artisanal skill and attention to detail, featuring supple leather that ages beautifully over time. With its versatile design, this purse seamlessly transitions from day to evening, effortlessly complementing any ensemble. Ample interior space and organizational pockets ensure that your essentials stay organized, while the adjustable strap offers customizable comfort. Make a statement of sophistication with our timeless leather shoulder bag, a true symbol of refined elegance.",
+        "price": 50.99,
+        "category": 1,
+        "rating": 4.7,
+        "image_url": "https://madeheart.com/media/productphoto/141/38343446/062_DSC_0717.jpg",
+        "image": "weman-lether-bag.jpg"
+      }
+    }, 
+    {
+      "pk": 93,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005930313",
+        "name": "Painting portrait of a black woman - Сourage - portrait african woman (2020) Oil painting",
+        "description": "Painting portrait of a black woman on - Сourage - portrait african woman on a metallized bronze background. Portrait african woman, oil original painting on canvas - Painting has a impasto, relief texture. I accept orders for the creation of portraits on request in a similar color scheme and technique of execution",
+        "price": 1299.99,
+        "category": 3,
+        "rating": 4.9,
+        "image_url": "https://d3rf6j5nx5r04a.cloudfront.net/Np_fLVQYYX9limyNzzgulQN4qQ4=/1188x1200/product/6/3/1d1eb7555887453889fdb1bb9a759845_opt.jpg",
+        "image": "painting-black-woman.webp"
+      }
+    },
+    {
+      "pk": 94,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005940242",
+        "name": "Brass Chess Set with Wooden Board",
+        "description": "Wood has been a preferred material for sculptures and statues since ancient times. It is easy to work with than most metals and stones and therefore requires less effort to shape it into any desired shape or form. The texture of the wood gives an element of realism to the sculpture. The selection of an appropriate wood type is necessary for carving. Woods that are too resinous or coniferous are not considered good for carving as their fiber is very soft and thus lacks strength. On the other hand, wood such as Mahogany, Oakwood, Walnut wood, Weet cherry wood, etc., are preferred by sculptors because their fiber is harder. A wood sculptor uses various tools such as a pointed chisel in one hand and a mallet in another to bring the wood to the desired measurement and to make intricate details on it. A carving knife is used to cut and smooth the wood. Other tools such as the gouge, V-tool, and coping saw also serve as important tools in wood carving. Although the wood carving technique is not as complex and tough as stone carving or metal sculpting, nonetheless, a wood carver requires a high level of skills and expertise to create a stunning sculpture",
+        "price": 312.99,
+        "category": 5,
+        "rating": 3.8,
+        "image_url": "https://cdn.exoticindia.com/images/products/original/sculptures/zbk48_a02.jpg",
+        "image": "zbk48.webp"
+      }
+    },
+    {
+      "pk": 95,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005940299",
+        "name": "African woman portrait painting, Original oil painting (2016)",
+        "description": "Modern art original oil female portrait painting. This colorful painting made with brushes and palette knife. It is perfect for the stylish modern interiors. This work is unique, this is not print and not copy.",
+        "price": 900,
+        "category": 3,
+        "rating": 5,
+        "image_url": "https://d2ezq7t0wj6z8f.cloudfront.net/EyP4yU2-IeX3XCNA2UhblwaVPw4=/1226x1500/filters:quality(95)/product/e/7/c78bdc509bf847119fae552911d24fe4.jpg",
+        "image": "african-woman-potrait.webp"
+      }
+    },
+    {
+      "pk": 96,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005941612",
+        "name": "Sondarya | Acrylic Painting on Canvas",
+        "description": "Her eyes, like pools of liquid moonlight, shine with an ethereal brilliance. Within their depths, one can glimpse the unspoken language of marvel and astonishment. It is a look that speaks of a soul perpetually open to the wonders of the world, an invitation to join in her unending quest for beauty and knowledge. Adorned with resplendent jewelry, she becomes a vision of opulence and grace. Each stroke of the artist's brush lovingly depicts the shimmering gold and intricate details of her adornments. Jewels, vibrant as the wings of a peacock, twinkle upon her neck, cascading like liquid stardust. RANJIT SARKAR captures the intricate patterns, as if each gem holds a story, each ornament a testament to the rich cultural heritage that adorns her being.",
+        "price": 1566,
+        "category": 3,
+        "rating": 4.7,
+        "image_url": "https://cdn.exoticindia.com/images/products/original/paintings-2019/pab439.jpg",
+        "image": "pab439.webp"
+      }
+    },
+    {
+      "pk": 97,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005980058",
+        "name": "Nature Buddha | Acrylic on Canvas | Painting by Gayatri Mavuru",
+        "description": "The natural grey Buddha in this artwork symbolizes wisdom, enlightenment, and the embodiment of inner peace - their serene countenance emanates a profound sense of tranquility and invites viewers to connect with their own inner stillness. The grey hue further emphasizes the timeless and enduring nature of the Buddha's teachings. The lush green leaves surrounding the Buddha statue represent growth, renewal, and the interconnectedness of all life. They symbolize the nurturing energy of nature and the potential for spiritual awakening that lies within each individual. The vibrant shades of green evoke a sense of vitality and harmony. The yellow gems that adorn the Buddha and the surrounding environment represent grounding and stability. Their warm hue adds a touch of radiance and serenity to the composition, reminding viewers of the inherent peace and consciousness one must constantly turn back to.",
+        "price": 600,
+        "category": 3,
+        "rating": 4.6,
+        "image_url": "https://cdn.exoticindia.com/images/products/original/paintings-2019/miy082.jpg",
+        "image": "buddah-painting.webp"
+      }
+    },
+    {
+      "pk": 98,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5005980146",
+        "name": "EM Ginn Handmade Gramophone Phonograph",
+        "description": "This is a very rare and desired E.M.Ginn Expert, hand made gramophone. It is in great shape for its age and works. This gramophone was made in England, cira 1930’s. This gramophone has an auto shut off and plays 78`s with wooden or medal needles. The horn is made with papier-mach, it is approximately 28 3/8″ in diameter, 44″ across and stands approximately 58″ tall. The metal throat diameter is approximately 3 3/8″ ID. The wooden cabinet measures approximately 22 1/4″ x 22 1/4″ x 14 3/8″. The motor is a Collaro Induction, multi-voltage 220v/50 hz – 110v/60 hz",
+        "price": 4500,
+        "category": 5,
+        "rating": 5,
+        "image_url": "http://www.greatestcollectibles.com/wp-content/uploads/2012/04/Phonographs-5.jpg",
+        "image": "gramophone.png"
+      }
+    },
+    {
+      "pk": 99,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006070077",
+        "name": "Synthetic Camel Statue Handmade ",
+        "description": "Antique Resin Hunting Carving Camel Figurine in Ivory Color. This product is hand made and is ideal for home decor. Length-8 inchWidth-4 inchHeight-6 inch Weight-750 gm Note :- Due to Being made by hand can make a diffrence in color and shape may be slightly different.",
+        "price": 80,
+        "category": 5,
+        "rating": 4.4,
+        "image_url": "https://s.ecrater.com/stores/448559/5c4d344e79cc6_448559b.jpg",
+        "image": "camel.jpg"
+      }
+    },
+    {
+      "pk": 100,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006081758",
+        "name": "Custom Wood Pen by Sandman Woodwork",
+        "description": "Introducing the Custom Wood Pen by Sandman Woodwork – a masterpiece of craftsmanship and elegance. Handcrafted from the finest wood, each pen showcases a unique blend of nature’s beauty and meticulous artistry. With its smooth finish and balanced design, this pen provides a luxurious writing experience that makes every word a delight. Ideal for the discerning writer, a thoughtful gift, or a distinguished addition to any desk, the Custom Wood Pen by Sandman Woodwork is more than just a writing instrument; it’s a statement of style and sophistication. Embrace the timeless charm of custom wood craftsmanship and enhance your writing journey today.",
+        "price": 175,
+        "category": 5,
+        "rating": 4.7,
+        "image_url": "https://images.custommade.com/EDJ9ajmgBUki2m8wcJ7wqcpzNE4=/custommade-photosets/1039.1035604.jpg",
+        "image": "wood-pen.webp"
+      }
+    },
+    {
+      "pk": 101,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006082011",
+        "name": "Vintage Model Ship",
+        "description": "Vintage Model Ship, CUTTY SARK 1869, Handmade Collectible Wooden Sailing Ship, 16 x 21, Nautical Deco",
+        "price": 100,
+        "category": 5,
+        "rating": 5,
+        "image_url": "https://img1.etsystatic.com/000/0/6382671/il_570xN.301042343.jpg",
+        "image": "model-ship.avif"
+      }
+    },
+    {
+      "pk": 102,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006150186",
+        "name": "i am unique by Yossi Kotler",
+        "description": "Yossi Kotler, a contemporary artist known for his vibrant and expressive works. Yossi Kotler often explores themes of individuality and human emotion through his art. In 'I Am Unique,' Kotler uses bold colors, dynamic compositions, and a sense of whimsy to celebrate the concept of uniqueness and self-expression. The piece likely features abstract or semi-abstract elements, with an emphasis on conveying a message of personal identity and the beauty of being different. Through his distinctive style, Kotler encourages viewers to embrace their individuality and appreciate the diversity of human experience.",
+        "price": 400,
+        "category": 3,
+        "rating": 4.5,
+        "image_url": "https://i.pinimg.com/originals/4a/44/9b/4a449b1dd0c1412358cf98065416eb15.jpg",
+        "image": "i-am-unique.jpg"
+      }
+    },
+    {
+      "pk": 103,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006153172",
+        "name": "FASCINATION - PALETTE KNIFE Oil Painting On Canvas By Leonid Afremov",
+        "description": "We would like to present hand painted oil on canvas painting (recreation) of Afremov's artwork mentioned in the title. This art piece made by Leonid Afremov Studio with the same amount of soul and emotion just like the first original painting. The piece is created with oil paint on artistic canvas using Afremov's unique technique of a palette knife. The artwork has a lot of texture, you can feel the strokes by touching this painting. By purchasing on our site, you are buying directly from Leonid Afremov Studio. We guarantee your satisfaction and the best customer experience. The artwork is signed on the back and on the front. The certificate of authenticity will include the name of the owner who purchased the piece of artwork. The certificate is signed by Leonid Afremov Studio. If you are buying this painting as a gift, please provide us the name of the gift recipient for the certificate. We can also ship to the address of the recipient of your gift.",
+        "price": 249,
+        "category": 3,
+        "rating": 4.4,
+        "image_url": "https://afremov.com/fascination-palette-knife-oil-painting-on-canvas-by-leonid-afremov-size-40-x30.html",
+        "image": "palette-knife.png"
+      }
+    },
+    {
+      "pk": 104,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006160127",
+        "name": "Wooden Steam Engine and Tender Handcrafted Locomotive.",
+        "description": "Classic wood/coal burning steam locomotive engine with tender. Each engine is individually numbered by production. Boiler is lathe-turned black walnut and maple. Two-drive wheel engine.",
+        "price": 1214.89,
+        "category": 5,
+        "rating": 5,
+        "image_url": "https://i.etsystatic.com/6261062/r/il/3496f2/255590472/il_1140xN.255590472.jpg",
+        "image": "locomotive.webp"
+      }
+    },
+    {
+      "pk": 105,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006160833",
+        "name": "Easy DIY 2 Sets Embroidery Coin Bag",
+        "description": "Easy DIY a delicate pattern small clutch frame bag for girls. Set embroidery includes embroidery pattern model cloth, wool kit, needle, lock frame, and thin cotton accessories, etc. Cover all necessory tools except embroidery frame in finish this coin bag. Just with this set, you can finish a pretty lock coin purse",
+        "price": 19.99,
+        "category": 1,
+        "rating": 4.8,
+        "image_url": "https://i.ebayimg.com/images/g/0d0AAOSwlcxmZQK5/s-l500.jpg",
+        "image": "white-coin-purse.png"
+      }
+    },
+    {
+      "pk": 106,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006170128",
+        "name": "Handcrafted 100% Silk Tie",
+        "description": "Jacquard refers to the way the silk is woven. During the weaving process,  each warp thread is raised independently of the others, making it possible to have the highest level of yarn control and allowing for incredible and intricate detailing and textures.All our neckties are crafted using the Jacquard weaving process.",
+        "price": 45,
+        "category": 5,
+        "rating": 4.2,
+        "image_url": "https://luxuryslu.com/wp-content/uploads/2018/04/s-l1600-18.jpg",
+        "image": "gold-krawa.webp"
+      }
+    },
+    {
+      "pk": 107,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006170131",
+        "name": "Handmade Wooden Music Box",
+        "description": "The Exquisite Artisan Music Box by Maestro Craftworks is more than just a music box; it is a symphony of art and engineering. Perfect for the discerning collector, this music box offers a bespoke musical experience wrapped in a luxurious package. Whether displayed as a centerpiece or gifted to a loved one, it embodies sophistication and timeless beauty.",
+        "price": 74.99,
+        "category": 5,
+        "rating": 4.6,
+        "image_url": "https://i.pinimg.com/originals/f1/e0/90/f1e090dea778dd1fbea3d38a332dd80f.jpg",
+        "image": "wooden-music-box.jpg"
+      }
+    },
+    {
+      "pk": 108,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006170357",
+        "name": "Pointer custom knife",
+        "description": "Overall length: 294 mm Blade length: 145 mm Blade thickness: 2,5 mm Blade width: 35 mm Coating thickness: nickel 26 µm; gold 4,5 µm Blade Rockwell hardness 56 HRC",
+        "price": 60.99,
+        "category": 5,
+        "rating": 4.5,
+        "image_url": "https://i.pinimg.com/originals/16/84/47/16844736dee08842c4a3c80d43973d60.png",
+        "image": "cosutm-knife.png"
+      }
+    },
+    {
+      "pk": 109,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006200155",
+        "name": "DEEP REFLECTION - oil painting on canvas by Leonid Afremov",
+        "description": "We would like to present hand painted oil on canvas painting (recreation) of Afremov's artwork mentioned in the title. This art piece made by Leonid Afremov Studio with the same amount of soul and emotion just like the first original painting. The piece is created with oil paint on artistic canvas using Afremov's unique technique of a palette knife.",
+        "price": 249,
+        "category": 3,
+        "rating": 4.4,
+        "image_url": "https://afremov.com/deep-reflection-palette-knife-oil-painting-on-canvas-by-leonid-afremov-size.html",
+        "image": "deep-reflection.png"
+      }
+    },
+    {
+      "pk": 110,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006200658",
+        "name": "KISS BY THE RIVER - PALETTE KNIFE Oil Painting On Canvas By Leonid Afremov",
+        "description": "We would like to present hand painted oil on canvas painting (recreation) of Afremov's artwork mentioned in the title. This art piece made by Leonid Afremov Studio with the same amount of soul and emotion just like the first original painting. The piece is created with oil paint on artistic canvas using Afremov's unique technique of a palette knife. The artwork has a lot of texture, you can feel the strokes by touching this painting. By purchasing on our site, you are buying directly from Leonid Afremov Studio. We guarantee your satisfaction and the best customer experience.",
+        "price": 120,
+        "category": 3,
+        "rating": 4.5,
+        "image_url": "https://afremov.com/kiss-by-the-river.html",
+        "image": "kiss-by-the-river.png"
+      }
+    },
+    {
+      "pk": 111,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006241766",
+        "name": "48pcs/box Diamond Painting Glue Clay with Storage Box Accessories Handmade",
+        "description": "48 pieces of diamond painting glue clays are included in this set, which can basically meet your usage needs and even allow you to share with your friends or family. Such a diamond painting glue clay with strong adhesion is easy to stick the diamonds to where you want and effectively helps you save a lot of time during the process of DIY painting and other DIY projects. It is made of high-quality plastic and silicone material. The length of this product is 2cm, the width is 2cm.",
+        "price": 9.99,
+        "category": 1,
+        "rating": 3,
+        "image_url": "https://i.ebayimg.com/images/g/BSEAAOSwMFxmY6PY/s-l1600.jpg",
+        "image": "s-l1600.jpg"
+      }
+    },
+    {
+      "pk": 112,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006242155",
+        "name": "1940s Vintage Handmade Brass Revolver Shape Folding Knife Rare Collectible KN26",
+        "description": "This unique vintage collectible opens with a trigger mechanism, revealing its contents in a distinctive half-manner. Guaranteed 100% authentic, this piece showcases genuine wear and tear that adds to its historical charm. Ideal for collectors, it promises to be a standout addition to any collection. This item is an authentic piece of history. Note that colors may vary slightly due to photographic lighting or monitor display. (Dimensions: 6.8' (Length) x 2.2' (Breadth) Weight: 149 grams)",
+        "price": 200,
+        "category": 2,
+        "rating": 4.7,
+        "image_url": "https://www.picclickimg.com/ei8AAOSwjWpjn-6m/1940s-Vintage-Handmade-Brass-Revolver-Shape-Folding-Knife.webp",
+        "image": "gun.webp"
+      }
+    },
+    {
+      "pk": 113,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006242904",
+        "name": "Arizona Raglan T-Shirt",
+        "description": "Heathered raglan tee from Arizona has a soft look (and even softer feel) that pairs perfectly with denim. crewneck raglan sleeves cotton/polyester washable imported",
+        "price": 23.99,
+        "category": 9,
+        "rating": 5,
+        "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP1104201517020304M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+        "image": "DP1104201517020304M.jpg"
+      }
+    },
+    {
+      "pk": 114,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006242905",
+        "name": "The Catherine 'Kit' Hewitt Collection of Doll Houses, Dolls and other toys",
+        "description": "An antique doll's house: Victorian suburban villa with double-bay two-storey frontage and garden, detachable to reveal four rooms and connecting stairwell, fitted fireplaces and electric lights, original wall and floor papers, and glazed, curtained windows, 79w x 69h x 51cms deep.",
+        "price": 400,
+        "category": 5,
+        "rating": 4.6,
+        "image_url": "https://andersonandgarland.blob.core.windows.net/stock/230667-0.jpg?v=63741576507147",
+        "image": "model-house.jpg"
+      }
+    },
+    {
+      "pk": 115,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006243106",
+        "name": "Big Blue Topaz Ring",
+        "description": "Sterling silver ring expertly coated with the thick layer of 14K gold with genuine semi-precious stones.",
+        "price": 599,
+        "category": 4,
+        "rating": 4.8,
+        "image_url": "https://shop.santayana.com/collections/rings/products/big-blue-topaz-ring",
+        "image": "blue-stone-ring.webp"
+      }
+    },
+    {
+      "pk": 116,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006243276",
+        "name": "Semi-Precious Double Rectangle Earrings",
+        "description": "Sterling silver earrings, expertly coated with the thick layer of 14K gold with genuine semi-precious stones.",
+        "price": 450,
+        "category": 4,
+        "rating": 4.9,
+        "image_url": "https://shop.santayana.com/collections/earrings/products/semi-precious-double-rectangle-earrings",
+        "image": "double-rectangle-earrings.webp"
+      }
+    },
+    {
+      "pk": 117,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006280064",
+        "name": "White Onyx Bead Necklace",
+        "description": "10mm round white onyx bead necklace with Santayana Signature interchangeable clasp closure.",
+        "price": 200,
+        "category": 4,
+        "rating": 4.4,
+        "image_url": "https://shop.santayana.com/collections/necklaces/products/white-onyx-bead-necklace",
+        "image": "IMG8224.webp"
+      }
+    },
+    {
+      "pk": 118,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006280190",
+        "name": "3 Carat Diamond Tennis Bracelet",
+        "description": "14K yellow gold diamond tennis bracelet with 10.36 carat total weight in diamonds",
+        "price": 4200,
+        "category": 4,
+        "rating": 5.0,
+        "image_url": "https://shop.santayana.com/collections/bracelets/products/3-carat-diamond-tennis-bracelet",
+        "image": "diamons-bracelet.webp"
+      }
+    },
+    {
+      "pk": 119,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006291997",
+        "name": "10 Carat Diamond Tennis Bracelet",
+        "description": "14K white gold diamond tennis bracelet with 10.36 carat total weight in diamonds",
+        "price": 14.900,
+        "category": 4,
+        "rating": 5.0,
+        "image_url": "https://shop.santayana.com/products/10-carat-diamond-tennis-bracelet?pr_prod_strat=e5_desc&pr_rec_id=011231ea7&pr_rec_pid=7331593453683&pr_ref_pid=7331595583603&pr_seq=uniform",
+        "image": "10-carat-diamons-bracelet.webp"
+      }
+    },
+    {
+      "pk": 120,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006310072",
+        "name": "5 Carat Diamond Tennis Bracelet",
+        "description": "14K white gold diamond tennis bracelet with 10.36 carat total weight in diamonds",
+        "price": 6.930,
+        "category": 4,
+        "rating": 5.0,
+        "image_url": "https://shop.santayana.com/products/5-carat-diamond-tennis-bracelet-1?pr_prod_strat=e5_desc&pr_rec_id=3c6e42ab7&pr_rec_pid=7331595354227&pr_ref_pid=7331593453683&pr_seq=uniform",
+        "image": "5-carat.webp"
+      }
+    },
+    {
+      "pk": 121,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006310446",
+        "name": "Crest Keychain",
+        "description": "Something different for the guys. Sterling silver crest keychain are a beautiful gift for dads, grads, or groomsmen.",
+        "price": 220,
+        "category": 4,
+        "rating": 4.2,
+        "image_url": "https://shop.santayana.com/collections/keychains/products/crest-keychain",
+        "image": "keychain.jpeg"
+      }
+    },
+    {
+      "pk": 122,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006310918",
+        "name": "Sterling Silver Enamel Cufflinks Darth Guayabera",
+        "description": "Sterling silver with enamel cufflinks of everyone's favorite bad dad in a guayabera.",
+        "price": 240,
+        "category": 4,
+        "rating": 4.5,
+        "image_url": "https://shop.santayana.com/collections/cufflinks/products/enamel-cufflinks-darth-guayabera",
+        "image": "darth-vader.webp"
+      }
+    },
+    {
+      "pk": 123,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006310935",
+        "name": "Mother of Pearl Caridad del Cobre",
+        "description": "14K yellow gold Caridad del Cobre necklace. The image of the Caridad del Cobre is mounted on an oval mother of pearl and surrounded by diamonds. The chain is embellished fresh water pearls.",
+        "price": 4000,
+        "category": 4,
+        "rating": 5,
+        "image_url": "https://shop.santayana.com/collections/necklaces/products/mother-of-pearl-caridad-del-cobre",
+        "image": "religious-amulet.webp"
+      }
+    },
+    {
+      "pk": 124,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006311067",
+        "name": "Leather Necklace Chord with Connections",
+        "description": "Leather cord with sterling silver, Santayana Signature connections clasps, that open in the center to allow you to switch out pendants.",
+        "price": 180,
+        "category": 4,
+        "rating": 4.5,
+        "image_url": "https://shop.santayana.com/collections/necklaces/products/leather-necklace-chord-with-connections",
+        "image": "leather-necklace.webp"
+      }
+    },
+    {
+      "pk": 125,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006330197",
+        "name": "San Lazaro Charm",
+        "description": "Add a little retro to your wardrobe to create fashion fun with our Stylus flare jeans. high rise flare leg 5-pockets 32\" inseam cotton/polyester/rayon/spandex washable imported ",
+        "price": 35,
+        "category": 4,
+        "rating": 3.9,
+        "image_url": "https://shop.santayana.com/collections/beads/products/san-lazaro-charm",
+        "image": "beads.webp"
+      }
+    },
+    {
+      "pk": 126,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5006330208",
+        "name": "Silver Crest Ring",
+        "description": "Sterling silver ring featuring a crest.",
+        "price": 150,
+        "category": 4,
+        "rating": 4.0,
+        "image_url": "https://shop.santayana.com/collections/rings/products/crest-ring",
+        "image": "crest-ring.webp"
+      }
     }
   ]
