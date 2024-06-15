@@ -6,8 +6,8 @@ def view_cart(request):
     '''
     A view that renders the bag contents page
     '''
-        
-    return render(request, 'cart/cart.html', context)
+
+    return render(request, 'cart/cart.html')
 
 def add_to_cart(request, item_id):
     '''
@@ -18,11 +18,10 @@ def add_to_cart(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
-    if item_id in list(bag.keys()):
-        bag[item_id] += quantity
+    if item_id in list(cart.keys()):
+        cart[item_id] += quantity
     else:
-        bag[item_id] = quantity
+        cart[item_id] = quantity
 
-    request.session['cart'] = bag
-    print(request.session['cart'])
+    request.session['cart'] = cart
     return redirect(redirect_url)
