@@ -51,7 +51,7 @@
                     {% endif %}
 
                     <p class="mt-3">{{ product.description }}</p>
-                    <form class="form" action="" method="POST">
+                    <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             {% with product.has_sizes as s %}
@@ -102,7 +102,7 @@
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
@@ -112,7 +112,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block postloadjs %}
 {% endblock %}
