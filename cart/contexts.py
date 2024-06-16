@@ -51,4 +51,4 @@ def cart_contents(request):
         'grand_total': grand_total,
     }
 
-    return contex
+    return context
