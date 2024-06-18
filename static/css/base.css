@@ -7,7 +7,9 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Shadows Into Light', cursive;
+    /*font-family: "Poppins", sans-serif;*/
+    /*font-family: "Merriweather", serif;*/
+    font-family: "Open Sans", sans-serif;
 }
 
 /* from Bulma */
@@ -19,6 +21,27 @@ body {
     width: 1.5rem;
 }
 
+.header-container {
+    padding: 10px;
+}
+
+.container.h-100 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    float: right;
+}
+
+h1.display-4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
 .container-fluid {
     background-color: #D07C3F;
 }
@@ -28,18 +51,65 @@ body {
     align-items: center;
 }
 
+.display-4.logo-font.text-white {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.my-5 {
+    margin: 20px 0;
+}
+
+#delivery-banner {
+    background-color: #FFA500;
+}
+
 .main-logo-link {
     width: fit-content;
 }
 
-.shop-now-button {
-    background: #4E342E;
+.navbar {
+    background-color: #003366;
+    border-bottom: 2px solid #D07C3F;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white !important;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #D07C3F;
+    color: white !important;
+}
+
+.dropdown-menu {
+    background-color: #444;
+}
+
+.dropdown-item {
     color: white;
-    min-width: 260px;
+}
+
+.dropdown-item:hover {
+    background-color: #D07C3F;
+    color: white;
+}
+
+.shop-now-button {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    transition: 0.3s, color 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0.1)
+    /* min-width: 260px; */   /*MODIFIED*/
 }
 
 .btn-black {
-    background: #4E342E;
+    background: #003366;
     color: white;
 }
 
@@ -63,7 +133,7 @@ body {
 .btn-black:active,
 .btn-black:focus {
     background: #222;
-    color: white;
+    color: #D07C3F;
 }
 
 .text-black {
@@ -298,6 +368,10 @@ input[name='q']::placeholder {
 
     .display-4.logo-font.text-black {
         font-size: 2rem;
+    }
+
+    .shop-now-button {
+        padding: 12px 24px;
     }
 
     .nav-link {
