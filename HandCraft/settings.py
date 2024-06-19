@@ -37,6 +37,11 @@ ALLOWED_HOSTS = [
     'project-5-39f95920fba3.herokuapp.com'
     ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-dfcmk-project5-empt7ixxel5.ws.codeinstitute-ide.net',
+    'https://project-5-39f95920fba3.herokuapp.com'
+]
+
 
 # Application definition
 
