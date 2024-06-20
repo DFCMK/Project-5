@@ -106,9 +106,9 @@
                               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                               <p class="my-0">
                                   {% if grand_total %}
-                                      <strong>${{ grand_total|floatformat:2 }}</strong>
+                                      <strong>€{{ grand_total|floatformat:2 }}</strong>
                                   {% else %}
-                                      <strong>$0.00</strong>
+                                      <strong>€0.00</strong>
                                   {% endif %}
                               </p>
                           </div>
