@@ -62,7 +62,9 @@ INSTALLED_APPS = [
     'checkout',
 
     # other
-    'crispy_forms'
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +79,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'HandCraft.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
