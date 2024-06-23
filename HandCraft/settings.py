@@ -108,7 +108,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
                 'django.template.context_processors.media',
-                'cart.contexts.cart_contents'
+                'cart.contexts.cart_contents',
+
+                # custom context processor
+                'user_profile.context_processor.wishlist_count',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
