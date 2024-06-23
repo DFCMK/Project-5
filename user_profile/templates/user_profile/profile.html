@@ -72,6 +72,12 @@
                     </table>
                 </div>
             </div>
+            <h2>Whishlist</h2>
+            <ul>
+                {% for item in whishlist %}
+                    <li>{{ item.product.name }} - <a href="{% url 'product_detail' item.product.id %}">View Product</a></li>
+                {% endfor %}
+            </ul>
         </div>
 {% endblock %}
 
