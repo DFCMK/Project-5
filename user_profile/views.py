@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
+from products.models import Product
 from .forms import UserProfileForm
 
 from checkout.models import Order
@@ -34,7 +36,7 @@ def profile(request):
 
     return render(request, template, context)
 
-
+@login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
@@ -50,3 +52,18 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+@login_required
+def add_to_wishlist(request, id):
+    '''
+    Save Products to a Whishlist, for later purchase
+    '''
+    product = get_object_or_404(Product, id=id)
+    if product.users_wishlist.filter(id=request.user.id).exists():
+        product.users_wishlist.remove(request.user)
+    else: 
+        product.users_wishlist.add(request.user)
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
+
+
+
