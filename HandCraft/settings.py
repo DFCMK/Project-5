@@ -17,6 +17,15 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+
+# Added as temporary workaround of the: 
+# AttributeError: 'BlankChoiceIterator' object has no attribute '__len__' "
+
+from django_countries.widgets import LazyChoicesMixin
+
+LazyChoicesMixin.get_choices = lambda self: self._choices
+LazyChoicesMixin.choices = property(LazyChoicesMixin.get_choices, LazyChoicesMixin.set_choices)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -60,6 +69,7 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+    'user_profile',
 
     # other
     'crispy_forms',
@@ -123,6 +133,8 @@ SITE_ID = 1
 # CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# AUTH_USER_MODEL = 'user_profile.UserProfile'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
