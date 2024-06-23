@@ -21,6 +21,10 @@ body {
     width: 1.5rem;
 }
 
+.whichlist-icon {
+    font-size: 1.2rem;
+}
+
 .header-container {
     padding: 10px;
 }
