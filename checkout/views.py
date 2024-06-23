@@ -5,6 +5,7 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+from user_profile.models import UserProfile
 from products.models import Product
 from cart.contexts import cart_contents
 
@@ -46,9 +47,23 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
-        order_form = OrderForm(form_data)
+
+        order_form = OrderForm(form_data, user=request.user)
         if order_form.is_valid():
             order = order_form.save(commit=False)
+            if request.user.is_authenticated:
+                order.user_profile = UserProfile.objects.get(user=request.user)
+                if 'save-info' in request.POST:
+                    profile = order.user_profile
+                    profile.default_phone_number = order.phone_number
+                    profile.default_country = order.country
+                    profile.default_postcode = order.postcode
+                    profile.default_town_or_city = order.town_or_city
+                    profile.default_street_address1 = order.street_address1
+                    profile.default_street_address2 = order.street_address2
+                    profile.default_county = order.county
+                    profile.save()
+                order.save()
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
@@ -86,6 +101,7 @@ def checkout(request):
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
+        order_form = OrderForm(user=request.user)
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(request, "There's nothing in your cart at the moment")
@@ -100,7 +116,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        order_form = OrderForm(user=request.user)
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
