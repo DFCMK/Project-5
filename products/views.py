@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
+from user_profile.models import Wishlist
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -48,11 +49,14 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    wishlist_count = Wishlist.objects.filter(user=request.user).count()
+
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        "wishlist_count": wishlist_count
     }
 
     return render(request, 'products/products.html', context)
@@ -62,9 +66,11 @@ def product_detail(request, product_id):
     Render Product details
     '''
     product = get_object_or_404(Product, pk=product_id)
+    wishlist_count = Wishlist.objects.filter(user=request.user).count()
 
     context = {
-        'product': product
+        'product': product,
+        'wishlist_count': wishlist_count
     }
 
     return render(request, 'products/product_detail.html', context)
