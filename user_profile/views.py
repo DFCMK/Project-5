@@ -81,8 +81,14 @@ def wishlist(request):
     
     wishlist_entries = Wishlist.objects.filter(user=request.user)
     products = [entry.product for entry in wishlist_entries]
+    wishlist_count = Wishlist.objects.filter(user=request.user).count()
 
-    return render(request, "user_profile/wishlist.html", {"wishlist": products})
+    context = {
+        "wishlist": products,
+        "wishlist_count": wishlist_count
+    }
+
+    return render(request, "user_profile/wishlist.html", context)
 
 @login_required
 def remove_from_wishlist(request, id):
