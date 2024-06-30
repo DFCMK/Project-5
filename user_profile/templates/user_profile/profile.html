@@ -23,71 +23,83 @@
                 <hr>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <button class="mb-3 delivery-info-btn" type="button" data-toggle="collapse" data-target="#profile-form" aria-expanded="false" aria-controls="profile-form">
-                    <i class="fa-solid fa-truck truck-icon"></i> Default Delivery Adress
-                </button>
-
-                <div class="collapse" id="profile-form">
-                    <div class="card card-body">
-                        <p class="text-muted">Default Delivery Information</p>
-                        <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                            <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Order History</p>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
+        {% if default_address %}
+        <h2>Default Delivery Address</h2>
+        <p>{{ default_address.full_name }}</p>
+        <p>{{ default_address.phone_number }}</p>
+        <p>{{ default_address.street_address1 }}</p>
+        <p>{{ default_address.street_address2 }}</p>
+        <p>{{ default_address.town_or_city }}</p>
+        <p>{{ default_address.county }}</p>
+        <p>{{ default_address.postcode }}</p>
+        <p>{{ default_address.country }}</p>
+        {% else %}
+        <p>No default delivery address set.</p>
+        {% endif %}
+        <hr>
+        <!-- Addresses -->
+        <a href="{% url 'add_address' %}" class="btn add-address-btn mb-3">Add New Address</a>
+        <ul>
+            {% for address in addresses %}
+            <li>
+                {{ address.full_name }}, {{ address.town_or_city }} 
+                <a href="{% url 'edit_address' address.id %}">Edit</a> 
+                <a href="{% url 'delete_address' address.id %}">Delete</a>
+                {% if not address.set_as_default %}
+                <a href="{% url 'set_default_address' address.id %}">Set as Default</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <!-- Order History -->
+        <div class="col-12 col-lg-6">
+            <p class="text-muted">Order History</p>
+            <div class="order-history table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Order Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
                             <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}"
+                                    title="{{ order.order_number }}">
+                                        {{ order.order_number|truncatechars:6 }}
+                                    </a>
+                                </td>
+                                <td>{{ order.date }}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% for item in order.lineitems.all %}
+                                            <li class="small">
+                                                {% if item.product.has_sizes %}
+                                                    Size {{ item.product.size|upper }}
+                                                {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td>${{ order.grand_total }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                    {% if item.product.has_sizes %}
-                                                        Size {{ item.product.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>${{ order.grand_total }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-            <h2>Wishlist</h2>
-            <ul>
-                {% for item in wishlist %}
-                    <li>{{ item.product.name }} - <a href="{% url 'product_detail' item.product.id %}">View Product</a></li>
-                {% endfor %}
-            </ul>
         </div>
+        <ul>
+            {% for item in wishlist %}
+                <li>{{ item.product.name }} - <a href="{% url 'product_detail' item.product.id %}">View Product</a></li>
+            {% endfor %}
+        </ul>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
@@ -96,7 +108,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#id_default_country').select2({
-                width: '100',
+                width: '100%',
                 placeholder: 'Select a country',
                 allowClear: true
             });
