@@ -3,11 +3,9 @@
     overflow-y: auto;
 }
 
-
 #profile-update-form .form-control {
     color: #000;
 }
-
 
 #profile-update-form input::placeholder {
     color: #aab7c4;
