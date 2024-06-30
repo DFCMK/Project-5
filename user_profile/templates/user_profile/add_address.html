@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Add a new Address</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <h3>Update your default Delivery Information</h3>
+    <form method="post" action="{% url 'add_address' %}">
+        {% csrf_token %}
+        {{ address_form|crispy }}
+        <button type="'submit" class="btn btn-success">Add Address</button>
+    </form>
+</div>
+{% endblock %}
