@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, Address
 
 
 class UserProfileForm(forms.ModelForm):
@@ -35,4 +35,36 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
+
+class AddressForm(forms.ModelForm):
+
+    set_as_default = forms.BooleanField(required=False, label='Set as default Delivery Address')
+
+    class Meta:
+        model = Address
+        exclude = ('user',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'full_name': 'Full_name',
+            'phone_number': 'Phone Number',
+            'country': 'Country',
+            'postcode': 'Postal Code',
+            'town_or_city': 'Town or City',
+            'street_address1': 'Street Address 1',
+            'street_address2': 'Street Address 2',
+            'county': 'County',
+        }
+        self.fields['full_name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            placeholder = placeholders.get(field, '')
+            if field != 'country':
+                if self.fields[field].required:
+                    placeholder = f'{placeholder} *'
+                else:
+                    placeholder = placeholder
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 address-form-input'
+            self.fields[field].label = 'Set as default Delivery Address'
 
