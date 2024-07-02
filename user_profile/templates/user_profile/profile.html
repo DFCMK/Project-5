@@ -25,33 +25,70 @@
         </div>
         {% if default_address %}
         <h2>Default Delivery Address</h2>
-        <p>{{ default_address.full_name }}</p>
-        <p>{{ default_address.phone_number }}</p>
-        <p>{{ default_address.street_address1 }}</p>
-        <p>{{ default_address.street_address2 }}</p>
-        <p>{{ default_address.town_or_city }}</p>
-        <p>{{ default_address.county }}</p>
-        <p>{{ default_address.postcode }}</p>
-        <p>{{ default_address.country }}</p>
+        <p>Full Name: {{ default_address.full_name }}</p>
+        <p>Phone Number: {{ default_address.phone_number }}</p>
+        <p>Street Address1: {{ default_address.street_address1 }}</p>
+        <p>Street Address2: {{ default_address.street_address2 }}</p>
+        <p>Town or City:{{ default_address.town_or_city }}</p>
+        <p>County: {{ default_address.county }}</p>
+        <p>Postcode: {{ default_address.postcode }}</p>
+        <p>Country: {{ default_address.country }}</p>
         {% else %}
         <p>No default delivery address set.</p>
         {% endif %}
         <hr>
         <!-- Addresses -->
-        <a href="{% url 'add_address' %}" class="btn add-address-btn mb-3">Add New Address</a>
-        <ul>
+        <button class="btn btn-primary mb-3" type="button" id="toggle-addresses-btn">Show All Addresses</button>
+        <div id="addresses-container" class="collapsible-content" style="display: none;">
             {% for address in addresses %}
-            <li>
-                {{ address.full_name }}, {{ address.town_or_city }} 
-                <a href="{% url 'edit_address' address.id %}">Edit</a> 
-                <a href="{% url 'delete_address' address.id %}">Delete</a>
-                {% if not address.set_as_default %}
-                <a href="{% url 'set_default_address' address.id %}">Set as Default</a>
-                {% endif %}
-            </li>
+            <div class="address-card">
+                <p><strong><u>Full Name:</u> {{ address.full_name }}</strong></p>
+                <p><strong><u>Street Address1:</u> {{ address.street_address1 }}</strong></p>
+                <p><strong><u>Street Address2:</u> {{ address.street_address2 }}</strong></p>
+                <p><strong><u>Phone Number:</u> {{ address.phone_number }}</strong></p>
+                <p><strong><u>Town or City:</u> {{ address.town_or_city }}</strong></p>
+                <p><strong><u>County:</u> {{ address.county }}</strong></p>
+                <p><strong><u>Postcode:</u> {{ address.postcode }}</strong></p>
+                <p><strong><u>Country:</u> {{ address.country }}</strong></p>
+                <a href="{% url 'edit_address' address.id %}" class="btn btn-secondary">Edit</a>
+                <form method="POST" action="{% url 'set_default_address' address.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="set_as_default" value="True">
+                    <button type="submit" class="btn btn-secondary">
+                        {% if address.set_as_default %}Default Address{% else %}Set as Default{% endif %}
+                    </button>
+                </form>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletePostModal{{ address.id }}">Delete</button>
+
+                <!-- Delete Modal -->
+                <div class="modal fade" id="deletePostModal{{ address.id }}" tabindex="-1" aria-labelledby="deletePostModalLabel{{ address.id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deletePostModalLabel{{ address.id }}">Delete Address</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete this address?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <form action="{% url 'delete_address' address.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% endfor %}
-        </ul>
+        </div>
         <hr>
+        <a href="{% url 'add_address' %}" class="btn add-address-btn mb-3">Add New Address</a>
+
         <!-- Order History -->
         <div class="col-12 col-lg-6">
             <p class="text-muted">Order History</p>
@@ -112,6 +149,17 @@
                 placeholder: 'Select a country',
                 allowClear: true
             });
+
+            $('#toggle-addresses-btn').click(function() {
+                var addressesContainer = $('#addresses-container');
+                addressesContainer.toggle();
+                if (addressesContainer.is(':visible')) {
+                    $(this).text('Hide All Addresses');
+                } else {
+                    $(this).text('Show All Addresses');
+                }
+            });
         });
     </script>
 {% endblock %}
+
