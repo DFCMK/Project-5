@@ -18,7 +18,7 @@ def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     wishlist = Wishlist.objects.filter(user=user)
     orders = profile.orders.all()
-    address = Address.objects.filter(user=user)
+    addresses = Address.objects.filter(user=user)
     default_address = Address.objects.filter(user=request.user, set_as_default=True).first()
 
     if request.method == 'POST':
@@ -36,7 +36,7 @@ def profile(request):
         'form': form,
         'orders': orders,
         'wishlist': wishlist,
-        'address': address,
+        'addresses': addresses,
         'default_address': default_address,
         'on_profile_page': True,
     }
@@ -118,15 +118,15 @@ def add_address(request):
             address = address_form.save(commit=False)
             address.user = request.user
 
-            # If a new address is set as default
+
             if address_form.cleaned_data.get('set_as_default', False):
-                # Unset the previous default address if it exists
+
                 if default_address:
                     default_address.set_as_default = False
                     default_address.save()
                 
                 address.set_as_default = True
-                # Update the user profile default address fields
+
                 user_profile.default_full_name = address.full_name
                 user_profile.default_phone_number = address.phone_number
                 user_profile.default_country = address.country
@@ -150,3 +150,57 @@ def add_address(request):
     }
 
     return render(request, 'user_profile/add_address.html', context)
+
+@login_required
+def set_default_address(request, address_id):
+    address = get_object_or_404(Address, id=address_id, user=request.user)
+
+    Address.objects.filter(user=request.user, set_as_default=True).update(set_as_default=False)
+
+    address.set_as_default = True
+    address.save()
+
+    user_profile = request.user.userprofile
+    user_profile.default_full_name = address.full_name
+    user_profile.default_phone_number = address.phone_number
+    user_profile.default_country = address.country
+    user_profile.default_postcode = address.postcode
+    user_profile.default_town_or_city = address.town_or_city
+    user_profile.default_street_address1 = address.street_address1
+    user_profile.default_street_address2 = address.street_address2
+    user_profile.default_county = address.county
+    user_profile.save()
+
+    messages.success(request, 'Default address updated successfully.')
+    return redirect('profile')
+
+@login_required
+def edit_address(request, address_id):
+    address = get_object_or_404(Address, id=address_id, user=request.user)
+
+    if request.method == 'POST':
+        form = AddressForm(request.POST, instance=address)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Address updated successfully.')
+            return redirect('profile')
+    else:
+        form = AddressForm(instance=address)
+
+        context = {
+            'form': form,
+            'address': address,
+        }
+        return render(request, 'user_profile/edit_address.html', context)
+
+@login_required
+def delete_address(request, address_id):
+    address = get_object_or_404(Address, id=address_id, user=request.user)
+
+    if request.method == 'POST':
+        address.delete()
+        messages.success(request, 'Address deleted successfully!')
+    else:
+        messages.error(request, 'Failed deleting Address!')
+
+    return redirect('profile')
