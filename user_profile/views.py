@@ -114,6 +114,11 @@ def add_address(request):
 
     if request.method == 'POST':
         address_form = AddressForm(request.POST)
+
+        if Address.objects.filter(user=request.user).count() >= 5:
+            messages.error(request, 'You can not add more then 5 addresses to your profile!')
+            return redirect('profile')
+
         if address_form.is_valid():
             address = address_form.save(commit=False)
             address.user = request.user
