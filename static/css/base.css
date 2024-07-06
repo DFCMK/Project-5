@@ -177,6 +177,10 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+p {
+    color: black;
+}
+
 input[name='q']::placeholder {
     color: #aab7c4;
 }
@@ -376,6 +380,36 @@ input[name='q']::placeholder {
 }
 .collapsible-content {
     display: none;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating-stars {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    font-size: 0;
+}
+
+.rating-stars input[type="radio"] {
+    display: none;
+}
+
+.rating-stars label {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.rating-stars label:before {
+    content: '\2605'; /* Unicode star character */
+}
+
+.rating-stars input[type="radio"]:checked + label:before {
+    color: #ffcc00; /* Change color to highlight selected stars */
 }
 
 
