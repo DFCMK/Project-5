@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<h2>Rate Product: {{ product.name }}</h2>
+
+<form method="post" action="{% url 'rate_product' product.id %}">
+    {% csrf_token %}
+    
+    {% if form.errors %}
+        <ul>
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form|crispy }}
+    
+    <!--<button type="submit">Rate</button>-->
+</form>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star');
+    const ratingValue = document.getElementById('rating-value');
+
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            ratingValue.value = value;
+            document.getElementById('rating-form').submit();
+        });
+    });
+});
+</script>
+{% endblock %}
+
