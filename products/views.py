@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Category, Rating
-from .forms import RateProductForm
+from .forms import RatingForm
 from user_profile.models import Wishlist
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -218,20 +218,24 @@ def rate_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     
     if request.method == 'POST':
-        rating_value = int(request.POST['rating'])
-        rating, created = Rating.objects.get_or_create(product=product, user=request.user)
-        rating.rating = rating_value
-        rating.save()
-        product.update_average_rating()
-        messages.success(request, 'Your rating was submited Successfully!')
-        return redirect('product_detail', product_id=product_id)
-    else:
-        messages.error(request, 'There where a ERROR! with submiting your rating')
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            rating = form.cleaned_data['rating']
+            review_text = form.cleaned_data['review']
+            
+            review, created = Rating.objects.get_or_create(product=product, user=request.user)
+            review.rating = rating
+            review.review_text = review_text
+            review.save()
+            
+            product.update_average_rating()
+            
+            reviews = product.ratings.all()
+        
+            return render(request, 'products/rate_product.html', {'product': product, 'reviews': reviews, 'form': form})
+        else:
+            return JsonResponse({'error': 'Form is not valid'}, status=400)
     
-    return redirect('product_detail', product_id=product_id)
-
-
-
-
-
-
+    form = RatingForm()
+    reviews = product.ratings.all()
+    return render(request, 'products/rate_product.html', {'product': product, 'reviews': reviews, 'form': form})
