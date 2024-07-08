@@ -1,158 +1,277 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_filters %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
-                    {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                    {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
-                </div>
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="image-container my-5">
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                    {% if product.category %}
-                        <p class="small mt-1 mb-0">
-                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                            </a>
-                        </p>
-                    {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
-                    {% endif %}
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-details-container mb-5 mt-md-5">
+                <p class="mb-0">{{ product.name }}</p>
+                <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                {% if product.category %}
+                <p class="small mt-1 mb-0">
+                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                    </a>
+                </p>
+                {% endif %}
+                {% if product.rating %}
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                {% else %}
+                <small class="text-muted">No Rating</small>
+                {% endif %}
 
-                    {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="">Edit</a>
-                            <a class="text-danger" href="">Delete</a>
-                        </small>
-                    {% endif %}
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="">Edit</a>
+                    <a class="text-danger" href="">Delete</a>
+                </small>
+                {% endif %}
 
-                    <p class="mt-3">{{ product.description }}</p>
+                <p class="mt-3">{{ product.description }}</p>
 
-                    <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-row">
-                            {% with product.has_sizes as s %}
-                            {% if s %}
-                                <div class="col-12">
-                                    <p><strong>Size:</strong></p>
-                                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="xs">XS</option>
-                                        <option value="s">S</option>
-                                        <option value="m" selected>M</option>
-                                        <option value="l">L</option>
-                                        <option value="xl">XL</option>
-                                    </select>
-                                </div>
-                            {% endif %}
-                            <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-black rounded-0" 
-                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control qty_input" type="number"
-                                            name="quantity" value="1" min="1" max="99"
-                                            data-item_id="{{ product.id }}"
-                                            id="id_qty_{{ product.id }}">
-                                        <div class="input-group-append">
-                                            <button class="increment-qty btn btn-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
+                <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        {% with product.has_sizes as s %}
+                        {% if s %}
+                        <div class="col-12">
+                            <p><strong>Size:</strong></p>
+                            <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                                <option value="xs">XS</option>
+                                <option value="s">S</option>
+                                <option value="m" selected>M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                        {% endif %}
+                        <div class="col-12">
+                            <p class="mt-3"><strong>Quantity:</strong></p>
+                            <div class="form-group w-50">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty btn btn-black rounded-0"
+                                            data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-minus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                        min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-black rounded-0"
+                                            data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Cart">
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
                         </div>
-                    </form>
 
-                    <!-- Add to Wishlist Button -->
-                    <form method="POST" action="{% url 'add_to_wishlist' product.id %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-outline-secondary btn-sm mt-3">Add to Wishlist</button>
-                    </form>
-                    
-    <form id="rating-form" method="post" action="{% url 'rate_product' product.id %}">
-        {% csrf_token %}
-        <div class="rating-stars">
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5" title="5 stars"></label>
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4" title="4 stars"></label>
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3" title="3 stars"></label>
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2" title="2 stars"></label>
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1" title="1 star"></label>
-        </div>
-        
-        <button type="submit">Rate</button>
-    </form>
+                        <div class="col{% if s %}-12 mt-2{% endif %}">
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5"
+                                value="Add to Cart">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        {% endwith %}
+                    </div>
+                </form>
+
+                <!-- Add to Wishlist Button -->
+                <form method="POST" action="{% url 'add_to_wishlist' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-secondary btn-sm mt-3">Add to Wishlist</button>
+                </form>
+
+                <!-- Star Rating Form -->
+                <form id="rating-form" method="post" action="{% url 'rate_product' product.id %}">
+                    {% csrf_token %}
+                    <div class="rating-stars">
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="1 star"></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="2 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="3 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="4 stars"></label>
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5" title="5 stars"></label>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-2" data-toggle="modal"
+                        data-target="#reviewModal">Leave a Review</button>
+                </form>
+
+                <!-- Review Modal -->
+                <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <form id="reviewForm" method="post" action="{% url 'rate_product' product.id %}">
+                                {% csrf_token %}
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="reviewModalLabel">Leave a Review</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="ratingInput">Your Rating:</label>
+                                        <input type="hidden" name="rating" id="modal-rating-value">
+                                        <div class="rating-stars">
+                                            <input type="radio" id="modalStar1" name="rating" value="1">
+                                            <label for="modalStar1" title="1 stars"></label>
+                                            <input type="radio" id="modalStar2" name="rating" value="2">
+                                            <label for="modalStar2" title="2 stars"></label>
+                                            <input type="radio" id="modalStar3" name="rating" value="3">
+                                            <label for="modalStar3" title="3 stars"></label>
+                                            <input type="radio" id="modalStar4" name="rating" value="4">
+                                            <label for="modalStar4" title="4 stars"></label>
+                                            <input type="radio" id="modalStar5" name="rating" value="5">
+                                            <label for="modalStar5" title="5 star"></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="reviewTextarea">Your Review:</label>
+                                        <textarea class="form-control" id="modal-review-text" name="review"
+                                            rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Reviews Section -->
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Customer Reviews</h5>
+
+                                <!-- List of Reviews -->
+                                <div class="mt-3">
+                                    {% if product.ratings.exists %}
+                                    <ul class="list-unstyled">
+                                        {% for rating in product.ratings.all %}
+                                        <li>
+                                            <strong>{{ rating.user.username }}</strong> -
+                                            {% for _ in rating.rating|get_star_range %}
+                                            <i class="fas fa-star"></i>
+                                            {% endfor %}
+                                            {% if rating.review %}
+                                            <p>{{ rating.review }}</p>
+                                            {% endif %}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% else %}
+                                    <p>No reviews yet.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
+
 {% block postloadjs %}
-    {{ block.super }}
-    {% include 'products/includes/quantity_input_script.html' %}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const stars = document.querySelectorAll('.rating-stars input[type="radio"]');
-            const ratingForm = document.getElementById('rating-form');
-            
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const stars = document.querySelectorAll('.rating-stars input[type="radio"]');
+        const modalStars = document.querySelectorAll('.modal .rating-stars input[type="radio"]');
+        const ratingValue = document.getElementById('modal-rating-value');
+
+        // Function to set the selected rating value
+        function setSelectedRating(stars, value) {
             stars.forEach(star => {
-                star.addEventListener('change', function() {
-                    ratingForm.submit();
-                });
+                if (star.value === value) {
+                    star.checked = true;
+                } else {
+                    star.checked = false;
+                }
+            });
+        }
+
+        // Event listener for rating stars in product detail page
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const value = this.value;
+                ratingValue.value = value; // Set hidden input value in modal
+                setSelectedRating(modalStars, value); // Set selected rating in modal stars
+                $('#reviewModal').modal('show'); // Show the review modal
             });
         });
-    </script>
+
+        // Handle submission of review modal form via AJAX
+        $('#reviewForm').submit(function (event) {
+            event.preventDefault();
+
+            // Serialize form data
+            var formData = $(this).serialize();
+
+            // Submit via AJAX
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: formData,
+                success: function (response) {
+                    // Update customer reviews section with the new review
+                    $('#customerReviews').html(response);
+                    $('#reviewModal').modal('hide'); // Hide the modal after successful submission
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    // Handle error if needed
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}
 
