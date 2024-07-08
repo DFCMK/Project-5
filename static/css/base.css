@@ -384,24 +384,28 @@ input[name='q']::placeholder {
 
 .star-rating {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* Ensure this aligns with how stars should display */
     justify-content: flex-end;
 }
 
 .rating-stars {
     display: inline-block;
     unicode-bidi: bidi-override;
-    font-size: 0;
+    font-size: 0; /* Adjust font size if necessary */
 }
 
 .rating-stars input[type="radio"] {
-    display: none;
+    display: none; /* Hide the actual radio buttons */
 }
 
 .rating-stars label {
-    font-size: 2rem;
+    font-size: 2rem; /* Adjust the star size */
     cursor: pointer;
-    color: #ccc;
+    color: #ccc; /* Default star color */
+}
+
+.rating-stars label:hover {
+    color: gold; /* Highlight color on hover */
 }
 
 .rating-stars label:before {
@@ -409,7 +413,7 @@ input[name='q']::placeholder {
 }
 
 .rating-stars input[type="radio"]:checked + label:before {
-    color: #ffcc00; /* Change color to highlight selected stars */
+    color: #ffcc00; /* Selected star color */
 }
 
 
