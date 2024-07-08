@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -34,9 +35,10 @@ class Product(models.Model):
 
     def update_average_rating(self):
         ratings = self.ratings.all()
-        avg_rating = ratings.aggregate(models.Avg('rating'))['rating__avg']
-        self.average_rating = avg_rating or 0
-        self.save()
+        if ratings.exists():
+            avg_rating = ratings.aggregate(models.Avg('rating'))['rating__avg']
+            self.average_rating = round(avg_rating, 1) if avg_rating is not None else None
+            self.save()
 
     def __str__(self):
         return self.name
@@ -47,4 +49,12 @@ class Rating(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='ratings')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     rating = models.IntegerField(choices=[(1, '1 Star'), (2, '2 Stars'), (3, '3 Stars'), (4, '4 Stars'), (5, '5 Stars')])
+    review_text = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"Rating for {self.product.name} by {self.user.username}"
+
+    class Meta:
+        unique_together = ('product', 'user')
