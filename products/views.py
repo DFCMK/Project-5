@@ -22,6 +22,8 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    wishlist_count = request.user.wishlist_entries.count()
+
 
     if request.GET:
         if 'sort' in request.GET:
@@ -59,6 +61,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'wishlist_count': wishlist_count
     }
 
     return render(request, 'products/products.html', context)
@@ -66,6 +69,8 @@ def all_products(request):
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     user_rating = None
+    wishlist_count = request.user.wishlist_entries.count()
+
     if request.user.is_authenticated:
         user_rating = Rating.objects.filter(product=product, user=request.user).first()
 
@@ -93,6 +98,7 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'user_rating': user_rating,
+        'wishlist_count': wishlist_count
     }
 
     return render(request, 'products/product_detail.html', context)
