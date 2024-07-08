@@ -116,20 +116,22 @@
                           </div>
                       </a>
                   </li>
+                  {% if request.user.is_authenticated %}
                   <li class="list-inline-item">
-                    <a class="text-black nav-link" href="{% url 'wishlist' %}">
-                        <div class="text-center">
-                            <div>
-                                <i class="fa-solid fa-shield-heart whichlist-icon"></i>
-                                {% if wishlist_count > 0 %}
-                                    <span class="wishlist-count badge badge-danger">{{ wishlist_count }}</span>
-                                {% endif %}
-                            </div>
-                            <p class="my-0"><strong>Wishlist</strong></p>
-                        </div>
-                    </a>
-                </li>
-              </ul>
+                      <a class="text-black nav-link" href="{% url 'wishlist' %}">
+                          <div class="text-center">
+                              <div>
+                                  <i class="fa-solid fa-shield-heart whichlist-icon"></i>
+                                  {% if wishlist_count > 0 %}
+                                      <span class="wishlist-count badge badge-danger">{{ wishlist_count }}</span>
+                                  {% endif %}
+                              </div>
+                              <p class="my-0"><strong>Wishlist</strong></p>
+                          </div>
+                      </a>
+                  </li>
+                  {% endif %}
+                </ul>
 
           </div>
       </div>
@@ -178,7 +180,5 @@
         $('.toast').toast('show');
     </script>
   {% endblock %}
-
-  
 </body>
 </html>
