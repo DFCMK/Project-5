@@ -10,9 +10,6 @@ from django.http import JsonResponse
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from rest_framework import viewsets
-
-# from .serializers import ProductSerializer
 from .models import Product
 
 import json
