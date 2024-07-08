@@ -1,31 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
-<h2>Rate Product: {{ product.name }}</h2>
+<div class="container">
+    <h2>Rate Product: {{ product.name }}</h2>
 
-<form method="post" action="{% url 'rate_product' product.id %}">
-    {% csrf_token %}
-    
-    {% if form.errors %}
-        <ul>
-            {% for error in form.non_field_errors %}
-                <li>{{ error }}</li>
+    <form id="rating-form" method="post" action="{% url 'rate_product' product.id %}">
+        {% csrf_token %}
+        
+        {% if form.errors %}
+            <ul>
+                {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+        {{ form|crispy }}
+        
+        <button type="submit" class="btn btn-primary mt-3">Submit Review</button>
+    </form>
+
+    <!-- Customer Reviews Section -->
+    <div class="mt-4">
+        <h3>Customer Reviews:</h3>
+        <ul class="list-unstyled">
+            {% for review in reviews %}
+                <li>
+                    <p><strong>Rating: {{ review.rating }}</strong></p>
+                    <p>{{ review.review_text }}</p>
+                </li>
+            {% empty %}
+                <li>No reviews yet.</li>
             {% endfor %}
         </ul>
-    {% endif %}
-    {{ form|crispy }}
-    
-    <!--<button type="submit">Rate</button>-->
-</form>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
@@ -33,16 +43,16 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
     const stars = document.querySelectorAll('.star');
-    const ratingValue = document.getElementById('rating-value');
 
     stars.forEach(star => {
         star.addEventListener('click', function() {
             const value = this.getAttribute('data-value');
-            ratingValue.value = value;
+            document.getElementById('id_rating').value = value;
+            const reviewText = prompt('Enter your review'); // Prompt user for review text (you can customize this)
+            document.getElementById('id_review').value = reviewText;
             document.getElementById('rating-form').submit();
         });
     });
 });
 </script>
 {% endblock %}
-
