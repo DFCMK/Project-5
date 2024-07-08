@@ -22,7 +22,11 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
-    wishlist_count = request.user.wishlist_entries.count()
+
+    if request.user.is_authenticated:
+        wishlist_count = request.user.wishlist_entries.count()
+    else:
+        wishlist_count = 0
 
 
     if request.GET:
@@ -69,7 +73,11 @@ def all_products(request):
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     user_rating = None
-    wishlist_count = request.user.wishlist_entries.count()
+
+    if request.user.is_authenticated:
+        wishlist_count = request.user.wishlist_entries.count()
+    else:
+        wishlist_count = 0
 
     if request.user.is_authenticated:
         user_rating = Rating.objects.filter(product=product, user=request.user).first()
