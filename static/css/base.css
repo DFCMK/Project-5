@@ -384,36 +384,36 @@ input[name='q']::placeholder {
 
 .star-rating {
     display: flex;
-    flex-direction: row-reverse; /* Ensure this aligns with how stars should display */
+    flex-direction: row-reverse;
     justify-content: flex-end;
 }
 
 .rating-stars {
     display: inline-block;
     unicode-bidi: bidi-override;
-    font-size: 0; /* Adjust font size if necessary */
+    font-size: 0;
 }
 
 .rating-stars input[type="radio"] {
-    display: none; /* Hide the actual radio buttons */
+    display: none;
 }
 
 .rating-stars label {
-    font-size: 2rem; /* Adjust the star size */
+    font-size: 2rem;
     cursor: pointer;
-    color: #ccc; /* Default star color */
+    color: #ccc;
 }
 
 .rating-stars label:hover {
-    color: gold; /* Highlight color on hover */
+    color: gold;
 }
 
 .rating-stars label:before {
-    content: '\2605'; /* Unicode star character */
+    content: '\2605';
 }
 
 .rating-stars input[type="radio"]:checked + label:before {
-    color: #ffcc00; /* Selected star color */
+    color: #ffcc00;
 }
 
 
