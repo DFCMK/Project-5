@@ -1,0 +1,8 @@
+{% for rating in reviews %}
+<div class="review">
+    <strong>{{ rating.user.username }}</strong> - {{ rating.rating }} / {{ max_value }}
+    {% if rating.review %}
+    <p>{{ rating.review }}</p>
+    {% endif %}
+</div>
+{% endfor %}
