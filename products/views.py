@@ -6,9 +6,11 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.db.models import Q
 from django.db.models.functions import Lower
+
+from django.template.loader import render_to_string
 
 from .models import Product
 
@@ -72,6 +74,7 @@ def all_products(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Rating.objects.filter(product=product)
     user_rating = None
 
     if request.user.is_authenticated:
@@ -103,10 +106,20 @@ def product_detail(request, product_id):
                 messages.success(request, 'Your rating has been updated.')
             return redirect('product_detail', product_id=product.id)
 
+    # Calculate average rating for display
+    avg_rating = product.rating if product.rating else 0
+    full_stars = int(avg_rating)
+    half_star = 1 if avg_rating % 1 >= 0.5 else 0
+    empty_stars = 5 - full_stars - half_star
+
     context = {
         'product': product,
         'user_rating': user_rating,
-        'wishlist_count': wishlist_count
+        'wishlist_count': wishlist_count,
+        'reviews': reviews,
+        'full_stars': full_stars,
+        'half_star': half_star,
+        'empty_stars': empty_stars,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -182,71 +195,39 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
-#@login_required
-#def rate_product(request, product_id):
-#    '''
-#    rate product with star rating system (1-5 stars)
-#    '''
-#    if request.method == "POST" and request.POST.get("action") == "stars":
-#
-#        product = get_object_or_404(Product, product_id)
-#        star = request.POST.get("star")
-#
-#        if star and 1 <= int(star) <= 5:
-#            product.total_votes += 1
-#            product.total_rating += int(star)
-#
-#            product.average_rating = product.total_rating / product.total_votes
-#
-#            product.save()
-
-#    product = get_object_or_404(Product, id=product_id)
-#    user = request.user
-    
-#    if request.method == "POST" and request.POST.get("action") == "stars":
-#        star = request.POST.get("star", None)
-        
-#        if star and 1 <= int(star) <= 5:
-#            # Create or update the Rating instance
-#            rating, created = Rating.objects.update_or_create(
-#                product=product,
-#                user=request.user,
-#                defaults={'user': request.user, 'rating': int(star)},
-#                unique_together=['product', 'user']
-#            )
-#            
-#            # Recalculate the product's average rating
-#            product.update_average_rating()
-#
-#            return JsonResponse({'average_rating': product.average_rating})
-#        else:
-#            return JsonResponse({'error': 'Invalid star rating'}, status=400)
-
-#    return redirect('product_detail', product_id=product_id)
-
 @login_required
 def rate_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    
+
     if request.method == 'POST':
         form = RatingForm(request.POST)
         if form.is_valid():
-            rating = form.cleaned_data['rating']
+            rating_value = form.cleaned_data['rating']
             review_text = form.cleaned_data['review']
-            
-            review, created = Rating.objects.get_or_create(product=product, user=request.user)
-            review.rating = rating
-            review.review_text = review_text
-            review.save()
-            
+
+            try:
+                rating = Rating.objects.get(product=product, user=request.user)
+            except Rating.DoesNotExist:
+                rating = Rating(product=product, user=request.user)
+
+            rating.rating = rating_value
+            rating.review = review_text
+            rating.save()
+
             product.update_average_rating()
-            
-            reviews = product.ratings.all()
-        
-            return render(request, 'products/rate_product.html', {'product': product, 'reviews': reviews, 'form': form})
-        else:
-            return JsonResponse({'error': 'Form is not valid'}, status=400)
-    
+
+            reviews = Rating.objects.filter(product=product).order_by('-rating')
+            max_value = 5
+            if reviews.exists():
+                max_value = reviews.first().rating
+
+            reviews_html = render_to_string('products/includes/review_list.html', {'reviews': reviews, 'max_value': max_value})
+            print(reviews_html)
+
+            return JsonResponse({'reviews_html': reviews_html})
+
+        return JsonResponse({'error': 'Form is not valid'}, status=400)
+
     form = RatingForm()
-    reviews = product.ratings.all()
+    reviews = Rating.objects.filter(product=product).order_by('-rating')
     return render(request, 'products/rate_product.html', {'product': product, 'reviews': reviews, 'form': form})
