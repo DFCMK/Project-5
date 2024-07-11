@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
 {% block content %}
 <div class="container">
     <h2>Rate Product: {{ product.name }}</h2>
@@ -22,37 +31,9 @@
     </form>
 
     <!-- Customer Reviews Section -->
-    <div class="mt-4">
+    <div id="customerReviews" class="mt-4">
         <h3>Customer Reviews:</h3>
-        <ul class="list-unstyled">
-            {% for review in reviews %}
-                <li>
-                    <p><strong>Rating: {{ review.rating }}</strong></p>
-                    <p>{{ review.review_text }}</p>
-                </li>
-            {% empty %}
-                <li>No reviews yet.</li>
-            {% endfor %}
-        </ul>
+        {% include 'products/includes/reviews_list.html' with reviews=reviews %}
     </div>
 </div>
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-    const stars = document.querySelectorAll('.star');
-
-    stars.forEach(star => {
-        star.addEventListener('click', function() {
-            const value = this.getAttribute('data-value');
-            document.getElementById('id_rating').value = value;
-            const reviewText = prompt('Enter your review'); // Prompt user for review text (you can customize this)
-            document.getElementById('id_review').value = reviewText;
-            document.getElementById('rating-form').submit();
-        });
-    });
-});
-</script>
 {% endblock %}
