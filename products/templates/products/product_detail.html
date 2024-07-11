@@ -186,6 +186,9 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h5 class="card-title">Customer Reviews</h5>
+                                <div id="customerReviews" class="mt-3">
+                                    {% include 'products/includes/review_list.html' with reviews=product.ratings.all max_value=5 %}
+                                </div>
 
                                 <!-- List of Reviews -->
                                 <div class="mt-3">
@@ -221,57 +224,4 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const stars = document.querySelectorAll('.rating-stars input[type="radio"]');
-        const modalStars = document.querySelectorAll('.modal .rating-stars input[type="radio"]');
-        const ratingValue = document.getElementById('modal-rating-value');
-
-        // Function to set the selected rating value
-        function setSelectedRating(stars, value) {
-            stars.forEach(star => {
-                if (star.value === value) {
-                    star.checked = true;
-                } else {
-                    star.checked = false;
-                }
-            });
-        }
-
-        // Event listener for rating stars in product detail page
-        stars.forEach(star => {
-            star.addEventListener('click', function () {
-                const value = this.value;
-                ratingValue.value = value; // Set hidden input value in modal
-                setSelectedRating(modalStars, value); // Set selected rating in modal stars
-                $('#reviewModal').modal('show'); // Show the review modal
-            });
-        });
-
-        // Handle submission of review modal form via AJAX
-        $('#reviewForm').submit(function (event) {
-            event.preventDefault();
-
-            // Serialize form data
-            var formData = $(this).serialize();
-
-            // Submit via AJAX
-            $.ajax({
-                type: 'POST',
-                url: $(this).attr('action'),
-                data: formData,
-                success: function (response) {
-                    // Update customer reviews section with the new review
-                    $('#customerReviews').html(response);
-                    $('#reviewModal').modal('hide'); // Hide the modal after successful submission
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error:', error);
-                    // Handle error if needed
-                }
-            });
-        });
-    });
-</script>
 {% endblock %}
-
