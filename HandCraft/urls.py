@@ -16,8 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# from rest_framework import routers
+# from products.views import ProductViewSet
+
 from django.conf import settings
 from django.conf.urls.static import static
+
+# router = routers.DefaultRouter()
+
+# router.register(r'products', ProductViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +34,6 @@ urlpatterns = [
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('user_profile.urls')),
+#    path('api/', include('rest_framework.urls', namespace='rest_framework')),
+#    path('', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
