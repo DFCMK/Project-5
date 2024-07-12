@@ -391,7 +391,7 @@ input[name='q']::placeholder {
 .rating-stars {
     display: inline-block;
     unicode-bidi: bidi-override;
-    font-size: 0;
+    font-size: 2rem;
 }
 
 .rating-stars input[type="radio"] {
@@ -399,23 +399,23 @@ input[name='q']::placeholder {
 }
 
 .rating-stars label {
-    font-size: 2rem;
     cursor: pointer;
     color: #ccc;
 }
 
-.rating-stars label:hover {
-    color: gold;
-}
-
-.rating-stars label:before {
-    content: '\2605';
-}
-
-.rating-stars input[type="radio"]:checked + label:before {
+.rating-stars label:hover,
+.rating-stars input[type="radio"]:checked + label {
     color: #ffcc00;
 }
 
+.rating-stars label:before {
+    content: '\2605'; /* Unicode character for star */
+}
+
+.rating-stars input[type="radio"]:checked + label:before,
+.rating-stars label:hover:before {
+    color: #ffcc00;
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
