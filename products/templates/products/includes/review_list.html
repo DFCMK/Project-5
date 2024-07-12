@@ -1,8 +1,23 @@
+{% load custom_filters %}
+
+
 {% for rating in reviews %}
 <div class="review">
-    <strong>{{ rating.user.username }}</strong> - {{ rating.rating }} / {{ max_value }}
+    <strong>{{ rating.user.username }}</strong> - 
+    {% for _ in rating.rating|get_star_range %}
+        &#9733; <!-- Full Star -->
+    {% endfor %}
+    {% for _ in rating.rating|get_empty_stars %}
+        &#9734; <!-- Empty Star -->
+    {% endfor %}
     {% if rating.review %}
-    <p>{{ rating.review }}</p>
+        <p>{{ rating.review }}</p>
+    {% endif %}
+    {% if rating.user == request.user %}
+        <button type="button" class="btn btn-sm btn-warning edit-review-btn"
+                data-toggle="modal" data-target="#reviewModal"
+                data-product-id="{{ rating.product.id }}"
+                data-review-id="{{ rating.id }}">Edit Review</button>
     {% endif %}
 </div>
 {% endfor %}
