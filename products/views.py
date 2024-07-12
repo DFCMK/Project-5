@@ -11,6 +11,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from django.template.loader import render_to_string
+from decimal import Decimal
 
 from .models import Product
 
@@ -197,6 +198,9 @@ def delete_product(request, product_id):
 
 @login_required
 def rate_product(request, product_id):
+    '''
+    Rate product and leave review
+    '''
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':
@@ -217,17 +221,55 @@ def rate_product(request, product_id):
             product.update_average_rating()
 
             reviews = Rating.objects.filter(product=product).order_by('-rating')
-            max_value = 5
-            if reviews.exists():
-                max_value = reviews.first().rating
+            average_rating = calculate_average_rating(reviews)
 
-            reviews_html = render_to_string('products/includes/review_list.html', {'reviews': reviews, 'max_value': max_value})
-            print(reviews_html)
-
+            reviews_html = render_to_string('products/includes/review_list.html', {'reviews': reviews, 'average_rating': average_rating})
             return JsonResponse({'reviews_html': reviews_html})
 
         return JsonResponse({'error': 'Form is not valid'}, status=400)
 
     form = RatingForm()
     reviews = Rating.objects.filter(product=product).order_by('-rating')
-    return render(request, 'products/rate_product.html', {'product': product, 'reviews': reviews, 'form': form})
+    average_rating = calculate_average_rating(reviews)
+    return render(request, 'products/rate_product.html', {'product': product, 'reviews': reviews, 'form': form, 'average_rating': average_rating})
+
+def calculate_average_rating(reviews):
+    '''
+    Calculate average rating out of the total ratings
+    '''
+    if reviews.exists():
+        total_ratings = sum([review.rating for review in reviews])
+        average_rating = total_ratings / reviews.count()
+        return round(average_rating, 1)
+    return 0
+    
+def edit_review(request, product_id, review_id):
+    '''
+    Edit given review, with a repopulated form.
+    '''
+    product = get_object_or_404(Product, pk=product_id)
+    
+    try:
+        review = Rating.objects.get(pk=review_id, product=product, user=request.user)
+    except Rating.DoesNotExist:
+        return JsonResponse({'error': 'Review does not exist or you do not have permission to edit it.'}, status=404)
+    
+    if request.method == 'GET':
+        # Return review data as JSON
+        return JsonResponse({'rating': review.rating, 'review': review.review})
+    
+    elif request.method == 'POST':
+        form = RatingForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            product.update_average_rating()
+            
+            reviews = Rating.objects.filter(product=product).order_by('-rating')
+            max_value = 5 if not reviews.exists() else reviews.first().rating
+            reviews_html = render_to_string('products/includes/review_list.html', {'reviews': reviews, 'max_value': max_value})
+
+            return JsonResponse({'reviews_html': reviews_html})
+        
+        return JsonResponse({'error': 'Form is not valid'}, status=400)
+    
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
