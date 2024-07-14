@@ -1,6 +1,5 @@
 {% load custom_filters %}
 
-
 {% for rating in reviews %}
 <div class="review">
     <strong>{{ rating.user.username }}</strong> - 
@@ -16,8 +15,45 @@
     {% if rating.user == request.user %}
         <button type="button" class="btn btn-sm btn-warning edit-review-btn"
                 data-toggle="modal" data-target="#reviewModal"
-                data-product-id="{{ rating.product.id }}"
-                data-review-id="{{ rating.id }}">Edit Review</button>
+                data-review-id="{{ rating.id }}">Edit</button>
+        <button type="button" class="btn btn-sm btn-danger delete-review-btn"
+                data-toggle="modal" data-target="#deleteReviewModal"
+                data-review-id="{{ rating.id }}">Delete</button>
     {% endif %}
 </div>
 {% endfor %}
+
+<!-- Delete Review Modal -->
+<div class="modal fade" id="deleteReviewModal" tabindex="-1" role="dialog" aria-labelledby="deleteReviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="deleteReviewForm" method="post" action="">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteReviewModalLabel">Delete Review</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this review?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.delete-review-btn').click(function() {
+            let reviewId = $(this).data('review-id');
+            let productId = "{{ product.id }}";
+            let actionUrl = '{% url "delete_review" product_id=0 review_id=0 %}'.replace('0', productId).replace('0', reviewId);
+            $('#deleteReviewForm').attr('action', actionUrl);
+        });
+    });
+    </script>
