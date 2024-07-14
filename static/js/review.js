@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
             success: function(response) {
                 if (response.reviews_html) {
                     customerReviews.innerHTML = response.reviews_html;
+
+                    window.location.reload();
                 } else {
                     console.error("Unexpected response format:", response);
                 }
@@ -87,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         $('input[name="rating"][value="' + data.rating + '"]').prop('checked', true);
                         $('#modal-review-text').val(data.review);
     
-                        // Open the modal if it's not already open
                         $('#reviewModal').modal('show');
                     } else {
                         console.error("Data received does not contain expected properties.");
