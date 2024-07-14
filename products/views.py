@@ -273,3 +273,18 @@ def edit_review(request, product_id, review_id):
         return JsonResponse({'error': 'Form is not valid'}, status=400)
     
     return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+def delete_review(request, product_id, review_id):
+    if request.method == 'POST':
+        try:
+            review = get_object_or_404(Rating, pk=review_id, product_id=product_id, user=request.user)
+            review.delete()
+            messages.success(request, f'Your review ({review_id}) has been deleted successfully.')
+        except Rating.DoesNotExist:
+            messages.error(request, 'The review you are trying to delete does not exist.')
+        except Exception as e:
+            messages.error(request, str(e))
+        return redirect('product_detail', product_id=product_id)
+    else:
+        messages.error(request, 'Invalid request method!')
+        return redirect(reverse('delete_review', kwargs={'product_id': 'product_id', 'review_id': 'review_id'}))
