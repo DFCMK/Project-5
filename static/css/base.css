@@ -382,16 +382,9 @@ input[name='q']::placeholder {
     display: none;
 }
 
-.star-rating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-}
-
 .rating-stars {
+    direction: ltr;
     display: inline-block;
-    unicode-bidi: bidi-override;
-    font-size: 2rem;
 }
 
 .rating-stars input[type="radio"] {
@@ -401,19 +394,20 @@ input[name='q']::placeholder {
 .rating-stars label {
     cursor: pointer;
     color: #ccc;
-}
-
-.rating-stars label:hover,
-.rating-stars input[type="radio"]:checked + label {
-    color: #ffcc00;
+    font-size: 2rem;
+    transition: color 0.2s ease-in-out;
 }
 
 .rating-stars label:before {
     content: '\2605'; /* Unicode character for star */
 }
 
-.rating-stars input[type="radio"]:checked + label:before,
-.rating-stars label:hover:before {
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #ffcc00;
+}
+
+.rating-stars input[type="radio"]:checked ~ label {
     color: #ffcc00;
 }
 
