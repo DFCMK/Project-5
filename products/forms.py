@@ -25,4 +25,3 @@ class RatingForm(forms.ModelForm):
             'rating': forms.NumberInput(attrs={'min': 1, 'max': 5}),
             'review_text': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
         }
-
