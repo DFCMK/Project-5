@@ -12,6 +12,9 @@ from cart.contexts import cart_contents
 import stripe
 import json
 
+#import logging
+
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -35,6 +38,11 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
+        
+        # Logs for Debugging
+        #logger = logging.getLogger(__name__)
+        #logging.basicConfig(level=logging.DEBUG)
+        #logger.debug(f"Received POST data: {request.POST}")
 
         form_data = {
             'full_name': request.POST['full_name'],

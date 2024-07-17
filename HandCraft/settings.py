@@ -23,6 +23,8 @@ if os.path.isfile('env.py'):
 
 from django_countries.widgets import LazyChoicesMixin
 
+import logging
+
 LazyChoicesMixin.get_choices = lambda self: self._choices
 LazyChoicesMixin.choices = property(LazyChoicesMixin.get_choices, LazyChoicesMixin.set_choices)
 
@@ -37,7 +39,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-als)2_&xnnr=c#4+8&4%8u)&8vs61nbtl0_&b--+8ybr&pb3!k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-dfcmk-project5-empt7ixxel5.ws.codeinstitute-ide.net',
@@ -137,7 +139,6 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 # CART_SESSION_ID = 'cart'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # AUTH_USER_MODEL = 'user_profile.UserProfile'
 
@@ -148,6 +149,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+# APPEND_SLASH = False
 
 WSGI_APPLICATION = 'HandCraft.wsgi.application'
 
@@ -227,6 +229,7 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
@@ -236,3 +239,21 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#LOGGING = {
+#    'version': 1,
+#    'disable_existing_loggers': False,
+#    'handlers': {
+#        'console': {
+#            'level': 'DEBUG',
+#            'class': 'logging.StreamHandler',
+#        },
+#    },
+#    'loggers': {
+#        'django': {
+#            'handlers': ['console'],
+#            'level': 'DEBUG',
+#        },
+#    },
+#}
+

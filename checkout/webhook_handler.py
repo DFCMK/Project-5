@@ -10,14 +10,21 @@ from user_profile.models import UserProfile
 import json
 import time
 
+#import logging
+#logger = logging.getLogger(__name__)
+
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    """
+    Handle Stripe webhooks
+    """
 
     def __init__(self, request):
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
+        """
+        Send the user a confirmation email
+        """
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -25,13 +32,15 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+
+        print(cust_email)
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )        
+        )
+
 
     def handle_event(self, event):
         """
@@ -47,7 +56,7 @@ class StripeWH_Handler:
         """
         intent = event.data.object
         pid = intent.id
-        bag = intent.metadata.bag
+        cart = intent.metadata.cart
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
@@ -89,7 +98,7 @@ class StripeWH_Handler:
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
-                    original_bag=bag,
+                    original_cart=cart,
                     stripe_pid=pid,
                 )
                 order_exists = True
@@ -116,10 +125,10 @@ class StripeWH_Handler:
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
-                    original_bag=bag,
+                    original_cart=cart,
                     stripe_pid=pid,
                 )
-                for item_id, item_data in json.loads(bag).items():
+                for item_id, item_data in json.loads(cart).items():
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
@@ -155,3 +164,9 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
+
+    def test_send_email(request):
+        order = Order.objects.first()
+        handler = StripeWH_Handler(request)
+        handler._send_confirmation_email(order)
+        return HttpResponse("Email function executed")
