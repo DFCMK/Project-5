@@ -23,7 +23,6 @@ if os.path.isfile('env.py'):
 
 from django_countries.widgets import LazyChoicesMixin
 
-import logging
 
 LazyChoicesMixin.get_choices = lambda self: self._choices
 LazyChoicesMixin.choices = property(LazyChoicesMixin.get_choices, LazyChoicesMixin.set_choices)
@@ -39,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-als)2_&xnnr=c#4+8&4%8u)&8vs61nbtl0_&b--+8ybr&pb3!k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-dfcmk-project5-empt7ixxel5.ws.codeinstitute-ide.net',
