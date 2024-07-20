@@ -41,14 +41,14 @@ SECRET_KEY = 'django-insecure-als)2_&xnnr=c#4+8&4%8u)&8vs61nbtl0_&b--+8ybr&pb3!k
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-dfcmk-project5-empt7ixxel5.ws.codeinstitute-ide.net',
+    '8000-dfcmk-project5-an9odnlpx5n.ws.codeinstitute-ide.net',
     'localhost',
     '127.0.0.1',
     'project-5-39f95920fba3.herokuapp.com'
     ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-dfcmk-project5-empt7ixxel5.ws.codeinstitute-ide.net',
+    'https://8000-dfcmk-project5-an9odnlpx5n.ws.codeinstitute-ide.net',
     'https://project-5-39f95920fba3.herokuapp.com'
 ]
 
