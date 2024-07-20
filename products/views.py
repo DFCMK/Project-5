@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product, Category, Rating
-from .forms import RatingForm
+from .forms import RatingForm, ProductForm
 from user_profile.models import Wishlist
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
