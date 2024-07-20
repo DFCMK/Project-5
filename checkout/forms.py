@@ -18,6 +18,7 @@ class OrderForm(forms.ModelForm):
         """
         self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
+
         if self.user and self.user.is_authenticated:
             user_profile = UserProfile.objects.get(user=self.user)
             self.fields['full_name'].initial = user_profile.default_full_name
@@ -29,6 +30,7 @@ class OrderForm(forms.ModelForm):
             self.fields['street_address1'].initial = user_profile.default_street_address1
             self.fields['street_address2'].initial = user_profile.default_street_address2
             self.fields['county'].initial = user_profile.default_county
+
         placeholders = {
             'full_name': 'Full Name',
             'email': 'Email Address',
@@ -38,20 +40,19 @@ class OrderForm(forms.ModelForm):
             'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
-            'county': 'County', 'state_or_locality': 'State or Locality',
+            'county': 'County',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
+                placeholder = f'{placeholders[field]} *' if self.fields[field].required else placeholders[field]
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
-        
+
         if 'user' in kwargs and kwargs['user'].is_authenticated:
             user_profile = UserProfile.objects.get(user=kwargs['user'])
             for field in self.fields:
