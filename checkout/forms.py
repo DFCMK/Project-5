@@ -4,6 +4,8 @@ from user_profile.models import UserProfile
 
 
 class OrderForm(forms.ModelForm):
+    phone_number = forms.CharField(widget=forms.NumberInput(attrs={'min_length': 9, 'max_length': 15}))
+    postcode = forms.CharField(widget=forms.NumberInput(attrs={'max_length': 5,}))
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
