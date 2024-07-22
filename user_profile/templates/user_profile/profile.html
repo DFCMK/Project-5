@@ -25,19 +25,21 @@
         </div>
         {% if default_address %}
         <h2>Default Delivery Address</h2>
-        <p>Full Name: {{ default_address.full_name }}</p>
-        <p>Phone Number: {{ default_address.phone_number }}</p>
-        <p>Street Address1: {{ default_address.street_address1 }}</p>
-        <p>Street Address2: {{ default_address.street_address2 }}</p>
-        <p>Town or City:{{ default_address.town_or_city }}</p>
-        <p>County: {{ default_address.county }}</p>
-        <p>Postcode: {{ default_address.postcode }}</p>
-        <p>Country: {{ default_address.country }}</p>
+        <div class="card">
+            <p>Full Name: <b>{{ default_address.full_name }}</b></p>
+            <p>Phone Number: <b>{{ default_address.phone_number }}</b></p>
+            <p>Street Address1: <b>{{ default_address.street_address1 }}</b></p>
+            <p>Street Address2: <b>{{ default_address.street_address2 }}</b></p>
+            <p>Town or City: <b>{{ default_address.town_or_city }}</b></p>
+            <p>County: <b>{{ default_address.county }}</b></p>
+            <p>Postcode: <b>{{ default_address.postcode }}</b></p>
+            <p>Country: <b>{{ default_address.country }}</b></p>
+        </div>
         {% else %}
         <p>No default delivery address set.</p>
         {% endif %}
         <hr>
-        <!-- Addresses -->
+
         <button class="btn btn-primary mb-3" type="button" id="toggle-addresses-btn">Show All Addresses</button>
         <div id="addresses-container" class="collapsible-content" style="display: none;">
             {% for address in addresses %}
@@ -60,7 +62,7 @@
                 </form>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletePostModal{{ address.id }}">Delete</button>
 
-                <!-- Delete Modal -->
+                <!-- Delete Address Modal -->
                 <div class="modal fade" id="deletePostModal{{ address.id }}" tabindex="-1" aria-labelledby="deletePostModalLabel{{ address.id }}" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -135,8 +137,11 @@
                 <li>{{ item.product.name }} - <a href="{% url 'product_detail' item.product.id %}">View Product</a></li>
             {% endfor %}
         </ul>
-    </div>
-</div>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'user_reviews' %}" class="btn btn-primary">View Your Reviews</a>
+            </div>
+        </div>
 {% endblock %}
 
 {% block postloadjs %}
@@ -162,4 +167,3 @@
         });
     </script>
 {% endblock %}
-
