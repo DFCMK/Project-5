@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile, Wishlist, Address
+from products.models import Rating
 from products.models import Product
 from .forms import UserProfileForm, AddressForm
 
@@ -209,3 +210,31 @@ def delete_address(request, address_id):
         messages.error(request, 'Failed deleting Address!')
 
     return redirect('profile')
+
+@login_required
+def user_reviews(request):
+    user = request.user
+    user_reviews = Rating.objects.filter(user=user).select_related('product')
+
+    if request.method == 'POST':
+        if 'delete_review' in request.POST:
+            review_id = request.POST.get('review_id')
+            review = get_object_or_404(Rating, id=review_id, user=user)
+            review.delete()
+            return redirect('user_reviews')
+        elif 'edit_review' in request.POST:
+            review_id = request.POST.get('review_id')
+            rating_value = request.POST.get('rating')
+            review_text = request.POST.get('review')
+            review = get_object_or_404(Rating, id=review_id, user=user)
+            review.rating = review_value
+            review.review = review_text
+            review.save()
+            return redirect('user_reviews')
+
+    context = {
+        'user': user,
+        'user_reviews': user_reviews,
+    }
+    return render(request, 'user_profile/user_reviews.html', context)
+
