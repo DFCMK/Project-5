@@ -27,10 +27,10 @@
 
         <div class="row">
             <div class="col-12 col-lg-7">
-                <div class="order-confirmation-wrapper p-2 border">
+                <div class="order-confirmation-wrapper p-2 border card">
                     <div class="row">
                         <div class="col">
-                            <small class="text-muted">Order Info:</small>
+                            <small class="text-black text-faded-black">Order Info:</small>
                         </div>
                     </div>
 
@@ -51,10 +51,11 @@
                             <p class="mb-0">{{ order.date }}</p>
                         </div>
                     </div>
+                    <hr>
 
                     <div class="row">
                         <div class="col">
-                            <small class="text-muted">Order Details:</small>
+                            <small class="text-black text-faded-black">Order Details:</small>
                         </div>
                     </div>
 
@@ -69,11 +70,12 @@
                             <p class="small mb-0">{{ item.quantity }} @ ${{ item.product.price }} each</p>
                         </div>
                     </div>
+                    <hr>
                     {% endfor %}
 
                     <div class="row">
                         <div class="col">
-                            <small class="text-muted">Delivering To:</small>
+                            <small class="text-black text-faded-black">Delivering To:</small>
                         </div>
                     </div>
 
@@ -154,10 +156,11 @@
                             <p class="mb-0">{{ order.phone_number }}</p>
                         </div>
                     </div>
+                    <hr>
 
                     <div class="row">
                         <div class="col">
-                            <small class="text-muted">Billing Info:</small>
+                            <small class="text-black text-faded-black">Billing Info:</small>
                         </div>
                     </div>
 
