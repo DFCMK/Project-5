@@ -100,4 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+    $(document).ready(function() {
+        $('.delete-review-btn').click(function() {
+            let reviewId = $(this).data('review-id');
+            let productId = "{{ product.id }}";
+            let actionUrl = '{% url "delete_review" product_id=0 review_id=0 %}'.replace('0', productId).replace('0', reviewId);
+
+            $('#deleteReviewForm').attr('action', actionUrl);
+        });
+    });
 });
