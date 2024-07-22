@@ -6,7 +6,7 @@ body {
     background: url('/media/pexels-cottonbro-5095886.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: #141516;
     /*font-family: "Poppins", sans-serif;*/
     /*font-family: "Merriweather", serif;*/
     font-family: "Open Sans", sans-serif;
@@ -181,8 +181,12 @@ p {
     color: black;
 }
 
+.text-faded-black {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 input[name='q']::placeholder {
-    color: #aab7c4;
+    color: #141516;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -266,7 +270,7 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    color: #141516; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -279,7 +283,7 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content input::placeholder {
-    color: #aab7c4;
+    color: #141516;
 }
 
 .allauth-form-inner-content button,
