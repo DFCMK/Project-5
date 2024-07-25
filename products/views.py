@@ -16,6 +16,7 @@ from decimal import Decimal
 from .models import Product
 
 import json
+#from django.views.decorators.csrf import csrf_exempt
 
 
 # Based on Boutique ado view
