@@ -12,5 +12,5 @@ urlpatterns = [
     path('profile/address/<int:address_id>/edit/', views.edit_address, name='edit_address'),
     path('profile/address/<int:address_id>/delete/', views.delete_address, name='delete_address'),
     path('profile/address/<int:address_id>/set_default/', views.set_default_address, name='set_default_address'),
-    path('profile/reviews/', views.user_reviews, name='user_reviews')
+    #path('reviews/', views.user_reviews, name='user_reviews'),
     ]
