@@ -243,6 +243,7 @@
 
 
 {% block postloadjs %}
+<script src="{% static 'js/review.js' %}"></script>
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
