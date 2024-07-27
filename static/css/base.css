@@ -365,13 +365,23 @@ input[name='q']::placeholder {
     border-radius: 50%;
 }
 
-.add-address-btn,
+.show-addresses-btn,
+.add-address-btn {
+    background-color: #003366;
+    color: white;
+}
 .delivery-info-btn {
     background-color: #003366;
     color: white;
     font-size: 2rem;
     /*width: 39vw;
     height: auto;*/
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .address-card {
