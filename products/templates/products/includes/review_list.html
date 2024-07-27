@@ -16,10 +16,10 @@
     {% if rating.user == request.user %}
         <button type="button" class="btn btn-sm btn-warning edit-review-btn"
                 data-toggle="modal" data-target="#reviewModal"
-                data-review-id="{{ rating.id }}" data-product-id="{{ product.id }}">Edit</button>
+                data-review-id="{{ rating.id }}" data-product-id="{{ product.id }}"><i class="fa-solid fa-pen-to-square"></i></button>
         <button type="button" class="btn btn-sm btn-danger delete-review-btn"
                 data-toggle="modal" data-target="#deleteReviewModal"
-                data-review-id="{{ rating.id }}">Delete</button>
+                data-review-id="{{ rating.id }}"><i class="fa-solid fa-trash"></i></button>
     {% endif %}
 </div>
 {% endfor %}

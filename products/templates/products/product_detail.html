@@ -46,9 +46,9 @@
 
                 {% if request.user.is_superuser %}
                 <small class="ml-3">
-                    <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                     <button type="button" class="btn btn-sm btn-danger delete-review-btn" data-toggle="modal"
-                        data-target="#deleteProductModal">Delete</button>
+                        data-target="#deleteProductModal"><i class="fa-solid fa-trash"></i></button>
                 </small>
                 {% endif %}
 
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-danger" id="deleteButton">Delete</button>
+                                    <button type="submit" class="btn btn-danger" id="deleteButton"><i class="fa-solid fa-trash"></i></button>
                                 </div>
                             </form>
                         </div>

@@ -84,9 +84,9 @@
                                             {% endif %}
                                             {% if request.user.is_superuser %}
                                             <small class="ml-3">
-                                                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-warning">Edit</a>
+                                                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                                 <button type="button" class="btn btn-sm btn-danger delete-review-btn"
-                                                data-toggle="modal" data-target="#deleteProductModal">Delete</button>
+                                                data-toggle="modal" data-target="#deleteProductModal"><i class="fa-solid fa-trash"></i></button>
                                             </small>
                                             {% endif %}
                                         </div>
