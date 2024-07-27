@@ -35,7 +35,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-als)2_&xnnr=c#4+8&4%8u)&8vs61nbtl0_&b--+8ybr&pb3!k'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -51,7 +51,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-dfcmk-project5-an9odnlpx5n.ws.codeinstitute-ide.net',
     'https://project-5-39f95920fba3.herokuapp.com'
 ]
-
 
 # Application definition
 
@@ -209,6 +208,9 @@ if 'DEVELOPMENT' in os.environ:
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
