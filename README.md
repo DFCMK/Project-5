@@ -97,7 +97,7 @@ View the Facebook page at: [HandCraft Facebook page](https://www.facebook.com/pr
 
 <details><summary><b>HandCraft - Facebook 2</b></summary>
 
-![HandCraft - Facebook 2](readme/assets/images/instagram_2.png)
+![HandCraft - Facebook 2](readme/assets/images/facebook_2.png)
 
 </details><br/>
 
