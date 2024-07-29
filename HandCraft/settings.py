@@ -38,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-dfcmk-project5-an9odnlpx5n.ws.codeinstitute-ide.net',
@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap4',
     'storages',
+    'csp'
     #'cloudinary',
 ]
 
@@ -90,6 +91,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'HandCraft.urls'
@@ -216,6 +218,40 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Content Security Policy settings
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = (
+    "'self'", 
+    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com',
+    'https://cdnjs.cloudflare.com'
+)
+CSP_STYLE_SRC = (
+    "'self'", 
+    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com',
+    'https://fonts.googleapis.com'
+)
+CSP_IMG_SRC = (
+    "'self'", 
+    'data:', 
+    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+)
+CSP_FONT_SRC = (
+    "'self'", 
+    'https://fonts.googleapis.com', 
+    'https://fonts.gstatic.com'
+)
+CSP_CONNECT_SRC = ("'self'",)
+CSP_MEDIA_SRC = (
+    "'self'", 
+    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+)
+CSP_OBJECT_SRC = ("'none'",)
+CSP_FRAME_SRC = ("'self'",)
+CSP_SANDBOX = ('allow-forms', 'allow-scripts', 'allow-same-origin')
+CSP_REPORT_URI = '/csp-report-endpoint'
 
 if 'USE_AWS' in os.environ:
     # Cache control
