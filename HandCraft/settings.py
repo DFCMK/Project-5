@@ -222,7 +222,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Determine if AWS is being used
-#USE_AWS = 'USE_AWS' in os.environ
+USE_AWS = 'USE_AWS' in os.environ
 
 # Content Security Policy settings
 CSP_DEFAULT_SRC = ("'self'",)
