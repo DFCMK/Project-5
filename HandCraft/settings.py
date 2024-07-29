@@ -221,39 +221,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Content Security Policy settings
+# Determine if AWS is being used
+USE_AWS = 'USE_AWS' in os.environ
+
+# Default Content Security Policy (CSP) settings
 CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = (
-    "'self'", 
-    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com',
-    'https://cdnjs.cloudflare.com'
-)
-CSP_STYLE_SRC = (
-    "'self'", 
-    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com',
-    'https://fonts.googleapis.com'
-)
-CSP_IMG_SRC = (
-    "'self'", 
-    'data:', 
-    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-)
-CSP_FONT_SRC = (
-    "'self'", 
-    'https://fonts.googleapis.com', 
-    'https://fonts.gstatic.com'
-)
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'",)
+CSP_IMG_SRC = ("'self'", 'data:')
+CSP_FONT_SRC = ("'self'",)
 CSP_CONNECT_SRC = ("'self'",)
-CSP_MEDIA_SRC = (
-    "'self'", 
-    f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-)
+CSP_MEDIA_SRC = ("'self'",)
 CSP_OBJECT_SRC = ("'none'",)
 CSP_FRAME_SRC = ("'self'",)
 CSP_SANDBOX = ('allow-forms', 'allow-scripts', 'allow-same-origin')
 CSP_REPORT_URI = '/csp-report-endpoint'
 
-if 'USE_AWS' in os.environ:
+if USE_AWS:
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'THU, 31 Dec 2099 20:00:00 GMT',
@@ -265,7 +249,7 @@ if 'USE_AWS' in os.environ:
     AWS_S3_REGION_NAME = 'eu-north-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
@@ -275,7 +259,31 @@ if 'USE_AWS' in os.environ:
 
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+    # Content Security Policy settings
+    CSP_SCRIPT_SRC += (
+        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+        'https://cdnjs.cloudflare.com',
+    )
+    CSP_STYLE_SRC += (
+        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+        'https://fonts.googleapis.com',
+    )
+    CSP_IMG_SRC += (
+        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+    )
+    CSP_MEDIA_SRC += (
+        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+    )
+else:
+    # Local storage settings for development
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Stripe
 FREE_DELIVERY_THRESHOLD = 100
