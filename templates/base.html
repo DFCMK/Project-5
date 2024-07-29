@@ -8,10 +8,13 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <meta name="description" content="Explore HandCraft's unique collection of handmade goods across various genres. Discover exquisite pieces for your home, wardrobe, and more. Shop now and experience the artistry firsthand.">
+        <meta name="keywords" content="HandCraft, handmade goods, unique items, home decor, clothing, jewelry, art, collectibles, accessories">
     {% endblock %}
 
     {% block extra_meta %}
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' sha256-hash-of-script">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' unsafe-inline">
     {% endblock %}
 
     {% block corecss %}
@@ -176,6 +179,19 @@
   {% endblock %}
 
   {% block content %}
+  <footer class="footer bg-steel fixed-bottom mt-auto">
+    <p class="m-0 text-center text-white">
+        {% block copyright %}
+        Made by Denes Kalnoky
+        {% endblock copyright %}
+    </p>
+    <p class="m-0 text-center text-white">Follow us:<br>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook text-white"></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-x-twitter text-white"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram text-white"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube channel (opens in a new tab)"><i class="fab fa-youtube text-white"></i></a>
+    </p>
+</footer>
   {% endblock %}
 
   {% block postloadjs %}
