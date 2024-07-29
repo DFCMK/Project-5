@@ -14,7 +14,7 @@
     {% endblock %}
 
     {% block extra_meta %}
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' unsafe-inline">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'report-sample' 'self' https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/">
     {% endblock %}
 
     {% block corecss %}
