@@ -266,7 +266,7 @@ CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'self'",)
 CSP_MANIFEST_SRC = ("'self'",)
 CSP_MEDIA_SRC = ("'self'",)
-CSP_REPORT_URI = 'https://66a7ef5664eefe535f8a90cd.endpoint.csper.io/?v=1'
+#CSP_REPORT_URI = 'https://66a7ef5664eefe535f8a90cd.endpoint.csper.io/?v=1'
 CSP_WORKER_SRC = ("'none'",)
 
 if USE_AWS:
