@@ -425,6 +425,18 @@ input[name='q']::placeholder {
     color: #ffcc00;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color: #003366;
+    padding: 1rem;
+    /*margin-top: 5rem;*/
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
