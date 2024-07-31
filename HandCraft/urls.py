@@ -27,7 +27,7 @@ urlpatterns = [
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('user_profile.urls')),
-    path('csp-report-endpoint/', csp_report, name='csp_report'),
+    #path('csp-report-endpoint/', csp_report, name='csp_report'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'HandCraft.views.handler404'
