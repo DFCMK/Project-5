@@ -264,6 +264,28 @@ USE_AWS = 'USE_AWS' in os.environ
 #    'https://js.stripe.com',
 #    'https://another-iframe-source.com',
 #)
+csp_policy = (
+    "script-src 'self' 'unsafe-inline' "
+    "https://cdn.jsdelivr.net https://code.jquery.com https://js.stripe.com "
+    "https://kit.fontawesome.com/1390569447.js https://cdnjs.cloudflare.com "
+    "https://stackpath.bootstrapcdn.com; "
+    "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net "
+    "https://fonts.googleapis.com https://project-5dk.s3.eu-north-1.amazonaws.com "
+    "https://stackpath.bootstrapcdn.com https://another-stylesheet-source.com "
+    "https://cdnjs.cloudflare.com https://kit.fontawesome.com/1390569447.js; "
+    "img-src 'self' https://project-5dk.s3.eu-north-1.amazonaws.com https://cdnjs.cloudflare.com "
+    "https://kit.fontawesome.com; "
+    "font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com "
+    "https://cdnjs.cloudflare.com https://kit.fontawesome.com/1390569447.js; "
+    "connect-src 'self' https://ka-f.fontawesome.com https://api.example.com; "
+    "frame-src 'self' https://js.stripe.com https://another-iframe-source.com; "
+    "object-src 'none'; "
+    "base-uri 'self'; "
+    "manifest-src 'self'; "
+    "media-src 'self'; "
+    "report-uri /csp-report-endpoint; "
+    "worker-src 'none'"
+)
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = ("'self'",)
 CSP_STYLE_SRC = ("'self'",)
