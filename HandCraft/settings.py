@@ -27,6 +27,13 @@ from django_countries.widgets import LazyChoicesMixin
 LazyChoicesMixin.get_choices = lambda self: self._choices
 LazyChoicesMixin.choices = property(LazyChoicesMixin.get_choices, LazyChoicesMixin.set_choices)
 
+import logging
+import boto3
+from botocore.exceptions import ClientError
+
+logging.basicConfig(level=logging.DEBUG)
+boto3.set_stream_logger(name='botocore')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
