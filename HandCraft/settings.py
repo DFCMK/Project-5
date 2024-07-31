@@ -238,7 +238,7 @@ CSP_STYLE_SRC = (
     'https://stackpath.bootstrapcdn.com',
     'https://another-stylesheet-source.com',
     'https://cdnjs.cloudflare.com',
-    'https://kit.fontawesome.com',
+    'https://kit.fontawesome.com/1390569447.js',
 )
 CSP_IMG_SRC = (
     "'self'",
