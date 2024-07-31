@@ -38,13 +38,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-dfcmk-project5-an9odnlpx5n.ws.codeinstitute-ide.net',
     'localhost',
     '127.0.0.1',
-    'project-5-39f95920fba3.herokuapp.com'
+    'project-5-39f95920fba3.herokuapp.com',
     ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -213,13 +213,6 @@ USE_TZ = True
 #else:
 #    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Determine if AWS is being used
 USE_AWS = 'USE_AWS' in os.environ
@@ -263,11 +256,11 @@ CSP_FRAME_SRC = (
     'https://js.stripe.com',
     'https://another-iframe-source.com',
 )
-CSP_FONT_SRC = {
+CSP_FONT_SRC = (
     "'self'",
     'https://fonts.gstatic.com,',
     'https://ka-f.fontawesome.com,',
-}
+)
 CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'self'",)
 CSP_MANIFEST_SRC = ("'self'",)
