@@ -264,12 +264,19 @@ USE_AWS = 'USE_AWS' in os.environ
 #    'https://js.stripe.com',
 #    'https://another-iframe-source.com',
 #)
-#CSP_OBJECT_SRC = ("'none'",)
-#CSP_BASE_URI = ("'self'",)
-#CSP_MANIFEST_SRC = ("'self'",)
-#CSP_MEDIA_SRC = ("'self'",)
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'",)
+CSP_IMG_SRC = ("'self'",)
+CSP_FONT_SRC = ("'self'",)
+CSP_CONNECT_SRC = ("'self'",)
+CSP_FRAME_SRC = ("'self'",)
+CSP_OBJECT_SRC = ("'none'",)
+CSP_BASE_URI = ("'self'",)
+CSP_MANIFEST_SRC = ("'self'",)
+CSP_MEDIA_SRC = ("'self'",)
 #CSP_REPORT_URI = ('/csp-report-endpoint',)
-#CSP_WORKER_SRC = ("'none'",)
+CSP_WORKER_SRC = ("'none'",)
 
 if USE_AWS:
     # Cache control
