@@ -251,7 +251,7 @@ CSP_FONT_SRC = (
     'https://fonts.gstatic.com',
     'https://ka-f.fontawesome.com',
     'https://cdnjs.cloudflare.com',
-    'https://kit.fontawesome.com',
+    'https://kit.fontawesome.com/1390569447.js',
 )
 CSP_CONNECT_SRC = (
     "'self'",
@@ -262,13 +262,6 @@ CSP_FRAME_SRC = (
     "'self'",
     'https://js.stripe.com',
     'https://another-iframe-source.com',
-)
-CSP_FONT_SRC = (
-    "'self'",
-    'https://fonts.gstatic.com',
-    'https://ka-f.fontawesome.com',
-    'https://cdnjs.cloudflare.com',
-    'https://kit.fontawesome.com/1390569447.js',
 )
 CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'self'",)
