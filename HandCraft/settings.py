@@ -27,13 +27,6 @@ from django_countries.widgets import LazyChoicesMixin
 LazyChoicesMixin.get_choices = lambda self: self._choices
 LazyChoicesMixin.choices = property(LazyChoicesMixin.get_choices, LazyChoicesMixin.set_choices)
 
-#import logging
-#import boto3
-#from botocore.exceptions import ClientError
-
-#logging.basicConfig(level=logging.DEBUG)
-#boto3.set_stream_logger(name='botocore')
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-dfcmk-project5-an9odnlpx5n.ws.codeinstitute-ide.net',
@@ -229,17 +222,49 @@ CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = (
     "'report-sample'", 
     "'self'",
+    'https://cdn.jsdelivr.net',
+    'https://code.jquery.com',
+    'https://js.stripe.com',
+    'https://kit.fontawesome.com',
+    'https://cdnjs.cloudflare.com',
+    'https://stackpath.bootstrapcdn.com',
 )
 CSP_STYLE_SRC = (
     "'report-sample'",
     "'self'",
+    'https://cdn.jsdelivr.net',
+    'https://fonts.googleapis.com',
+    'https://project-5dk.s3.eu-north-1.amazonaws.com',
+    'https://stackpath.bootstrapcdn.com',
+    'https://another-stylesheet-source.com',
+    'https://cdnjs.cloudflare.com',
+    'https://kit.fontawesome.com',
+)
+CSP_IMG_SRC = (
+    "'self'",
+    'https://project-5dk.s3.eu-north-1.amazonaws.com',
+    'https://cdnjs.cloudflare.com',
+    'https://kit.fontawesome.com',
+)
+CSP_FONT_SRC = (
+    "'self'",
+    'https://fonts.gstatic.com',
+    'https://ka-f.fontawesome.com',
+    'https://cdnjs.cloudflare.com',
+    'https://kit.fontawesome.com',
+)
+CSP_CONNECT_SRC = (
+    "'self'",
+    'https://ka-f.fontawesome.com',
+    'https://api.example.com',
+)
+CSP_FRAME_SRC = (
+    "'self'",
+    'https://js.stripe.com',
+    'https://another-iframe-source.com',
 )
 CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'self'",)
-CSP_CONNECT_SRC = ("'self'",)
-CSP_FONT_SRC = ("'self'",)
-CSP_FRAME_SRC = ("'self'",)
-CSP_IMG_SRC = ("'self'",)
 CSP_MANIFEST_SRC = ("'self'",)
 CSP_MEDIA_SRC = ("'self'",)
 #CSP_REPORT_URI = 'https://66a7ef5664eefe535f8a90cd.endpoint.csper.io/?v=1'
