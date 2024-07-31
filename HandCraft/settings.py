@@ -222,47 +222,17 @@ CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = (
     "'report-sample'", 
     "'self'",
-    'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
-    'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', 
-    'https://code.jquery.com/jquery-3.4.1.min.js',
-    'https://js.stripe.com/v3/',
-    'https://kit.fontawesome.com/1390569447.js',
-    'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js',
 )
 CSP_STYLE_SRC = (
     "'report-sample'",
     "'self'",
-    'https://cdn.jsdelivr.net',
-    'https://fonts.googleapis.com',
-    'https://project-5dk.s3.eu-north-1.amazonaws.com',
-    'https://stackpath.bootstrapcdn.com',
-    'https://another-stylesheet-source.com',
-)
-CSP_IMG_SRC = (
-    "'self'",
-    'https://project-5dk.s3.eu-north-1.amazonaws.com',
-)
-CSP_FONT_SRC = (
-    "'self'",
-    'https://fonts.gstatic.com',
-)
-CSP_CONNECT_SRC = (
-    "'self'",
-    'https://ka-f.fontawesome.com',
-    'https://api.example.com',
-)
-CSP_FRAME_SRC = (
-    "'self'",
-    'https://js.stripe.com',
-    'https://another-iframe-source.com',
-)
-CSP_FONT_SRC = (
-    "'self'",
-    'https://fonts.gstatic.com,',
-    'https://ka-f.fontawesome.com,',
 )
 CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'self'",)
+CSP_CONNECT_SRC = ("'self'",)
+CSP_FONT_SRC = ("'self'",)
+CSP_FRAME_SRC = ("'self'",)
+CSP_IMG_SRC = ("'self'",)
 CSP_MANIFEST_SRC = ("'self'",)
 CSP_MEDIA_SRC = ("'self'",)
 #CSP_REPORT_URI = 'https://66a7ef5664eefe535f8a90cd.endpoint.csper.io/?v=1'
