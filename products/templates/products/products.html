@@ -161,13 +161,13 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script nonce="{{ request.csp_nonce }}">
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
     
-    <script type="text/javascript">
+    <script nonce="{{ request.csp_nonce }}">
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);

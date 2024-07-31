@@ -14,32 +14,6 @@
     {% endblock %}
 
     {% block extra_meta %}
-    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self';
-    script-src 'report-sample' 'self' https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js https://code.jquery.com/jquery-3.4.1.min.js https://js.stripe.com/v3/ https://kit.fontawesome.com/1390569447.js https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js;
-    style-src 'report-sample' 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://project-5dk.s3.amazonaws.com https://stackpath.bootstrapcdn.com;
-    object-src 'none';
-    base-uri 'self';
-    connect-src 'self';
-    font-src 'self';
-    frame-src 'self';
-    img-src 'self';
-    manifest-src 'self';
-    media-src 'self';
-    report-uri https://66a7d82264eefe535f8a9098.endpoint.csper.io/?v=2;
-    worker-src 'none';">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
-    script-src 'report-sample' 'self' https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js https://code.jquery.com/jquery-3.4.1.min.js https://js.stripe.com/v3/ https://kit.fontawesome.com/1390569447.js https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js;
-    style-src 'report-sample' 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://project-5dk.s3.amazonaws.com https://stackpath.bootstrapcdn.com;
-    object-src 'none';
-    base-uri 'self';
-    connect-src 'self' https://ka-f.fontawesome.com;
-    font-src 'self' https://fonts.gstatic.com;
-    frame-src 'self' https://js.stripe.com;
-    img-src 'self';
-    manifest-src 'self';
-    media-src 'self';
-    report-uri https://66a7d82264eefe535f8a9098.endpoint.csper.io/?v=4;
-    worker-src 'none';">-->
     {% endblock %}
 
     {% block corecss %}
@@ -69,7 +43,7 @@
     {% endblock %}
 
     {% block extra_css %}
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     {% endblock %}
 
     {% block corejs %}
@@ -219,7 +193,7 @@
 </footer>
 
   {% block postloadjs %}
-  <script type="text/javascript">
+  <script nonce="{{ request.csp_nonce }}">
       $('.toast').toast('show');
   </script>
   {% endblock %}

@@ -81,7 +81,7 @@
 
 {% block postloadjs %}
 <script src="{% static 'js/review.js' %}"></script>
-<script type="text/javascript">
+<script nonce="{{ request.csp_nonce }}">
     $(document).ready(function() {
         $('.delete-review-btn').click(function() {
             let reviewId = $(this).data('review-id');

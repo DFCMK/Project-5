@@ -103,7 +103,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script nonce="{{ request.csp_nonce }}">
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
