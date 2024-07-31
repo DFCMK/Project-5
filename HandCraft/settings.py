@@ -230,6 +230,7 @@ CSP_SCRIPT_SRC = (
     "'report-sample'", 
     "'self'",
     'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
+    'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', 
     'https://code.jquery.com/jquery-3.4.1.min.js',
     'https://js.stripe.com/v3/',
     'https://kit.fontawesome.com/1390569447.js',
@@ -262,6 +263,11 @@ CSP_FRAME_SRC = (
     'https://js.stripe.com',
     'https://another-iframe-source.com',
 )
+CSP_FONT_SRC = {
+    "'self'",
+    'https://fonts.gstatic.com,',
+    'https://ka-f.fontawesome.com,',
+}
 CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'self'",)
 CSP_MANIFEST_SRC = ("'self'",)
