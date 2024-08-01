@@ -9,6 +9,7 @@ class CSPNonceMiddleware(MiddlewareMixin):
         if hasattr(request, 'csp_nonce'):
             nonce = request.csp_nonce
             csp_policy = (
+                f"default-src 'self'; "
                 f"script-src 'self' 'nonce-{nonce}' "
                 "https://cdn.jsdelivr.net "
                 "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js "
@@ -25,7 +26,7 @@ class CSPNonceMiddleware(MiddlewareMixin):
                 "https://another-stylesheet-source.com "
                 "https://cdnjs.cloudflare.com "
                 "https://kit.fontawesome.com/1390569447.js; "
-                "img-src 'self' "
+                "img-src 'self' data: "
                 "https://project-5dk.s3.eu-north-1.amazonaws.com "
                 "https://cdnjs.cloudflare.com "
                 "https://kit.fontawesome.com; "
@@ -45,6 +46,6 @@ class CSPNonceMiddleware(MiddlewareMixin):
                 "media-src 'self'; "
                 #"report-uri /csp-report-endpoint; "
                 "worker-src 'none';"
-            ).format(nonce=nonce)
+            )
             response['Content-Security-Policy'] = csp_policy
         return response
