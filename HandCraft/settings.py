@@ -77,7 +77,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap4',
     'storages',
-    'csp'
+    #'csp'
     #'cloudinary',
 ]
 
@@ -91,8 +91,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'home.middleware.CSPNonceMiddleware',
-    'csp.middleware.CSPMiddleware',
+    #'home.middleware.CSPNonceMiddleware',
+    #'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'HandCraft.urls'
@@ -264,19 +264,19 @@ USE_AWS = 'USE_AWS' in os.environ
 #    'https://js.stripe.com',
 #    'https://another-iframe-source.com',
 #)
-CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'",)
-CSP_STYLE_SRC = ("'self'",)
-CSP_IMG_SRC = ("'self'",)
-CSP_FONT_SRC = ("'self'",)
-CSP_CONNECT_SRC = ("'self'",)
-CSP_FRAME_SRC = ("'self'",)
-CSP_OBJECT_SRC = ("'none'",)
-CSP_BASE_URI = ("'self'",)
-CSP_MANIFEST_SRC = ("'self'",)
-CSP_MEDIA_SRC = ("'self'",)
+#CSP_DEFAULT_SRC = ("'self'",)
+#CSP_SCRIPT_SRC = ("'self'",)
+#CSP_STYLE_SRC = ("'self'",)
+#CSP_IMG_SRC = ("'self'",)
+#CSP_FONT_SRC = ("'self'",)
+#CSP_CONNECT_SRC = ("'self'",)
+#CSP_FRAME_SRC = ("'self'",)
+#CSP_OBJECT_SRC = ("'none'",)
+#CSP_BASE_URI = ("'self'",)
+#CSP_MANIFEST_SRC = ("'self'",)
+#CSP_MEDIA_SRC = ("'self'",)
 #CSP_REPORT_URI = ('/csp-report-endpoint',)
-CSP_WORKER_SRC = ("'none'",)
+#CSP_WORKER_SRC = ("'none'",)
 
 if USE_AWS:
     # Cache control
@@ -303,23 +303,23 @@ if USE_AWS:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
     # Content Security Policy settings
-    CSP_SCRIPT_SRC += (
-        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
-        'https://cdnjs.cloudflare.com',
-    )
-    CSP_STYLE_SRC += (
-        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
-        'https://fonts.googleapis.com',
-    )
-    CSP_IMG_SRC += (
-        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
-        'https://cdnjs.cloudflare.com',
-        'https://kit.fontawesome.com',
-        'data:',
-    )
-    CSP_MEDIA_SRC += (
-        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
-    )
+#    CSP_SCRIPT_SRC += (
+#        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+#        'https://cdnjs.cloudflare.com',
+#    )
+#    CSP_STYLE_SRC += (
+#        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+#        'https://fonts.googleapis.com',
+#    )
+#    CSP_IMG_SRC += (
+#        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+#        'https://cdnjs.cloudflare.com',
+#        'https://kit.fontawesome.com',
+#        'data:',
+#    )
+#    CSP_MEDIA_SRC += (
+#        f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com',
+#    )
 else:
     # Local storage settings for development
     STATIC_URL = '/static/'
