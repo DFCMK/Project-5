@@ -136,7 +136,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script nonce="{{ request.csp_nonce }}">
+<script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');

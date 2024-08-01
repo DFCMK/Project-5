@@ -193,7 +193,7 @@
 </footer>
 
   {% block postloadjs %}
-  <script nonce="{{ request.csp_nonce }}">
+  <script type="text/javascript">
       $('.toast').toast('show');
   </script>
   {% endblock %}
