@@ -45,6 +45,6 @@ class CSPNonceMiddleware(MiddlewareMixin):
                 "media-src 'self'; "
                 #"report-uri /csp-report-endpoint; "
                 "worker-src 'none';"
-            )
+            ).format(nonce=nonce)
             response['Content-Security-Policy'] = csp_policy
         return response
