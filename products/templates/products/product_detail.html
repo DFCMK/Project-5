@@ -142,7 +142,8 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-outline-secondary btn-sm mt-3">Add to Wishlist</button>
                 </form>
-
+                
+                {% if user.is_authenticated %}
                 <form id="rating-form" method="post" action="{% url 'rate_product' product.id %}">
                     {% csrf_token %}
                     <div class="rating-stars">
@@ -158,6 +159,7 @@
                         <label for="star1" title="1 stars"></label>
                     </div>
                 </form>
+
 
                 <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel"
                     aria-hidden="true">
@@ -202,6 +204,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
 
                 <div class="row mt-3">
                     <div class="col-12">
