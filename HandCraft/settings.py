@@ -276,7 +276,7 @@ USE_TZ = True
 #CSP_MANIFEST_SRC = ("'self'",)
 #CSP_MEDIA_SRC = ("'self'",)
 #CSP_REPORT_URI = ('/csp-report-endpoint',)
-CSP_WORKER_SRC = ("'none'",)
+#CSP_WORKER_SRC = ("'none'",)
 
 if 'USE_AWS' in os.environ:
     # Cache control
