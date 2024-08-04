@@ -9,6 +9,8 @@ from user_profile.models import UserProfile
 from products.models import Product
 from cart.contexts import cart_contents
 
+#from django.core.mail import send_mail
+
 import stripe
 import json
 
@@ -35,6 +37,11 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    if request.user.is_authenticated:
+        wishlist_count = request.user.wishlist_entries.count()
+    else:
+        wishlist_count = 0
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
@@ -135,6 +142,7 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'wishlist_count': wishlist_count
     }
 
     return render(request, template, context)
@@ -159,3 +167,14 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+# Test email view
+#ef test_send_email(request):
+#    send_mail(
+#        'Test Subject',
+#        'This is a test message.',
+#        'from@example.com',
+#        ['to@example.com'],
+#        fail_silently=False,
+#    )
+#    return HttpResponse('Email sent!')
