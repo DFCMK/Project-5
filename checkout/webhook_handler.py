@@ -34,12 +34,17 @@ class StripeWH_Handler:
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         print(cust_email)
-        send_mail(
+        try:
+            send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )
+            )
+            print(f'Email sent to {cust_email}')
+        except Exception as e:
+            print(f'failed to send email to {cust_email}: {e}')
+    
 
 
     def handle_event(self, event):
@@ -164,9 +169,3 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
-
-    def test_send_email(request):
-        order = Order.objects.first()
-        handler = StripeWH_Handler(request)
-        handler._send_confirmation_email(order)
-        return HttpResponse("Email function executed")
