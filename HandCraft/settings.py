@@ -216,7 +216,7 @@ USE_TZ = True
 
 
 # Determine if AWS is being used
-USE_AWS = 'USE_AWS' in os.environ
+#USE_AWS = 'USE_AWS' in os.environ
 
 # Content Security Policy settings
 #CSP_DEFAULT_SRC = ("'self'",)
@@ -278,7 +278,7 @@ USE_AWS = 'USE_AWS' in os.environ
 #CSP_REPORT_URI = ('/csp-report-endpoint',)
 CSP_WORKER_SRC = ("'none'",)
 
-if USE_AWS:
+if 'USE_AWS' in os.environ:
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'THU, 31 Dec 2099 20:00:00 GMT',
