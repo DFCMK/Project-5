@@ -16,7 +16,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
+    <div class="profile-container">
         <div class="row">
             <div class="col">
                 <hr>
@@ -27,14 +27,14 @@
         {% if default_address %}
         <h2>Default Delivery Address</h2>
         <div class="card">
-            <p>Full Name: <b>{{ default_address.full_name }}</b></p>
-            <p>Phone Number: <b>{{ default_address.phone_number }}</b></p>
-            <p>Street Address1: <b>{{ default_address.street_address1 }}</b></p>
-            <p>Street Address2: <b>{{ default_address.street_address2 }}</b></p>
-            <p>Town or City: <b>{{ default_address.town_or_city }}</b></p>
-            <p>County: <b>{{ default_address.county }}</b></p>
-            <p>Postcode: <b>{{ default_address.postcode }}</b></p>
-            <p>Country: <b>{{ default_address.country }}</b></p>
+            <p><strong>Full Name:</strong> {{ default_address.full_name }}</p>
+            <p><strong>Phone Number:</strong> {{ default_address.phone_number }}</p>
+            <p><strong>Street Address1:</strong> {{ default_address.street_address1 }}</p>
+            <p><strong>Street Address2:</strong> {{ default_address.street_address2 }}</p>
+            <p><strong>Town or City:</strong> {{ default_address.town_or_city }}</p>
+            <p><strong>County:</strong> {{ default_address.county }}</p>
+            <p><strong>Postcode:</strong> {{ default_address.postcode }}</p>
+            <p><strong>Country:</strong> {{ default_address.country }}</p>
         </div>
         {% else %}
         <p>No default delivery address set.</p>
@@ -45,14 +45,14 @@
         <div id="addresses-container" class="collapsible-content" style="display: none;">
             {% for address in addresses %}
             <div class="address-card">
-                <p><strong><u>Full Name:</u> {{ address.full_name }}</strong></p>
-                <p><strong><u>Street Address1:</u> {{ address.street_address1 }}</strong></p>
-                <p><strong><u>Street Address2:</u> {{ address.street_address2 }}</strong></p>
-                <p><strong><u>Phone Number:</u> {{ address.phone_number }}</strong></p>
-                <p><strong><u>Town or City:</u> {{ address.town_or_city }}</strong></p>
-                <p><strong><u>County:</u> {{ address.county }}</strong></p>
-                <p><strong><u>Postcode:</u> {{ address.postcode }}</strong></p>
-                <p><strong><u>Country:</u> {{ address.country }}</strong></p>
+                <p><strong>Full Name:</strong> {{ address.full_name }}</p>
+                <p><strong>Street Address1:</strong> {{ address.street_address1 }}</p>
+                <p><strong>Street Address2:</strong> {{ address.street_address2 }}</p>
+                <p><strong>Phone Number:</strong> {{ address.phone_number }}</p>
+                <p><strong>Town or City:</strong> {{ address.town_or_city }}</p>
+                <p><strong>County:</strong> {{ address.county }}</p>
+                <p><strong>Postcode:</strong> {{ address.postcode }}</p>
+                <p><strong>Country:</strong> {{ address.country }}</p>
                 <div class="button-container">
                 <a href="{% url 'edit_address' address.id %}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <form method="POST" action="{% url 'set_default_address' address.id %}">
@@ -123,7 +123,7 @@
                                         {% if rating.review %}
                                             <p>{{ rating.review }}</p>
                                         {% endif %}
-                                        <a href="{% url 'product_detail' rating.product.id %}" class="btn btn-sm btn-info">Review Management</a>
+                                        <a href="{% url 'product_detail' rating.product.id %}" class="btn btn-sm btn-info">Manage Review</a>
                                         <p>Review for: <b>{{ rating.product.name }}</b></p>
                                     </div>
                                     {% endfor %}
