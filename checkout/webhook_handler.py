@@ -34,16 +34,16 @@ class StripeWH_Handler:
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         print(cust_email)
-        try:
-            send_mail(
+        
+        send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
             )
-            print(f'Email sent to {cust_email}')
-        except Exception as e:
-            print(f'failed to send email to {cust_email}: {e}')
+            #print(f'Email sent to {cust_email}')
+        #except Exception as e:
+        #    print(f'failed to send email to {cust_email}: {e}')
     
 
 
