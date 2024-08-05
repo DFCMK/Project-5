@@ -7,6 +7,7 @@ from .models import Order, OrderLineItem
 from products.models import Product
 from user_profile.models import UserProfile
 
+import stripe
 import json
 import time
 
@@ -41,9 +42,6 @@ class StripeWH_Handler:
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
             )
-            #print(f'Email sent to {cust_email}')
-        #except Exception as e:
-        #    print(f'failed to send email to {cust_email}: {e}')
     
 
 
