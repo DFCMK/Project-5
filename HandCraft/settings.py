@@ -280,7 +280,7 @@ USE_TZ = True
 
 #USE_AWS = os.getenv('USE_AWS', '')
 
-if 'USE_S3' in os.environ:
+if 'USE_AWS' in os.environ:
 #if USE_AWS:
 
     #print("USE_AWS:", os.getenv('USE_AWS'))
