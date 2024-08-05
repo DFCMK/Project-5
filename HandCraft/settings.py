@@ -278,7 +278,13 @@ USE_TZ = True
 #CSP_REPORT_URI = ('/csp-report-endpoint',)
 #CSP_WORKER_SRC = ("'none'",)
 
-if 'USE_AWS' in os.environ:
+#USE_AWS = os.getenv('USE_AWS', '')
+
+if 'USE_S3' in os.environ:
+#if USE_AWS:
+
+    #print("USE_AWS:", os.getenv('USE_AWS'))
+    #print("USE_S3:", os.getenv('USE_S3'))
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'THU, 31 Dec 2099 20:00:00 GMT',
@@ -338,7 +344,6 @@ if 'DEVELOPMENT' in os.environ:
     DEFAULT_FROM_EMAIL = 'handcraft@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
     EMAIL_HOST = 'smtp.gmail.com'
