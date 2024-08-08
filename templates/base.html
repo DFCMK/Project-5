@@ -21,20 +21,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}">
-        <style type="text/css">
-            footer {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                bottom: 0;
-                width: 100%;
-                color: white;
-                background-color: #003366;
-                padding: 1rem;
-                margin-top: 15rem;
-            }
-        </style>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <!--Shadows Into Light-->
         <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
         <!--Open Sans-->
@@ -191,7 +178,8 @@
   {% block content %}
   {% endblock %}
   {% block footer %}
-        <footer>
+
+  <footer class="{% block footer_class %}footer{% endblock %}">
             <p class="m-0 text-center text-white">
                 {% block copyright %}
                 Made by Denes Kalnoky
@@ -204,6 +192,10 @@
                 <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube channel (opens in a new tab)"><i class="fab fa-youtube text-white"></i></a>
             </p>
         </footer>
+   {% endblock %}
+
+   {% block footer_class %}
+        .footer
    {% endblock %}
 
   {% block postloadjs %}
