@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<<<<<<< HEAD
         <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}">
         <style type="text/css">
             footer {
@@ -35,6 +36,10 @@
                 margin-top: 15rem;
             }
         </style>
+=======
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+>>>>>>> 0dfa806 (added ninja tags in footer class to get dynamic footers)
         <!--Shadows Into Light-->
         <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
         <!--Open Sans-->
@@ -191,6 +196,7 @@
   {% block content %}
   {% endblock %}
   {% block footer %}
+<<<<<<< HEAD
         <footer>
             <p class="m-0 text-center text-white">
                 {% block copyright %}
@@ -206,6 +212,27 @@
         </footer>
    {% endblock %}
 
+=======
+
+  {% block footer %}
+    <!--<footer class="footer primary fixed-bottom mt-auto pb-0</footer>-->
+        <footer class="{% block footer_class %}footer{% endblock %}">
+        <p class="m-0 text-center text-white">
+            {% block copyright %}
+            Made by Denes Kalnoky
+            {% endblock copyright %}
+        </p>
+    <p class="m-0 text-center text-white">Follow us:<br>
+            <a href="https://www.facebook.com/profile.php?id=61563089110829" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook text-white"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-x-twitter text-white"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram text-white"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube channel (opens in a new tab)"><i class="fab fa-youtube text-white"></i></a>
+        </p>
+    </footer>
+{% endblock %}
+
+
+>>>>>>> 0dfa806 (added ninja tags in footer class to get dynamic footers)
   {% block postloadjs %}
   <script type="text/javascript">
       $('.toast').toast('show');
