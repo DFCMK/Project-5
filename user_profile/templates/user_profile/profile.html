@@ -26,7 +26,7 @@
         </div>
         {% if default_address %}
         <h2>Default Delivery Address</h2>
-        <div class="card">
+        <div class="address-card">
             <p><strong>Full Name:</strong> {{ default_address.full_name }}</p>
             <p><strong>Phone Number:</strong> {{ default_address.phone_number }}</p>
             <p><strong>Street Address1:</strong> {{ default_address.street_address1 }}</p>
@@ -183,6 +183,11 @@
                 <li>{{ item.product.name }} - <a href="{% url 'product_detail' item.product.id %}">View Product</a></li>
             {% endfor %}
         </ul>
+    </div>
+{% endblock %}
+
+{% block footer_class %}
+    fixed-footer
 {% endblock %}
 
 {% block postloadjs %}
