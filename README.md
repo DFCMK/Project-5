@@ -487,13 +487,13 @@ If the user has forgotten the password they can ask for a password reset through
 <details><summary><b>Password Reset</b></summary>
 
 ![Password Reset](readme/assets/images/allauth_password_reset.png)
-</details><br/>
+<!--</details><br/>-->
 
 ![Password Reset Email](readme/assets/images/allauth_password_reset_email.png)
-</details><br/>
+<!--</details><br/>-->
 
 ![Password Reset Email Send](readme/assets/images/allauth_password_reset_email_confirmation.png)
-</details><br/>
+<!--</details><br/>-->
 
 ![Password Reset Success](readme/assets/images/allauth_password_reset_success.png)
 </details><br/>
@@ -628,5 +628,3 @@ The libraries used in this project are located in the requirements.txt file and 
 
 * As a Site User I want to receive visual feedback when interacting with content so that I can be confident in how I have interacted with the page.
     * When the site user performs actions on the sites flash messages shows (i.e. delete/update/add to cart/ actions).
-
---
