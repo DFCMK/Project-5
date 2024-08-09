@@ -66,5 +66,5 @@ class AddressForm(forms.ModelForm):
                     placeholder = placeholder
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 address-form-input'
-            self.fields[field].label = 'Set as default Delivery Address'
+            self.fields['set_as_default'].label = 'Set as default Delivery Address'
 
