@@ -18,3 +18,20 @@
 #id_default_country option:first-child {
     color: #aab7c4;
 }
+
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.address-card, .order-history {
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 10px;
+    }
+}
