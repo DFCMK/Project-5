@@ -4,8 +4,11 @@ from user_profile.models import UserProfile
 
 
 class OrderForm(forms.ModelForm):
-    phone_number = forms.CharField(widget=forms.NumberInput(attrs={'min_length': 9, 'max_length': 15}))
-    postcode = forms.CharField(widget=forms.NumberInput(attrs={'max_length': 5,}))
+    phone_number = forms.CharField(widget=forms.NumberInput(
+        attrs={'min_length': 9, 'max_length': 15}))
+    postcode = forms.CharField(widget=forms.NumberInput(
+        attrs={'max_length': 5, }))
+
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
@@ -25,12 +28,16 @@ class OrderForm(forms.ModelForm):
             user_profile = UserProfile.objects.get(user=self.user)
             self.fields['full_name'].initial = user_profile.default_full_name
             self.fields['email'].initial = self.user.email
-            self.fields['phone_number'].initial = user_profile.default_phone_number
+            self.fields['phone_number'].initial = (
+                user_profile.default_phone_number)
             self.fields['country'].initial = user_profile.default_country
             self.fields['postcode'].initial = user_profile.default_postcode
-            self.fields['town_or_city'].initial = user_profile.default_town_or_city
-            self.fields['street_address1'].initial = user_profile.default_street_address1
-            self.fields['street_address2'].initial = user_profile.default_street_address2
+            self.fields['town_or_city'].initial = (
+                user_profile.default_town_or_city)
+            self.fields['street_address1'].initial = (
+                user_profile.default_street_address1)
+            self.fields['street_address2'].initial = (
+                user_profile.default_street_address2)
             self.fields['county'].initial = user_profile.default_county
 
         placeholders = {
@@ -48,7 +55,9 @@ class OrderForm(forms.ModelForm):
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':
-                placeholder = f'{placeholders[field]} *' if self.fields[field].required else placeholders[field]
+                placeholder = (
+                    f'{placeholders[field]} *'
+                    if self.fields[field].required else placeholders[field])
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
@@ -58,4 +67,5 @@ class OrderForm(forms.ModelForm):
         if 'user' in kwargs and kwargs['user'].is_authenticated:
             user_profile = UserProfile.objects.get(user=kwargs['user'])
             for field in self.fields:
-                self.fields[field].initial = getattr(user_profile, f'default_{field}', '')
+                self.fields[field].initial = getattr(
+                    user_profile, f'default_{field}', '')

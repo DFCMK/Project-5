@@ -1,20 +1,15 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from user_profile.models import UserProfile
 from products.models import Product
 from cart.contexts import cart_contents
-
-#from django.core.mail import send_mail
-
 import stripe
 import json
-
-#import logging
 
 
 @require_POST
@@ -45,11 +40,6 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-        
-        # Logs for Debugging
-        #logger = logging.getLogger(__name__)
-        #logging.basicConfig(level=logging.DEBUG)
-        #logger.debug(f"Received POST data: {request.POST}")
 
         form_data = {
             'full_name': request.POST['full_name'],
@@ -67,7 +57,8 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save(commit=False)
             if request.user.is_authenticated:
-                order.user_profile = UserProfile.objects.get(user=request.user)
+                order.user_profile = UserProfile.objects.get(
+                    user=request.user)
                 if 'save-info' in request.POST:
                     profile = order.user_profile
                     profile.default_phone_number = order.phone_number
@@ -104,14 +95,16 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your cart wasn't found in our database. "
+                        "One of the products in your cart \
+                            wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -119,7 +112,8 @@ def checkout(request):
         order_form = OrderForm(user=request.user)
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(
+                request, "There's nothing in your cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
@@ -152,7 +146,7 @@ def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
-    save_info = request.session.get('save_info')
+    # save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
@@ -169,7 +163,7 @@ def checkout_success(request, order_number):
     return render(request, template, context)
 
 # Test email view
-#ef test_send_email(request):
+# def test_send_email(request):
 #    send_mail(
 #        'Test Subject',
 #        'This is a test message.',
