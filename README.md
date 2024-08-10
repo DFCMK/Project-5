@@ -166,41 +166,41 @@ Below the user stories for the project are listed to clarify why particular feat
 ### Registration And User Accounts
 |  | | |
 |:-------:|:--------|:--------|
-| As a Site User | I want to register an account so that I can have a personal account and access my profile.| &#9745; |
-| As a Site User | I want to have my own user profile so that I can view my personal order history, see and manage my own reviews, and update my contact/payment/delivery information.| &#9745; |
-| As a Site User | I want to log out from the site so that I can feel secure that nobody can access my information. | &#9745; |
+| As a Site User | I want to register an account so that I can have a personal account and access my profile | &#9745; |
+| As a Site User | I want to have my own user profile so that I can view my personal order history, see and manage my own reviews, and update my contact/payment/delivery information | &#9745; |
+| As a Site User | I want to log out from the site so that I can feel secure that nobody can access my information | &#9745; |
 
 
 ### Sorting And Searching
 |  | | |
 |:-------:|:--------|:--------|
-| As a Customer | I want to sort the list of all products in different ways so that I can identify the best-rated, best prices, and products based on category.| &#9745; |
-| As a Customer | I want to sort a specific category of products so that I can identify the best rated, best prices or just sort the products by name. | &#9745; |
-| As a Customer | I want easily get information about specific products by typing keywords into a search bar so that I can find what I am looking for quickly. | &#9745; |
+| As a Customer | I want to sort the list of all products in different ways so that I can identify the best-rated, best prices, and products based on category| &#9745; |
+| As a Customer | I want to sort a specific category of products so that I can identify the best rated, best prices or just sort the products by name | &#9745; |
+| As a Customer | I want easily get information about specific products by typing keywords into a search bar so that I can find what I am looking for quickly | &#9745; |
 
 ### Purchasing And Checkout
 |  | | |
 |:-------:|:--------|:--------|
-| As a Customer | I want to easily choose the quantity of a product and size if applicable when purchasing it so that I ensure I get the correct product. | &#9745; |
-| As a Customer | I want to easily view the items in my cart to be purchased so that I can see the total cost and all the items I am about to receive  .| &#9745; |
+| As a Customer | I want to easily choose the quantity of a product and size if applicable when purchasing it so that I ensure I get the correct product | &#9745; |
+| As a Customer | I want to easily view the items in my cart to be purchased so that I can see the total cost and all the items I am about to receive  | &#9745; |
 | As a Customer | I want to easily adjust the amount of products in my cart so that I can change the products quantity and size before checking out | &#9745; |
-| As a Customer | I want to set up my payment details in an intuitive way so that the checkout process is quick and convenient.| &#9745; |
-| As a Customer | I want to a intuitive and secure way of interacting with the site so that I feel convenient while providing all necessary information needed for purchase. | &#9745; |
-| As a Customer | I want to view an order confirmation and summer after checkout so that I can ensure that the purchase succeeded with the desired Products and delivery Information | &#9745; |
-| As a Customer | I want to receive an email confirmation after the checkout process is done so that I can keep the information for future use if needed. | &#9745; |--
+| As a Customer | I want to set up my payment details in an intuitive way so that the checkout process is quick and convenient | &#9745; |
+| As a Customer | I want to a intuitive and secure way of interacting with the site so that I feel convenient while providing all necessary information needed for purchase | &#9745; |
+| As a Customer | I want to view an order confirmation and summery after checkout so that I can ensure that the purchase succeeded with the desired Products and delivery Information | &#9745; |
+| As a Customer | I want to receive an email confirmation after the checkout process is done so that I can keep the information for future use if needed | &#9745; |
 | As a Customer | I want to receive an email confirmation when my order changes so that I get relevant information about my order | &#9746; |
 | As a Customer | I want to use a promotion code so that I can get a better deal | &#9746; |
-| As a Customer | I want to add products to a wishlist so that I can view and purchase them later, with a visual element indicating how many items are in my wishlist. | &#9745; |
+| As a Customer | I want to add products to a wishlist so that I can view and purchase them later, with a visual element indicating how many items are in my wishlist | &#9745; |
 
 ### Site Admin
 
 |  | | |
 |:-------:|:--------|:--------|
-| As a Site Admin | I want to search, create, update, and delete product posts so that I can manage my product content | &#9745;
+| As a Site Admin | I want to search, create, update, and delete product posts so that I can manage my product content | &#9745; |
 | As a Site Admin | I want to log out from the site so that I can feel safe that nobody can access my information | &#9745; |
-| As a Site Admin | I want to create draft product posts so that I can finish writing the content later. | &#9746; |
-| As a Site Admin | I want to access an admin area so that I can manage my Websites content| &#9745; |
-| As a Site Admin | I want to get visual feedback when interacting with the content so that I can be sure how I have interacted with the page. | &#9745; |
+| As a Site Admin | I want to create draft product posts so that I can finish writing the content later | &#9746; |
+| As a Site Admin | I want to access an admin area so that I can manage my Websites content | &#9745; |
+| As a Site Admin | I want to get visual feedback when interacting with the content so that I can be sure how I have interacted with the page | &#9745; |
 
 [Back to top](<#table-of-content>)
 
@@ -580,10 +580,10 @@ The libraries used in this project are located in the requirements.txt file and 
 * [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - Is used to create, configure, and manage AWS services, such as Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3).
 
 * [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html) - Botocore is a low-level interface to a growing number of Amazon Web Services. Botocore serves as the foundation for the AWS-CLI command line utilities.
-* [dj-database-url](https://pypi.org/project/dj-database-url/) - This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.)
+* [dj-database-url](https://pypi.org/project/dj-database-url/) - This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
 * [Django](https://pypi.org/project/Django/) - Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
 * [django-allauth](https://pypi.org/project/django-allauth/) - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
-* [django-countries](https://pypi.org/project/django-countries/) - A Django application that provides country choices for use with forms, flag icons static files, and a country field for models.)
+* [django-countries](https://pypi.org/project/django-countries/) - A Django application that provides country choices for use with forms, flag icons static files, and a country field for models.
 * [django-crispy-forms](https://pypi.org/project/django-crispy-forms/) - Used to integrate Django DRY forms in the project.
 * [django-extensions](https://pypi.org/project/django-extensions/) - Django Extensions is a collection of custom extensions for the Django Framework.
 * [django-storages](https://django-storages.readthedocs.io/en/latest/) - django-storages is a collection of custom storage backends for Django.
@@ -628,3 +628,103 @@ The libraries used in this project are located in the requirements.txt file and 
 
 * As a Site User I want to receive visual feedback when interacting with content so that I can be confident in how I have interacted with the page.
     * When the site user performs actions on the sites flash messages shows (i.e. delete/update/add to cart/ actions).
+
+### Registration And User Accounts
+
+* As a Site User I want to register an account so that I can have a personal account and access my profile.
+    * In the navigation bar the user can click the Register link in the My Account menu sign up for a new account. When this is done the user can access the personal account.
+
+* As a Site User I want to have my own user profile so that I can view my personal order history, see and manage my own reviews, and update my contact/payment/delivery information.
+
+    * When the user has created an account and is logged in the menu My Profile in the menu takes them to a profile page were they can set theire default delivery Address, save up to five addresses to theire profile, set them as default, delete or edit them and view their own Reviews within a User Review card, where each Review have a **Manage Review** button below the actual review, and when clicked will redirect the user to the product detail page.
+
+* As a Site User I want to log out from the site so that I can feel secure that nobody can access my information.
+    * When the user is logged in it is possible to choose the 'Logout'-option in the navigation menu.
+
+### Sorting And Searching
+
+*  As a Customer I want to sort the list of all products in different ways so that I can identify the best-rated, best prices, and products based on category.
+    * At the top of the site there is a navigation bar with links that lists products based on categories, sorting or through a search query. When rendering a subcategory in the category menu in the Navbar or render the **All Products** page there will be also in the right top corner a drop down menu where the user can sort products by price, rating, alpabetic order, name, category, etc.
+
+* As a Customer I want to sort a specific category of products so that I can identify the best rated, best prices or just sort the products by name.--
+    * At the top of the site there is a navigation bar with links that lists products based on categories, sorting or through a search query.
+
+* As a Customer I want easily get information about specific products by typing keywords into a search bar so that I can find what I am looking for quickly
+    *  Within the Top Bar there is a search bar in the center top of the page, which allow user to search for specific products or keywords.
+
+### Purchasing And Checkout
+
+* As a Customer I want to easily choose the quantity of a product and size if applicable when purchasing it so that I ensure I get the correct product.
+    * On the product detail page the user can choose the quantity of a product and size.
+
+* As a Customer I want to easily view the items in my cart to be purchased so that I can see the total cost and all the items I am about to receive.
+    * The user can easily view the cart by clicking the cart icon in the top navigation bar.
+
+* As a Customer I want to easily adjust the amount of products in my cart so that I can change the products quantity and size before checking out.
+    * On the shopping cart page, which the user can reach by clicking the cart icon in the top navigation bar, it is easy to adjust the amount of products before checking out.
+
+* As a Customer I want to set up my payment details in an intuitive way so that the checkout process is quick and convenient.
+    * In the secure checkout page fill out easily a Address form, with credit card details at the bottom and checkout process quickly.
+
+*  As a Customer I want to a intuitive and secure way of interacting with the site so that I feel convenient while providing all necessary information needed for purchase.
+    * This is somehow subjective but the site has been build to 'radiate' a sense of professionality and stability.
+
+*  As a Customer I want to view an order confirmation and summer after checkout so that I can ensure that the purchase succeeded with the desired Products and delivery Information.
+    * When the checkout process is completed the user is taken to a confirmation success page with an order summery.
+
+* As a Customer I want to receive an email confirmation after the checkout process is done so that I can keep the information for future use if needed.
+    * When the checkout process is completed the user recieves a confirmation e-mail to the e-mail that has been registered in the checkout process.
+
+* As a Customer I want to receive an email confirmation when my order changes so that I get relevant information about my order.
+    * Not implemented yet
+
+* As a Customer I want to add products to a wishlist so that I can view and purchase them later, with a visual element indicating how many items are in my wishlist.
+    * On the all products pages and also on the product detail page the logged in user can add the specific product to their whislist and then access the wishlist from the 'Wishlist' icon within the Top Bar.
+
+* As a Customer I want to use a promotion code so that I can get a better deal.
+    * Not implemented yet
+
+### Site Admin
+
+* As a Site Admin I want to search, create, update, and delete product posts so that I can manage my product content.
+    * When admin is logged the product management page can be reached through the 'My Account' -dropdown menu. This will allow the admin to add new products to the Webstore. When the admin want to edit or delete products, these buttons will appear at each products page.
+
+* As a Site Admin I want to log out from the site so that I can feel safe that nobody can access my information.
+    * When admin is logged in it is possible to choose the 'Log Out'-option in the navigation menu.
+
+* As a Site Admin | I want to create draft product posts so that I can finish writing the content later.
+    * Not implemented yet.
+
+* As a Site Admin I want to access an admin area so that I can get a general understanding of i.e. number of users, number of products
+    * Not implemented yet
+
+* As a Site Admin | I want to get visual feedback when interacting with the content so that I can be sure how I have interacted with the page.
+    * When the site user performs actions on the sites flash messages shows (i.e. delete/update/add to cart/ actions).
+
+* As a Site Admin I want to create draft blog posts so that I can finish writing the content later.
+    * Not implemented yet
+
+[Back to top](<#table-of-content>)
+
+## Code Validation
+The code on the HandCraft site has been tested through W3C Markup Validation Service, W3C CSS Validation Service, CI Python Linter and JSHint.
+
+### Markup Validation
+ Errors were at first found on the site in the W3C Markup Validation Service but could quite easily be fixed (see bugs section). After fixing the inital errors that W3C Markup Validation Service reported, no errors were returned except 1 connected to a form on the profile page (more information about that in the bugs section).
+
+<details><summary><b>HTML Validation Result</b></summary>
+
+![HTML Result Home Page](readme/assets/images/html_validation_no_error.png)
+</details><br/>
+
+[Back to top](<#table-of-content>)
+
+### CSS Validation
+When validating my own code the W3C CSS Validator reports no errors but 16 errors connected to Bootstrap were reported.
+
+<details><summary><b>CSS Validation Result</b></summary>
+
+**Base CSS**
+![CSS Result - Main](readme/assets/images/base_css_validation_results.png)
+
+--
