@@ -2,6 +2,7 @@ from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Rating, Product, Category
 
+
 # inspired by Desphinx tutorial:
 # https://www.youtube.com/watch?v=TIDldj2BDuY
 class RatingForm(forms.ModelForm):
@@ -16,7 +17,8 @@ class RatingForm(forms.ModelForm):
         (5, '★★★★★'),
     ]
 
-    rating = forms.ChoiceField(choices=RATING_CHOICES, widget=forms.RadioSelect)
+    rating = forms.ChoiceField(
+        choices=RATING_CHOICES, widget=forms.RadioSelect)
     review = forms.CharField(widget=forms.Textarea, required=False)
 
     class Meta:
@@ -27,6 +29,7 @@ class RatingForm(forms.ModelForm):
             'review_text': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
         }
 
+
 # inspired by CI boutique ado:
 class ProductForm(forms.ModelForm):
 
@@ -34,7 +37,8 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+        label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
