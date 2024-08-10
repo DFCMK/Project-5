@@ -12,5 +12,5 @@ def home(request):
         wishlist_count = 0
 
     context = {'wishlist_count': wishlist_count}
-       
+
     return render(request, 'home/index.html', context)
