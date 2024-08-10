@@ -33,12 +33,15 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+            self.fields[field].widget.attrs['class'] = (
+                'border-black rounded-0 profile-form-input')
             self.fields[field].label = False
+
 
 class AddressForm(forms.ModelForm):
 
-    set_as_default = forms.BooleanField(required=False, label='Set as default Delivery Address')
+    set_as_default = forms.BooleanField(
+        required=False, label='Set as default Delivery Address')
 
     class Meta:
         model = Address
@@ -65,6 +68,7 @@ class AddressForm(forms.ModelForm):
                 else:
                     placeholder = placeholder
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 address-form-input'
-            self.fields['set_as_default'].label = 'Set as default Delivery Address'
-
+            self.fields[field].widget.attrs['class'] = (
+                'border-black rounded-0 address-form-input')
+            self.fields['set_as_default'].label = (
+                'Set as default Delivery Address')

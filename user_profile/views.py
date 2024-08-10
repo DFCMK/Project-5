@@ -1,19 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 from .models import UserProfile, Wishlist, Address
 from products.models import Rating, Product
-from products.forms import RatingForm
 from .forms import UserProfileForm, AddressForm
-from django.http import JsonResponse
-
 from checkout.models import Order
+
 
 @login_required
 def profile(request):
-    """ 
+    """
     Display the user's profile.
     """
     user = request.user
@@ -21,7 +18,8 @@ def profile(request):
     wishlist = Wishlist.objects.filter(user=user)
     orders = profile.orders.all()
     addresses = Address.objects.filter(user=user)
-    default_address = Address.objects.filter(user=request.user, set_as_default=True).first()
+    default_address = Address.objects.filter(
+        user=request.user, set_as_default=True).first()
     user_reviews = Rating.objects.filter(user=request.user)
 
     if request.method == 'POST':
@@ -30,7 +28,9 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
 
@@ -46,6 +46,7 @@ def profile(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def order_history(request, order_number):
@@ -64,6 +65,7 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+
 # Based on Very Academys tutorial:
 # https://www.youtube.com/watch?v=OgA0TTKAtqQ
 @login_required
@@ -72,21 +74,30 @@ def add_to_wishlist(request, id):
     Save Products to a Whishlist, for later purchase
     '''
     product = get_object_or_404(Product, id=id)
-    wishlist_entry, created = Wishlist.objects.get_or_create(user=request.user, product=product)
+    wishlist_entry, created = Wishlist.objects.get_or_create(
+        user=request.user,
+        product=product)
     wishlist_count = request.user.wishlist_entries.count()
     if created:
-        messages.success(request, f'{product.name} was successfully added to your Wishlist!')
+        messages.success(
+            request,
+            f'{product.name} was successfully added to your Wishlist!'
+            f'You now have {wishlist_count} item(s) in your wishlist.')
         return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
-    else: 
-        messages.error(request, f'{product.name} is already in your wishlist!')
+    else:
+        messages.error(
+            request,
+            f'{product.name} is already in your wishlist!'
+            f'You have {wishlist_count} item(s) in your wishlist.')
         return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
+
 
 @login_required
 def wishlist(request):
     '''
     Filter for products in wishlist and assosite them with the user
     '''
-    
+
     wishlist_entries = Wishlist.objects.filter(user=request.user)
     products = [entry.product for entry in wishlist_entries]
     wishlist_count = Wishlist.objects.filter(user=request.user).count()
@@ -98,13 +109,17 @@ def wishlist(request):
 
     return render(request, "user_profile/wishlist.html", context)
 
+
 @login_required
 def remove_from_wishlist(request, id):
     product = get_object_or_404(Product, id=id)
-    wishlist_entry = Wishlist.objects.filter(user=request.user, product=product).first()
+    wishlist_entry = Wishlist.objects.filter(
+        user=request.user, product=product).first()
     if wishlist_entry:
         wishlist_entry.delete()
-        messages.success(request, f'{product.name} deleted from Wishlist!')
+        messages.success(
+            request,
+            f'{product.name} deleted from Wishlist!')
         return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
     else:
         messages.error(request, 'Wishlist entry not found!')
@@ -114,26 +129,28 @@ def remove_from_wishlist(request, id):
 @login_required
 def add_address(request):
     user_profile = request.user.userprofile
-    default_address = Address.objects.filter(user=request.user, set_as_default=True).first()
+    default_address = Address.objects.filter(
+        user=request.user, set_as_default=True).first()
 
     if request.method == 'POST':
         address_form = AddressForm(request.POST)
 
         if Address.objects.filter(user=request.user).count() >= 5:
-            messages.error(request, 'You can not add more then 5 addresses to your profile!')
+            messages.error(
+                request,
+                'You can not add more then 5 addresses to your profile!')
             return redirect('profile')
 
         if address_form.is_valid():
             address = address_form.save(commit=False)
             address.user = request.user
 
-
             if address_form.cleaned_data.get('set_as_default', False):
 
                 if default_address:
                     default_address.set_as_default = False
                     default_address.save()
-                
+
                 address.set_as_default = True
 
                 user_profile.default_full_name = address.full_name
@@ -149,7 +166,9 @@ def add_address(request):
             messages.success(request, 'Address added successfully')
             return redirect('profile')
         else:
-            messages.error(request, 'Error adding address. Please check the form.')
+            messages.error(
+                request,
+                'Error adding address. Please check the form.')
     else:
         address_form = AddressForm()
 
@@ -158,13 +177,19 @@ def add_address(request):
         'default_address': default_address
     }
 
-    return render(request, 'user_profile/add_address.html', context)
+    return render(
+        request,
+        'user_profile/add_address.html', context)
+
 
 @login_required
 def set_default_address(request, address_id):
-    address = get_object_or_404(Address, id=address_id, user=request.user)
+    address = get_object_or_404(
+        Address, id=address_id, user=request.user)
 
-    Address.objects.filter(user=request.user, set_as_default=True).update(set_as_default=False)
+    Address.objects.filter(
+        user=request.user,
+        set_as_default=True).update(set_as_default=False)
 
     address.set_as_default = True
     address.save()
@@ -182,6 +207,7 @@ def set_default_address(request, address_id):
 
     messages.success(request, 'Default address updated successfully.')
     return redirect('profile')
+
 
 @login_required
 def edit_address(request, address_id):
@@ -202,6 +228,7 @@ def edit_address(request, address_id):
         }
         return render(request, 'user_profile/edit_address.html', context)
 
+
 @login_required
 def delete_address(request, address_id):
     address = get_object_or_404(Address, id=address_id, user=request.user)
@@ -213,30 +240,3 @@ def delete_address(request, address_id):
         messages.error(request, 'Failed deleting Address!')
 
     return redirect('profile')
-
-#@login_required
-#def user_reviews(request):
-#    user = request.user
-#    user_reviews = Rating.objects.filter(user=user).select_related('product')
-#
-#    if request.method == 'POST':
-#        if 'delete_review' in request.POST:
-#            review_id = request.POST.get('review_id')
-#            review = get_object_or_404(Rating, id=review_id, user=user)
-#            review.delete()
-#            return redirect('user_reviews')
-#        elif 'edit_review' in request.POST:
-#            review_id = request.POST.get('review_id')
-#            rating_value = request.POST.get('rating')
-#            review_text = request.POST.get('review')
-#            review = get_object_or_404(Rating, id=review_id, user=user)
-#            review.rating = review_value
-#            review.review = review_text
-#            review.save()
-#            return redirect('user_reviews')
-#
-#    context = {
-#        'user': user,
-#        'user_reviews': user_reviews,
-#    }
-#    return render(request, 'user_profile/user_reviews.html', context)
