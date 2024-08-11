@@ -1109,3 +1109,347 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 
 [Back to top](<#table-of-content>)
 
+### Lighthouse
+Google Lighthouse in Chrome Developer Tools was used to test the site within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *landing page*, *view all products page*, *cart page* and *Product Detail page*. The testing showed the following:
+
+* Landing Page - Desktop - Performance: 94, Accessibility: 77, Best Practises: 78, SEO: 100
+* Landing Page - Mobile - Performance: 72, Accessibility: 82, Best Practises: 79, SEO: 100
+* View All Products Page - Desktop - Performance: 62, Accessibility: 75, Best Practises: 78, SEO: 91
+* View All Products Page - Mobile - Performance: 56, Accessibility: 82, Best Practises: 79, SEO: 91
+* View Product Detail - Desktop - Performance: 90, Accessibility: 76, Best Practises: 74, SEO: 100
+* View Product Detail - Mobile - Performance: 56, Accessibility: 72, Best Practises: 79, SEO: 100
+* View Cart - Desktop - Performance: 92, Accessibility: 69, Best Practises: 78, SEO: 82
+* View Cart - Mobile - Performance: 56, Accessibility: 68, Best Practises: 79, SEO: 82
+
+From a general point of view these are quite good results. On all pages the performance is a little bit to low and it is mainly connected to the image sizes. I did some compressing on all the images(approx -50% in size) but still the performance result landed around 70-80. The decrease in the SEO results are mainly connected to the 'read more' links that is not a optimal description from a SEO point of view. In the view all products page the SEO result is affected by the heading elements not being in sequentially-descending order, but this is an active design choice and not a big issue (but I thought it would be proper to highlight it here so that it's clear I'm aware of it).
+
+<details><summary><b>Lighthouse Landing page Desktop & Mobile</b></summary>
+
+![Lighthouse Landing page Desktop Result](readme/assets/images/lighthouse_landingpage_desktop.png)
+![Lighthouse Landing page Mobile Result](readme/assets/images/lighthouse_landingpage_mobile.png)
+</details><br/>
+
+<details><summary><b>Lighthouse View All Products Page Result Desktop & Mobile</b></summary>
+
+
+![Lighthouse View All Products Page Desktop Result](readme/assets/images/lightouse_all_products_desktop.png)
+![Lighthouse View All Products Page Mobile Result](readme/assets/images/lightouse_all_products_mobile.png)
+</details><br/>
+
+<details><summary><b>Lighthouse Product Detail Desktop & Mobile Result</b></summary>
+
+![Lighthouse Product Detail Desktop Result](readme/assets/images/product_detail_lighthouse_desktop.png)
+![Lighthouse Product Detail Mobile Result](readme/assets/images/lightouse_Product_detail_mobile.png)
+</details><br/>
+
+<details><summary><b>Lighthouse Cart Page Desktop Result</b></summary>
+
+![Lighthouse Cart Page Desktop Results](readme/assets/images/lighthouse_desktop_cart.png)
+![Lighthouse Cart Page Desktop Results](readme/assets/images/lighthouse_cart_mobile.png)
+</details><br/>
+
+### WAVE
+[WAVE](https://wave.webaim.org/) was used to check accessibility. 4 errors were found (2 missing form label and 2 empty buttons). There where also 2 contrast errors. I was not able to fix this erros before submiting the project for assessment.
+
+<details><summary><b>WAVE Result</b></summary>
+
+![WAVE Result](readme/assets/images/wave_result.png)
+</details><br/>
+
+## Known bugs
+There is a known issue when a user attempts to delete a review for the "Orange Prom Dress" (product_id=20). Specifically, an IntegrityError occurs during the deletion process. Interestingly, this issue only affects the "Orange Prom Dress" product—CRUD functionality for reviews works as expected with all other products. The root cause of this bug has not yet been identified, and resolving it will be a task for the future.
+
+### Fixed Bugs
+**2024-07**
+* Bug: AttributeError: 'BlankChoiceIterator' object has no attribute 'len', is related to changes in Django 5.0, specifically to the forms.ChoiceField and its handling of choices. To resolve this i imported LazyChoicesMixin within the settings.py file as temporary work around. This issue seem only be related to Django 5.0 so using a older versio of Django can resolve this issue as well.
+
+**2024-07**
+* Bug: I noticed while writting the Readme during the manual testing part, that it was possible to add a negative number in the price field when adding a product in the product management area. I fixed this by adding a validation check in the product model (MinValueValidator).
+
+<details><summary><b>Negative Price Bug</b></summary>
+
+![Negative Price Bug](readme/assets/images/negative_price_bug.png)
+![Negative Price Fix Form Validation](readme/assets/images/negative_price_bug_fix_form_validation.png)
+![Negative Price Fix Price Field in Product Model](readme/assets/images/altered_price_field.png)
+</details><br />
+
+<details><summary><b>HTML Validator Error</b></summary>
+
+**HTML Validator Error Home**
+
+![HTML Validator Error Home](readme/assets/images/html_validator_bug_home.png)
+
+**HTML Validator Error Wishlist**
+![HTML Validator Error Wishlist](readme/assets/images/html_validator_bug_wishlist.png)
+
+**HTML Validator Error Remove Wishlist**
+![HTML Validator Error Remove Wishlist](readme/assets/images/html_validator_bug_remove_wishlist.png)
+
+**HTML Validator Error Footer**
+![HTML Validator Error Footer](readme/assets/images/html_validator_bug_footer.png)
+
+**HTML Validator Error Profile**
+![HTML Validator Error Footer](readme/assets/images/html_validator_bug_profile_page.png)
+</details><br />
+
+**2024-07**
+* Bug: When i tried to purchase the handmade luxury Bathtube for 37000.00 EUR the site crasches during checkout (throws a 500 error / InvalidRequestError). This bug was fixed by changing the number of accepted digits in the products model. **Update** The problem did show up again during the handshake with Stripe. I have solved this to lower the number of accepted digits, which works fine for the products on this site.
+
+<details><summary><b>37000 EUR Checkout Bug</b></summary>
+
+![999.999.99 EUR Checkout Bug](readme/assets/images/bug_amount.png)
+</details><br />
+
+
+### Unfixed Bugs
+
+**2024-07**
+* Bug: There is a known issue when a user attempts to delete a review for the "Orange Prom Dress" (product_id=20). Specifically, an IntegrityError occurs during the deletion process. Interestingly, this issue only affects the "Orange Prom Dress" product—CRUD functionality for reviews works as expected with all other products. The root cause of this bug has not yet been identified, and resolving it will be a task for the future.
+
+# Deployment
+
+## Deployment To Heroku
+
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process described below:
+
+1. Create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
+
+<details><summary><b>Heroku Deployment - Step 1</b></summary>
+
+![Heroku Deployment Step 1](readme/assets/images/heroku_01.png)
+</details><br />
+
+2. Fill in the details as stated in the screenshot below and then click 'Create Repository From Template'.
+
+<details><summary><b>Heroku Deployment - Step 2</b></summary>
+
+![Heroku Deployment Step 2](readme/assets/images/heroku_02.png)
+</details><br />
+
+3. When the repository is created click 'Gitpod' as stated in the screenshot below.
+
+<details><summary><b>Heroku Deployment - Step 3</b></summary>
+
+![Heroku Deployment Step 3](readme/assets/images/heroku_03.png)
+</details><br />
+
+4. The next step is installing Django and the supporting libraries that are needed. To do this, type the commands below.
+
+* ```pip3 install 'django<4' gunicorn```
+* ```pip3 install 'dj_database_url psycopg2```
+* ```pip3 install 'dj3-cloudinary-storage```
+
+<details><summary><b>Heroku Deployment - Step 4</b></summary>
+
+![Heroku Deployment Step 4](readme/assets/images/heroku_04.png)
+</details><br />
+
+5. Whenyou have installed Django and the libraries it's time to create a requirements file.
+
+* ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
+
+<details><summary><b>Heroku Deployment - Step 5</b></summary>
+
+![Heroku Deployment Step 5](readme/assets/images/heroku_05.png)
+</details><br />
+
+6. To create the project, write the following command.
+
+* ```django-admin startproject YOUR_PROJECT_NAME .``` - This will create your project
+
+<details><summary><b>Heroku Deployment - Step 6</b></summary>
+
+![Heroku Deployment Step 6](readme/assets/images/heroku_06.png)
+</details><br />
+
+7. When the project is created it's time to create the application.
+
+* ```python3 manage.py startapp APP_NAME``` - This will create your application
+
+<details><summary><b>Heroku Deployment - Step 7</b></summary>
+
+![Heroku Deployment Step 7](readme/assets/images/heroku_07.png)
+</details><br />
+
+8. Add the application to settings.py and first migration
+
+<details><summary><b>Heroku Deployment - Step 8</b></summary>
+
+![Heroku Deployment Step 8](readme/assets/images/heroku_08.png)
+</details><br />
+
+Now it is time to do our first migration and run the server to test that everything works as expected. This is done by writing the commands below.
+
+* ```python3 manage.py migrate``` - This will migrate the changes
+* ```python3 manage.py runserver``` - This runs the server. To test it, click the open browser button that will be visible after the command is run.
+
+<details><summary><b>Heroku Deployment - Step 8.1</b></summary>
+
+![Heroku Deployment Step 8.1](readme/assets/images/heroku_08_1.png)
+</details><br />
+
+9. The next step is to create our application on Heroku, attach a database, prepare our environment and settings.py file and setup the Cloudinary storage for our static and media files.
+
+* Head on to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
+
+* In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
+
+<details><summary><b>Heroku Step 9</b></summary>
+
+![Heroku Step 9](readme/assets/images/heroku_09.png)
+</details><br />
+
+10. Now it's time to enter an application name that needs to be unique. When you have chosen the name, choose your region and click 'Create app".
+
+<details><summary><b>Heroku Step 10</b></summary>
+
+![Heroku Step 10](readme/assets/images/heroku_10.png)
+</details><br />
+
+11. To add a database to the app you need to go to the resources tab ->> add-ons, search for 'Heroku Postgres' and add it. **Update:** At the time of writing Heroku is not offering free plans which means that this project has been migrated to [ElephantSQL](https://www.elephantsql.com/). This deployment instruction will though be connected to Heroku and not ElephantSQL.
+
+<details><summary><b>Heroku Step 11</b></summary>
+
+![Heroku Step 11](readme/assets/images/heroku_11_1.png)
+![Heroku Step 11](readme/assets/images/heroku_11_2.png)
+</details><br />
+
+12. Go to the settings tab and click on the reveal Config Vars button. Copy the text from DATABASE_URL (because we are going to need it in the next step).
+
+<details><summary><b>Heroku Step 12</b></summary>
+
+![Heroku Step 12](readme/assets/images/heroku_12.png)
+</details><br />
+
+13. Go back to GitPod and create a new env.py in the top level directory. Then add these rows.
+
+* ```import os``` - This imports the os library
+* ```os.environ["DATABASE_URL_FROM HEROKU"]``` - This sets the environment variables.
+* ```os.environ["SECRET_KEY"]``` - Here you can choose whatever secret key you want.
+
+<details><summary><b>Heroku Step 13</b></summary>
+
+![Heroku Step 13](readme/assets/images/heroku_13.png)
+</details><br />
+
+14. Now we are going to head back to Heroku to add our secret key to config vars. See screenshot below.
+
+<details><summary><b>Heroku Step 14</b></summary>
+
+![Heroku Step 14](readme/assets/images/heroku_14.png)
+</details><br />
+
+15. Now we have some preparations to do connected to our environment and settings.py file. In the settings.py, add the following code:
+
+```import os```
+
+```import dj_database_url```
+
+```if os.path.isfile("env.py"):```
+
+```import env```
+
+<details><summary><b>Heroku Step 15</b></summary>
+
+![Heroku Step 15](readme/assets/images/heroku_15.png)
+</details><br />
+
+16. In the settings file, remove the insecure secret key and replace it with:
+```SECRET_KEY = os.environ.get('SECRET_KEY')```
+
+<details><summary><b>Heroku Step 16</b></summary>
+
+![Heroku Step 16](readme/assets/images/heroku_16.png)
+</details><br />
+
+17. Now we need to make some changes in the database settings the settings.py file (this is because we are going to use the postgres database instead of the sqlite3 database).
+
+<details><summary><b>Heroku Step 17</b></summary>
+
+![Heroku Step 17](readme/assets/images/heroku_17.png)
+</details><br />
+
+18. Save all your fields and migrate the changes.
+
+```python3 manage.py migrate```
+
+19. In this project there are quite a lot of config variables that needs to be setup (i.e. Amazon Web Services, Stripe, e-mail hosts). Some of these settings also needs to be added to the env.py file in Gitpod. The config variables in this projects are:
+
+* AWS_ACCESS_KEY_ID
+* AWS_SECRET_ACCESS_KEY
+* DATABASE_URL
+* EMAIL_HOST_PASS
+* EMAIL_HOST_USER
+* PORT
+* SECRET_KEY
+* STRIPE_PUBLIC_KEY
+* STRIPE_SECRET_KEY
+* STRIPE_WH_SECRET
+* USE_AWS
+
+<details><summary><b>Heroku Step 19</b></summary>
+
+![Heroku Step 19](readme/assets/images/heroku_19.png)
+</details><br />
+
+21. Some of these settings needs to be added to the env.py file in gitpod
+
+<details><summary><b>Heroku Step 21</b></summary>
+
+![Heroku Step 21](readme/assets/images/heroku_21.png)
+</details><br />
+
+22. It's very important to add the correct installed apps (that also can be found in the requirements file) in the settings file.
+
+<details><summary><b>Heroku Step 22</b></summary>
+
+![Heroku Step 22](readme/assets/images/heroku_22.png)
+</details><br />
+
+23. For Django to be able to understand how to use and where to store static files we need to add some extra rows to the settings.py file. We also add some rows connected to Amazon Web Services (which this project uses).
+
+<details><summary><b>Heroku Step 23</b></summary>
+
+![Heroku Step 23](readme/assets/images/heroku_23.png)
+</details><br />
+
+24. Now it's time to link the file to the Heroku templates directory and change the templates directory to TEMPLATES_DIR in the templates array. We also add a path to allauth which this project uses.
+
+<details><summary><b>Heroku Step 24</b></summary>
+
+![Heroku Step 24](readme/assets/images/heroku_24.png)
+</details><br />
+
+
+25. To be able to get the application to work through Heroku we also need to add our Heroku app and localhost to which hosts that are allowed. You might also need to add a CSRF_TRUSTED_ORIGINS line if you are going to run the project locally.
+
+<details><summary><b>Heroku Step 25</b></summary>
+
+![Heroku Step 25](readme/assets/images/heroku_25.png)
+</details><br />
+
+26. Now we just need to add some files to Gitpod.
+
+* Create 3 folders in the top level directory: **media**, **static**, **templates**
+* Create a file called **Procfile* and add the line ```web: gunicorn PROJ_NAME.wsgi?``` to it.
+
+27. Now you can save all the files and prepare for the first commit and push to Github by writing the lines below.
+
+* ```git add .```
+* ```git commit -m "Deployment Commit```
+* ```git push```
+
+28. Before moving on to the Heroku deployment we just need to add one more thing in the config vars. We need to add "PORT" in the KEY input field and "8000" in the VALUE field. If we don't add this there might be problems with the deployment.
+
+29. Now it's time for deployment. Scroll to the top of the settings page in Heroku and click the 'Deploy' tab. For deployment method, select 'Github'. Search for the repository name you want to deploy and then click connect.
+
+30. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
+
+<details><summary><b>Heroku Step 30</b></summary>
+
+![Heroku Step 30](readme/assets/images/heroku_30.png)
+</details><br />
+
+The live link to the 'Review | Alliance' site on Heroku an be found [here](https://project-portfolio-5.herokuapp.com/). And the Github repository can be found [here](https://github.com/worldofmarcus/project-portfolio-5).
+
+[Back to top](<#table-of-content>)
