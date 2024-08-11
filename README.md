@@ -1024,3 +1024,88 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 | &check; | The Product Cards have a Edit and Delete button when Admin is Logged in, where the Admin can udate and delete exisiting products
 | &check; | The 'My Account' link will have a Product Management link in the dropdown when Admin is logged in, which will render the add product form, to add new products to the Webstore.
 
+| Status | **Main Website - Admin Logged In - Product Management - Add Product**
+|:-------:|:--------|
+| &check; | The form validation is working and does not accept negative numbers on price field
+| &check; | When not adding an image to the product a default image is being used instead automatically
+| &check; | When clicking the Cancel button the standard product view is being loaded and all products are being listed
+| &check; | When clicking the Add Product button the standard product view is being loaded viewing the newly added product
+
+| Status | **Main Website - Admin Logged In - Product Management - Edit Product**
+|:-------:|:--------|
+| &check; | When clicking the Edit button within the Product card on the product pages or the product detail the Add Product Form will open and populate itself with the product details the Admin wishes to Edit. When doing this an Alert toast will be shown 'You are editing this product name'.
+| &check; | When clicking the Cancel button the Add Product page is being loaded
+| &check; | When clicking the Update button Product Detail page is being loaded viewing the newly updated product
+
+| Status | **Main Website - Admin Logged In - Product Management - Delete Product**
+|:-------:|:--------|
+| &check; | When clicking the Delete Product button a warning modal is being loaded to get a second confirmation for the deletion of the product, to prevent deleting products accidently.
+
+| Status | **Main Website - Admin Logged In - Shopping cart**
+|:-------:|:--------|
+| &check; | The correct products and information are showing in the shopping cart (including correct sizes when product has size)
+| &check; | When changing the quantity and click update the quantity updates
+| &check; | When clicking the remove link the product is being removed from the shopping cart
+| &check; | Clicking the Keep Shopping button on the product detail page lists all products
+| &check; | Clicking the Secure Checkout button on the product detail page loads the secure checkout page
+
+| Status | **Main Website - Admin Logged In - Checkout**
+|:-------:|:--------|
+| &check; | The correct products, information and delivery amount are showing in the order summary (including correct sizes when product has size)
+| &check; | It the user has updated the profile information the information is prefilled in the form.
+| &check; | If the bottom of the form an option to save the delivery inforation to the users profile is visible
+| &#10008; | The form validation is working except that the Full Name field accepts integers characters.
+| &check; | When clicking the Adjust cart Button the Shopping cart page loads
+| &check; | The payment with card number is working correctly (tested with Stripe test numbers)
+| &check; | The payment with card number that needs to be authenticated is working correctly (tested with Stripe test numbers). The authentication window is visible.
+
+| Status | **Main Website - Admin Logged In - Order Confirmation Page**
+|:-------:|:--------|
+| &check; | The correct products, information and delivery amount are showing in the order confirmation and an e-mail has been sent to the registered site user e-mail
+| &check; | Webhooks are working and is confirmed in Stripe developer dashboard
+| &check; | When clicking the Back To The Store button all products are being listed
+
+| Status | **Main Website - Admin Logged In - Footer**
+|:-------:|:--------|
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Clicking the Youtube link in the footer area opens Youtube in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+| &check; | Clicking the Facebook link in the footer area opens the Facebook business page in a new window
+
+[Back to top](<#table-of-content>)
+
+### Automated Testing
+No automated testing has been done during this project.
+
+### Responsiveness Test
+The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+
+| Desktop    | Display <1280px       | Display >1280px    |
+|------------|-----------------------|--------------------|
+| Render     | pass                  | pass               |
+| Images     | pass                  | pass               |
+| Links      | pass                  | pass               |
+
+| Tablet     | Samsung Galaxy Tab 10 | Amazon Kindle Fire | iPad Mini | iPad Pro |
+|------------|-----------------------|--------------------|-----------|----------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+
+| Phone      | Galaxy S5/S6/S7       | iPhone 6/7/8       | iPhone 12pro         |
+|------------|-----------------------|--------------------|----------------------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+
+[Back to top](<#table-of-content>)
+
+### Browser Compatibility
+* Google Chrome Version (107.0.5304.110)
+* Mozilla Firefox (version 107.0)
+* Min (version 1.26.0)
+* Apple Safari (version 16.0)
+* Microsoft Edge (version 107.0.1418.42)
+
+[Back to top](<#table-of-content>)
+
