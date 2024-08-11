@@ -1230,7 +1230,7 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 <details><summary><b>Heroku Deployment - Step 3</b></summary>
 
-![Heroku Deployment Step 3](readme/assets/images/heroku_03.png)
+![Heroku Deployment Step 3](readme/assets/images/heroku03.png)
 </details><br />
 
 4. The next step is installing Django and the supporting libraries that are needed. To do this, type the commands below.
@@ -1451,5 +1451,81 @@ Now it is time to do our first migration and run the server to test that everyth
 </details><br />
 
 The live link to the 'Review | Alliance' site on Heroku an be found [here](https://project-portfolio-5.herokuapp.com/). And the Github repository can be found [here](https://github.com/worldofmarcus/project-portfolio-5).
+
+[Back to top](<#table-of-content>)
+
+## How To Fork The Repository On GitHub
+
+To make an independent copy of a repository on Github you can fork the GitHub account. You can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
+
+1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+
+<details><summary><b>Github Fork</b></summary>
+
+![Fork](readme/assets/images/github_fork.png)
+</details><br />
+
+[Back to top](<#table-of-content>)
+
+## Cloning And Setting Up This Project
+
+To clone and set up this project you need to follow the steps below.
+
+1. When you are in the repository, find the code tab and click it.
+2. To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
+3. Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
+4. Type 'git clone', and then paste the URL that you copied from GitHub. Press enter and a local clone will be created.
+
+<details><summary><b>Github Create Local Clone</b></summary>
+
+![Clone](readme/assets/images/git_clone_pp5.png)
+</details><br />
+
+5. You need to install all the requirements to get the project to work. This can be done by using the command below:
+
+* ```pip3 install -r requirements.txt``` - This command downloads and installs all required dependencies that is stated in the requirements file.
+
+6. The next step is to set up the environment file so that the project knows what variables it needs to work. Environment variables are usually hidden due to sensitive information. It's **very** important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars. Don't forget to do necessary migrations before trying to run the server.
+
+* ```python3 manage.py migrate``` - This will do the necessary migrations.
+* ```python3 manage.py runserver``` - If everything i setup correctly the project is now live locally.
+
+<details><summary><b>Setup env.py</b></summary>
+
+![Clone](readme/assets/images/set_up_env.png)
+</details><br />
+
+[Back to top](<#table-of-content>)
+
+# Credits
+
+## Content
+
+* All text content written by Denes Kalnoky.
+
+* Product images and text taken from: 
+  - [DuckDuckGo Images](https://duckduckgo.com/?t=ffab&q=duckduckgo+images&iax=images&ia=images).
+  - [Amazon Images](https://www.amazon.es/).
+  - [Ebay Images](https://www.ebay.com/).
+  - [Etsy Images](https://www.etsy.com).
+
+* The **product pages**,**Navbar**, **Checkout**, **Cart**, **Product Management** was inspired by the walkthrew project from [Codeinstitute](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/250e2c2b8e43cccb56b4721cd8a8bd4de6686546).
+
+* The Star Rating and Review section was inspiered by [Desphinx](https://www.youtube.com/watch?v=TIDldj2BDuY).
+
+* Default Placeholder image 'No Image' taken from: [Codeinstitute Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/250e2c2b8e43cccb56b4721cd8a8bd4de6686546)
+
+* Template for read.me provided by Code Institute [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/)*.
+
+## Technical
+
+* Some parts of this project are heavily inspired by the 'Building an E-commerce Platform - Project - Boutique Ado' provided by the [Code Institute](https://www.codeinstitute.net) (i.e. webhook_handler, signals and some of the checkout views). I have though incorporated my own design, code and added extra functionality to make this project as original as possible (and to present my knowledge within the scope of the project).
+
+# Acknowledgements
+This fictional site was created for Portfolio Project #5 (E-Commerce Applications Portfolio Project) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for relevant feedback during the project and my fantastic wife for supporting me through all the projects.
+
+This is my last project here at Code Institute and I would like to thank you guys for a really exciting and rewarding education.
+
+*Denes Kalnoky, 20224-08-11*
 
 [Back to top](<#table-of-content>)
