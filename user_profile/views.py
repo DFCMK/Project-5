@@ -112,6 +112,9 @@ def wishlist(request):
 
 @login_required
 def remove_from_wishlist(request, id):
+    '''
+    Update wishlist count and handel removing products from wishlist
+    '''
     product = get_object_or_404(Product, id=id)
     wishlist_entry = Wishlist.objects.filter(
         user=request.user, product=product).first()
@@ -128,6 +131,9 @@ def remove_from_wishlist(request, id):
 
 @login_required
 def add_address(request):
+    '''
+    Handel adding Addresses to user profile and Adress Management
+    '''
     user_profile = request.user.userprofile
     default_address = Address.objects.filter(
         user=request.user, set_as_default=True).first()
@@ -184,6 +190,9 @@ def add_address(request):
 
 @login_required
 def set_default_address(request, address_id):
+    '''
+    Responsible for default Delivery Address
+    '''
     address = get_object_or_404(
         Address, id=address_id, user=request.user)
 
@@ -211,6 +220,9 @@ def set_default_address(request, address_id):
 
 @login_required
 def edit_address(request, address_id):
+    '''
+    Manage editing Addresses
+    '''
     address = get_object_or_404(Address, id=address_id, user=request.user)
 
     if request.method == 'POST':
@@ -231,6 +243,9 @@ def edit_address(request, address_id):
 
 @login_required
 def delete_address(request, address_id):
+    '''
+    Manage deleting Addresses
+    '''
     address = get_object_or_404(Address, id=address_id, user=request.user)
 
     if request.method == 'POST':
