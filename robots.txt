@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /profile/
+Sitemap: https://project-5-39f95920fba3.herokuapp.com/
