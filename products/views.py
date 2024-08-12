@@ -146,10 +146,6 @@ def add_product(request):
     else:
         form = ProductForm()
 
-    if request.user.is_authenticated:
-        wishlist_count = request.user.wishlist_entries.count()
-    else:
-        wishlist_count = 0
 
     template = 'products/add_product.html'
     context = {
@@ -185,11 +181,6 @@ def edit_product(request, product_id):
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}.')
-
-    if request.user.is_authenticated:
-        wishlist_count = request.user.wishlist_entries.count()
-    else:
-        wishlist_count = 0
 
     template = 'products/edit_product.html'
     context = {
