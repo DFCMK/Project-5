@@ -487,13 +487,10 @@ If the user has forgotten the password they can ask for a password reset through
 <details><summary><b>Password Reset</b></summary>
 
 ![Password Reset](readme/assets/images/allauth_password_reset.png)
-<!--</details><br/>-->
 
 ![Password Reset Email](readme/assets/images/allauth_password_reset_email.png)
-<!--</details><br/>-->
 
 ![Password Reset Email Send](readme/assets/images/allauth_password_reset_email_confirmation.png)
-<!--</details><br/>-->
 
 ![Password Reset Success](readme/assets/images/allauth_password_reset_success.png)
 </details><br/>
@@ -1175,29 +1172,12 @@ There is a known issue when a user attempts to delete a review for the "Orange P
 
 <details><summary><b>HTML Validator Error</b></summary>
 
-**HTML Validator Error Home**
-
-![HTML Validator Error Home](readme/assets/images/html_validator_bug_home.png)
-
-**HTML Validator Error Wishlist**
-![HTML Validator Error Wishlist](readme/assets/images/html_validator_bug_wishlist.png)
-
-**HTML Validator Error Remove Wishlist**
-![HTML Validator Error Remove Wishlist](readme/assets/images/html_validator_bug_remove_wishlist.png)
-
-**HTML Validator Error Footer**
-![HTML Validator Error Footer](readme/assets/images/html_validator_bug_footer.png)
-
-**HTML Validator Error Profile**
-![HTML Validator Error Footer](readme/assets/images/html_validator_bug_profile_page.png)
-</details><br />
-
 **2024-07**
 * Bug: When i tried to purchase the handmade luxury Bathtube for 37000.00 EUR the site crasches during checkout (throws a 500 error / InvalidRequestError). This bug was fixed by changing the number of accepted digits in the products model. **Update** The problem did show up again during the handshake with Stripe. I have solved this to lower the number of accepted digits, which works fine for the products on this site.
 
 <details><summary><b>37000 EUR Checkout Bug</b></summary>
 
-![999.999.99 EUR Checkout Bug](readme/assets/images/bug_amount.png)
+![37000 EUR Checkout Bug](readme/assets/images/bug_amount.png)
 </details><br />
 
 
@@ -1205,6 +1185,9 @@ There is a known issue when a user attempts to delete a review for the "Orange P
 
 **2024-07**
 * Bug: There is a known issue when a user attempts to delete a review for the "Orange Prom Dress" (product_id=20). Specifically, an IntegrityError occurs during the deletion process. Interestingly, this issue only affects the "Orange Prom Dress" product—CRUD functionality for reviews works as expected with all other products. The root cause of this bug has not yet been identified, and resolving it will be a task for the future.
+
+**2024-07**
+* Bug: Users are currently able to rate the same product multiple times, with the new rating overriding the previous one. Unfortunately, I was unable to resolve this issue before submitting the project.
 
 # Deployment
 
