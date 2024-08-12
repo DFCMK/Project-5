@@ -129,11 +129,6 @@ def add_product(request):
     Add a product to the store
     """
 
-    if request.user.is_authenticated:
-        wishlist_count = request.user.wishlist_entries.count()
-    else:
-        wishlist_count = 0
-        
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that!')
         return redirect(reverse('home'))
@@ -150,6 +145,11 @@ def add_product(request):
                 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
+
+    if request.user.is_authenticated:
+        wishlist_count = request.user.wishlist_entries.count()
+    else:
+        wishlist_count = 0
 
     template = 'products/add_product.html'
     context = {
@@ -185,6 +185,11 @@ def edit_product(request, product_id):
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}.')
+
+    if request.user.is_authenticated:
+        wishlist_count = request.user.wishlist_entries.count()
+    else:
+        wishlist_count = 0
 
     template = 'products/edit_product.html'
     context = {
