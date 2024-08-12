@@ -7,8 +7,6 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #141516;
-    /*font-family: "Poppins", sans-serif;*/
-    /*font-family: "Merriweather", serif;*/
     font-family: "Open Sans", sans-serif;
 }
 
@@ -442,26 +440,6 @@ input[name='q']::placeholder {
     position: fixed;
     bottom: 0;
 }
-
-
-/*footer {
-    display: flex;
-    flex-direction: column;
-    position: static;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    background-color: #003366;
-    padding: 1rem;
-    margin-top: 15rem;
-}
-
-.fixed-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}*/
 
 .card-body {
     max-height: 250px;
