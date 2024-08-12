@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             processData: false,
             beforeSend: function(xhr, settings) {
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken')); // Set CSRF token if using Django
+                xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
             },
             success: function(response) {
                 if (response.reviews_html) {
