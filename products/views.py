@@ -304,6 +304,9 @@ def edit_review(request, product_id, review_id):
 
 
 def delete_review(request, product_id, review_id):
+    '''
+    Manage deleting reviews
+    '''
     if request.method == 'POST':
         try:
             review = get_object_or_404(
