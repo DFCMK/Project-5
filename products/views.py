@@ -128,6 +128,12 @@ def add_product(request):
     """
     Add a product to the store
     """
+
+    if request.user.is_authenticated:
+        wishlist_count = request.user.wishlist_entries.count()
+    else:
+        wishlist_count = 0
+        
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that!')
         return redirect(reverse('home'))
