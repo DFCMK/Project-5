@@ -146,6 +146,12 @@ def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
+
+    if request.user.is_authenticated:
+        wishlist_count = request.user.wishlist_entries.count()
+    else:
+        wishlist_count = 0
+    
     # save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
