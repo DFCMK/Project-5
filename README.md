@@ -1170,7 +1170,7 @@ There is a known issue when a user attempts to delete a review for the "Orange P
 ![Negative Price Fix Price Field in Product Model](readme/assets/images/altered_price_field.png)
 </details><br />
 
-<details><summary><b>HTML Validator Error</b></summary>
+### HTML Validator Error
 
 **2024-07**
 * Bug: When i tried to purchase the handmade luxury Bathtube for 37000.00 EUR the site crasches during checkout (throws a 500 error / InvalidRequestError). This bug was fixed by changing the number of accepted digits in the products model. **Update** The problem did show up again during the handshake with Stripe. I have solved this to lower the number of accepted digits, which works fine for the products on this site.
