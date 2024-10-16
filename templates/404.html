@@ -11,8 +11,8 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container h-100">
-        <div class="row h-100">
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-7 col-md-6 my-auto">
                 <h1 class="display-4 logo-font text-black">
                     <b>The page you are looking for isn't available</b>
@@ -30,5 +30,6 @@
     </div>
 {% endblock %}
 
-{% block footer %}
+{% block footer_class %}
+    fixed-footer
 {% endblock %}
