@@ -1162,7 +1162,7 @@ From a general point of view these are quite good results. On all pages the perf
 
 <details><summary><b>WAVE Result</b></summary>
 
-![WAVE Result](readme/assets/images/wave_result.png)
+![WAVE Result](readme/assets/images/wave_results.png)
 </details><br/>
 
 ## Known bugs
