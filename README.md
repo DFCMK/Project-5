@@ -403,6 +403,10 @@ In the example provided, products are sorted alphabetically (A-Z). Clicking on a
 ![Product Detail - Size](readme/assets/images/product_size.png)
 </details><br/>
 
+**Rating Form**
+The user can rate each product on the corresponding product detail page with 1 to 5 stars. I encountered an issue when trying to highlight the stars from left to right, which would be more intuitive for the user and provide a better UX. However, I was only able to get them to highlight from right to left.
+
+
 <details><summary><b>Product Detail - Rating Form</b></summary>
 
 ![Product Detail - Rating Form](readme/assets/images/rating_form.png)
