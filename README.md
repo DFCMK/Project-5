@@ -264,9 +264,9 @@ The navigation menu includes links to main sections of the site, including Home,
 
 ![Navigation](readme/assets/images/nav-bar-large.png)
 
-![Navigation - All Products](readme/assets/images/all_products_dropdown.png)
+![Navigation - All Products](readme/assets/images/all-products-dropdown.png)
 
-![Navigation - Clothes](readme/assets/images/clothing_dropdown.png)
+![Navigation - Clothes](readme/assets/images/clothing-dropdown.png)
 
 ![Navigation - Home & Living](readme/assets/images/home-living-dropdown.png)
 
