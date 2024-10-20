@@ -141,11 +141,6 @@ Models used (besides standard user model) in this project are:
 * **UserProfile** -  Manages delivery information and order history, with functionality for profile creation or updates.
 * **Address** - Manages saved addresses and default delivery address, allowing up to five addresses with one set as default.
 
-<details><summary><b>Database Schema</b></summary>
-
-![Database Schema](readme/assets/images/database_schema.png)
-</details><br/>
-
 # **User Experience (UX)**
 
 ## User Stories
@@ -508,15 +503,20 @@ When the user clicks sign out in the menu bar a confirmation page is being showe
 ### **Footer**
 The Footer displays the name of the webstore's creator, followed by the text <i>"Follow us on:"</i> and links to social media platforms such as Facebook, YouTube, Instagram, and Twitter. The Facebook link directs users to the specific Facebook business page created for this project, while the other links lead to the general homepages of the respective social media networks.
 
-### Newsletter:
+<details><summary><b>Footer</b></summary>
+
+![Footer](readme/assets/images/footer.png)
+</details><br/>
+
+### **Newsletter**:
 I decided to position the Mailchimp newsletter signup form at the bottom of the page, where the footer used to be. In this position, the popup covers the footer if the user doesn’t close it. Including the form directly in the footer increased its height, negatively impacting the overall design and making it less visually appealing.
 While this is not the ideal solution for newsletter implementation, as it compromises the visibility of the footer, the newsletter popup only appears once per day. Therefore, the footer will still be visible to users once they subscribe or close the popup.
 I tested embedded forms, a dedicated signup page, and a popup. The popup appearing at the bottom of the site was the most visually appealing option and seemed like the best compromise for this project.
 
 
-<details><summary><b>Footer</b></summary>
+<details><summary><b>Newsletter</b></summary>
 
-![Footer](readme/assets/images/footer.png)
+![Footer](readme/assets/images/newsletter.png)
 </details><br/>
 
 ### **Visual Feedback To The User**
@@ -537,7 +537,6 @@ The sites incorporates flash messages when an action has been performed (i.e. de
 
 * **Searchbar in Product Management** - Implement a search bar on the Product Management page that allows admins to search for specific products. Below the search bar, display a container listing all products where admins can search, edit, delete products, and manage user reviews. where the admin can search, edit, delete products and also user reviews.
 * **Promotion Codes** - Introduce a feature that allows logged-in users to apply a promotion code during checkout, enabling them to receive discounts or special offers.
-* **Newsletter Signup:** - Add a functionality that allows users to sign up for a newsletter, keeping them informed about new products, promotions, and updates.
 * **Admin Dashboard** - Develop an admin area that provides general information such as the number of logged-in users, total number of products, recent activity, and other key metrics.
 * **Enhanced Email Functionality** - Expand email capabilities by sending out notifications when an order has been processed or handled, in addition to the existing order confirmation emails.
 
