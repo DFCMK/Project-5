@@ -1141,14 +1141,14 @@ From a general point of view these are quite good results. On all pages the perf
 <details><summary><b>Lighthouse View All Products Page Result Desktop & Mobile</b></summary>
 
 
-![Lighthouse View All Products Page Desktop Result](readme/assets/images/lightouse_all_products_desktop.png)
-![Lighthouse View All Products Page Mobile Result](readme/assets/images/lightouse_all_products_mobile.png)
+![Lighthouse View All Products Page Desktop Result](readme/assets/images/lighthouse_all_products_desktop.png)
+![Lighthouse View All Products Page Mobile Result](readme/assets/images/lighthouse_all_products_mobile.png)
 </details><br/>
 
 <details><summary><b>Lighthouse Product Detail Desktop & Mobile Result</b></summary>
 
 ![Lighthouse Product Detail Desktop Result](readme/assets/images/product_detail_lighthouse_desktop.png)
-![Lighthouse Product Detail Mobile Result](readme/assets/images/lightouse_Product_detail_mobile.png)
+![Lighthouse Product Detail Mobile Result](readme/assets/images/lighthouse_Product_detail_mobile.png)
 </details><br/>
 
 <details><summary><b>Lighthouse Cart Page Desktop Result</b></summary>
