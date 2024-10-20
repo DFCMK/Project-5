@@ -191,6 +191,7 @@ Below the user stories for the project are listed to clarify why particular feat
 | As a Customer | I want to receive an email confirmation when my order changes so that I get relevant information about my order | &#9746; |
 | As a Customer | I want to use a promotion code so that I can get a better deal | &#9746; |
 | As a Customer | I want to add products to a wishlist so that I can view and purchase them later, with a visual element indicating how many items are in my wishlist | &#9745; |
+| As a Customer | I want to subscribe to a newsletter so that I don't miss out on great deals, promotions, projects, and other updates. | &#9745; |
 
 ### Site Admin
 
@@ -506,6 +507,12 @@ When the user clicks sign out in the menu bar a confirmation page is being showe
 
 ### **Footer**
 The Footer displays the name of the webstore's creator, followed by the text <i>"Follow us on:"</i> and links to social media platforms such as Facebook, YouTube, Instagram, and Twitter. The Facebook link directs users to the specific Facebook business page created for this project, while the other links lead to the general homepages of the respective social media networks.
+
+### Newsletter:
+I decided to position the Mailchimp newsletter signup form at the bottom of the page, where the footer used to be. In this position, the popup covers the footer if the user doesn’t close it. Including the form directly in the footer increased its height, negatively impacting the overall design and making it less visually appealing.
+While this is not the ideal solution for newsletter implementation, as it compromises the visibility of the footer, the newsletter popup only appears once per day. Therefore, the footer will still be visible to users once they subscribe or close the popup.
+I tested embedded forms, a dedicated signup page, and a popup. The popup appearing at the bottom of the site was the most visually appealing option and seemed like the best compromise for this project.
+
 
 <details><summary><b>Footer</b></summary>
 
