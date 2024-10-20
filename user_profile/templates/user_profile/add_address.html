@@ -19,7 +19,8 @@
     <form method="post" action="{% url 'add_address' %}">
         {% csrf_token %}
         {{ address_form|crispy }}
-        <button type="'submit" class="btn btn-success">Add Address</button>
+        <button type="submit" class="btn btn-success">Add Address</button>
+        <a href="{% url 'profile' %}" class="btn btn-danger">Cancel</a>
     </form>
 </div>
 {% endblock %}
