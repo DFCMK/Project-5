@@ -272,7 +272,7 @@ The navigation menu includes links to main sections of the site, including Home,
 
 ![Navigation - Art & Collectibles](readme/assets/images/art-collectibles-dropdown.png)
 
-![Navigation - My Account](readme/assets/account-icon.png)
+![Navigation - My Account](readme/assets/images/account-icon.png)
 
 ![Navigation - Search](readme/assets/images/searchbar.png)
 
