@@ -717,11 +717,13 @@ The libraries used in this project are located in the requirements.txt file and 
 The code on the HandCraft site has been tested through W3C Markup Validation Service, W3C CSS Validation Service, CI Python Linter and JSHint.
 
 ### Markup Validation
- Errors were at first found on the site in the W3C Markup Validation Service but could quite easily be fixed (see bugs section). After fixing the inital errors that W3C Markup Validation Service reported, no errors were returned except 1 connected to a form on the profile page (more information about that in the bugs section).
+Several errors and warnings were found during validation using the W3C HTML Validator. One of the more confusing issues involved list elements (<li>) not being allowed within navigation tags (<nav>), which persisted even after attempts to correct them. Upon further review, the issue did not seem to be caused by incorrect usage of list elements within navigation, as they were properly wrapped in unordered lists (<ul>).
+
+Refer to the attached screenshot for a closer view of the specific errors and warnings.
 
 <details><summary><b>HTML Validation Result</b></summary>
 
-![HTML Result Home Page](readme/assets/images/html_validation_no_error.png)
+![HTML Result Home Page](readme/assets/images/html-validator-results.png)
 </details><br/>
 
 [Back to top](<#table-of-content>)
