@@ -375,7 +375,7 @@ When a superuser / administrator is logged in the **My Account** gets more avila
 ### **Landing Page**
 The home page features a background image of a person drawing and various crafting tools on a table. It includes a centered introductory text reading "Prepare to be enchanted," a "Shop Now" button, and a footer with social media links, two images, and the latest blog posts.
 
-<details><summary><b>Carousel Area</b></summary>
+<details><summary><b>Landing Page</b></summary>
 
 ![HandCraft Landingpage](readme/assets/images/landingpage.png)
 
