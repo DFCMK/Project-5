@@ -470,7 +470,7 @@ If the site visitor has no registered user at Kollektiv Fem they can sign up.
 
 <details><summary><b>Register</b></summary>
 
-![Sign Up](readme/assets/images/allauth_sign_up.png)
+![Sign Up](readme/assets/images/allauth_register_form.png)
 </details><br/>
 
 ### **Register**
