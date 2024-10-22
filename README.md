@@ -518,10 +518,16 @@ While this is not the ideal solution for newsletter implementation, as it compro
 I tested embedded forms, a dedicated signup page, and a popup. The popup appearing at the bottom of the site was the most visually appealing option and seemed like the best compromise for this project.
 
 
+<details><summary><b>Newsletter Sign Up Form</b></summary>
+
+![Footer](readme/assets/images/newsletter_subscribe.png)
+</details><br/>
+
 <details><summary><b>Newsletter</b></summary>
 
 ![Footer](readme/assets/images/newsletter.png)
 </details><br/>
+
 
 ### **Visual Feedback To The User**
 The sites incorporates flash messages when an action has been performed (i.e. delete/update/add to cart-actions). Examples of this in the screenshots below.
