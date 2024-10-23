@@ -587,6 +587,7 @@ The sites incorporates flash messages when an action has been performed (i.e. de
 * [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
 * [CI Python Linter](https://pep8ci.herokuapp.com/) - Used to lint the Python code in the project
 * [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
+* [Mailchimp](https://mailchimp.com/) - Used for the newsletter functionality on the site.
 
 ## Libraries
 
