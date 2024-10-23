@@ -588,6 +588,7 @@ The sites incorporates flash messages when an action has been performed (i.e. de
 * [CI Python Linter](https://pep8ci.herokuapp.com/) - Used to lint the Python code in the project
 * [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 * [Mailchimp](https://mailchimp.com/) - Used for the newsletter functionality on the site.
+* [Favicon](https://favicon.io/) - Used to create the favicon.
 
 ## Libraries
 
@@ -807,14 +808,10 @@ CI Python Linter [Flake8](https://pypi.org/project/flake8/) was used to validate
 * urls.py - No errors reported
 * views.py - No errors reported
 
-**App Profiles**
+**App User Profile**
 * apps.py - No errors reported
 * forms.py - No errors reported
 * models.py - No errors reported
-* urls.py - No errors reported
-* views.py - No errors reported
-
-**kollektiv_fem**
 * urls.py - No errors reported
 * views.py - No errors reported
 
@@ -1216,6 +1213,10 @@ There is a known issue when a user attempts to delete a review for the "Orange P
 
 **2024-07**
 * Bug: Users are currently able to rate the same product multiple times, with the new rating overriding the previous one. Unfortunately, I was unable to resolve this issue before submitting the project.
+
+**2024-07**
+* Bug: <b>Element li not allowed as child of element nav in this context.<b> I couldnt figure out why this error keep persisting after correcting it.
+refer to [Code Validation](<#code-validation>) for more details.
 
 # Deployment
 
