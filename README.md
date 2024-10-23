@@ -1529,6 +1529,8 @@ To clone and set up this project you need to follow the steps below.
 
 * Template for read.me provided by Code Institute [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/)*.
 
+* Mailchimp was used for the Newsletter sign up Pop Up form [Mailchimp](https://mailchimp.com/pt-br/?currency=EUR)
+
 ## Technical
 
 * Some parts of this project are heavily inspired by the 'Building an E-commerce Platform - Project - Boutique Ado' provided by the [Code Institute](https://www.codeinstitute.net) (i.e. webhook_handler, signals and some of the checkout views). I have though incorporated my own design, code and added extra functionality to make this project as original as possible (and to present my knowledge within the scope of the project).
