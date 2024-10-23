@@ -186,7 +186,7 @@ Below the user stories for the project are listed to clarify why particular feat
 | As a Customer | I want to receive an email confirmation when my order changes so that I get relevant information about my order | &#9746; |
 | As a Customer | I want to use a promotion code so that I can get a better deal | &#9746; |
 | As a Customer | I want to add products to a wishlist so that I can view and purchase them later, with a visual element indicating how many items are in my wishlist | &#9745; |
-| As a Customer | I want to subscribe to a newsletter so that I don't miss out on great deals, promotions, projects, and other updates. | &#9745; |
+| As a Customer | I want to easily sign up for the newsletter so that I can stay informed about the latest updates, promotions, and news without missing out. | &#9745; |
 
 ### Site Admin
 
@@ -523,6 +523,12 @@ I tested embedded forms, a dedicated signup page, and a popup. The popup appeari
 ![Footer](readme/assets/images/newsletter_subscribe.png)
 </details><br/>
 
+<details><summary><b>Newsletter Success Message</b></summary>
+
+![Footer](readme/assets/images/newsletter_success.png)
+</details><br/>
+
+
 <details><summary><b>Newsletter</b></summary>
 
 ![Footer](readme/assets/images/newsletter.png)
@@ -641,6 +647,9 @@ The libraries used in this project are located in the requirements.txt file and 
 
 * As a Site User I want to receive visual feedback when interacting with content so that I can be confident in how I have interacted with the page.
     * When the site user performs actions on the sites flash messages shows (i.e. delete/update/add to cart/ actions).
+
+* As a Customer, I want to easily sign up for the newsletter so that I can stay informed about the latest updates, promotions, and news without missing out.
+    * When the site user enter his email address within the newsletter sign up Pop Up form on the bottom of the page and click on the Subscribe button he gets a success message and a Newsletter per E-Mail.
 
 ### Registration And User Accounts
 
