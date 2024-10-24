@@ -513,9 +513,11 @@ The Footer displays the name of the webstore's creator, followed by the text <i>
 </details><br/>
 
 ### **Newsletter**:
-I decided to position the Mailchimp newsletter signup form at the bottom of the page, where the footer used to be. In this position, the popup covers the footer if the user doesn’t close it. Including the form directly in the footer increased its height, negatively impacting the overall design and making it less visually appealing.
-While this is not the ideal solution for newsletter implementation, as it compromises the visibility of the footer, the newsletter popup only appears once per day. Therefore, the footer will still be visible to users once they subscribe or close the popup.
-I tested embedded forms, a dedicated signup page, and a popup. The popup appearing at the bottom of the site was the most visually appealing option and seemed like the best compromise for this project.
+I chose to position the Mailchimp newsletter signup form at the bottom of the page, where the footer used to be. In this location, the popup overlaps the footer if the user doesn’t close it. Embedding the form directly in the footer increased its height, negatively impacting the overall design and reducing its visual appeal.
+While this solution isn't ideal for newsletter implementation—since it compromises the visibility of the footer—the newsletter popup only appears once per day. This ensures that the footer will still be visible to users once they subscribe or close the popup.
+I tested various options, including embedded forms, a dedicated signup page, and a popup. The popup at the bottom of the site proved to be the most visually appealing and offered the best compromise for this project.
+<br>
+Once a user subscribes to the newsletter, it will be sent automatically to the provided email address. Please note that this process is not immediate, and it may take a short while for Mailchimp to process the data and send the email to the customer.
 
 
 <details><summary><b>Newsletter Sign Up Form</b></summary>
