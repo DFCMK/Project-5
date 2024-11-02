@@ -1222,6 +1222,20 @@ There is a known issue when a user attempts to delete a review for the "Orange P
 * Bug: <b>Element li not allowed as child of element nav in this context.<b> I couldnt figure out why this error keep persisting after correcting it.
 refer to [Code Validation](<#code-validation>) for more details.
 
+**2024-11-02**
+* Bug: The Favicon only appear on the local server, but not on the deployed page on Heroku, i couldn't figure out the reason for this yet.
+
+<details><summary><b>Local Favicon</b></summary>
+
+![Local Favicon Bug](readme/assets/images/local-favicon-bug.png)
+</details><br />
+
+<details><summary><b>Missing Favicon on Deployed Site</b></summary>
+
+![Local Favicon Bug](readme/assets/images/missing-favicon.png)
+</details><br />
+
+
 # Deployment
 
 ## Deployment To Heroku
