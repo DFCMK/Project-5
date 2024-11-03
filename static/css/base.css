@@ -520,6 +520,10 @@ input[name='q']::placeholder {
         position: relative;
         bottom: 0;
     }
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
 }
 
 @media only screen and (width: 760px) and (height: 360px) {
@@ -552,6 +556,114 @@ input[name='q']::placeholder {
 
   @media only screen and (width: 1280px) and (height: 800px) {
     .fixed-footer-allauth {
+        position: relative;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 1280px) and (height: 720px) {
+    .fixed-footer-allauth {
+        position: relative;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 600px) and (height: 1024px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 712px) and (height: 1138px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 600px) and (height: 960px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 480px) and (height: 854px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 414px) and (height: 896px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 430px) and (height: 932px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 915px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 768px) and (height: 1024px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 1024px) and (height: 1366px) {
+    .allauth-form-inner-content {
+        margin-top: 5rem;
+    }
+  }
+
+  @media only screen and (width: 912px) and (height: 1368px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 344px) and (height: 882px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 853px) and (height: 1280px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 914px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 1024px) and (height: 600px) {
+    .fixed-footer {
         position: relative;
         bottom: 0;
     }
