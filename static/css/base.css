@@ -559,10 +559,21 @@ input[name='q']::placeholder {
         position: relative;
         bottom: 0;
     }
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
   }
 
   @media only screen and (width: 1280px) and (height: 720px) {
     .fixed-footer-allauth {
+        position: relative;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 1280px) and (height: 950px) {
+    .fixed-footer {
         position: relative;
         bottom: 0;
     }
@@ -663,6 +674,13 @@ input[name='q']::placeholder {
   }
 
   @media only screen and (width: 1024px) and (height: 600px) {
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 1440px) and (height: 900px) {
     .fixed-footer {
         position: relative;
         bottom: 0;
