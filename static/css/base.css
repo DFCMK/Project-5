@@ -424,7 +424,7 @@ input[name='q']::placeholder {
     color: #ffcc00;
 }
 
-.footer, .fixed-footer, .fixed-footer-allauth {
+.footer, .fixed-footer, .fixed-footer-allauth, .fixed-footer-cart {
     width: 100%;
     background-color: #003366;
     padding: 1rem;
@@ -433,7 +433,7 @@ input[name='q']::placeholder {
 
 .footer {
     position: relative;
-    margin-top: 20rem;
+    bottom: 0;
 }
 
 .fixed-footer {
@@ -442,6 +442,11 @@ input[name='q']::placeholder {
 }
 
 .fixed-footer-allauth {
+    position: fixed;
+    bottom: 0;
+}
+
+.fixed-footer-cart {
     position: fixed;
     bottom: 0;
 }
@@ -524,17 +529,281 @@ input[name='q']::placeholder {
         position: relative;
         bottom: 0;
     }
+    .fixed-footer-cart {
+        position: relative;
+        bottom: 0;
+    }
 }
 
-@media only screen and (width: 760px) and (height: 360px) {
+  @media only screen and (width: 344px) and (height: 882px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 26.5rem;
+    }
+  }
+
+  @media only screen and (width: 353px) and (height: 745px) {
+    .fixed-footer-cart {
+        margin-top: 18rem;
+    }
+  }
+
+  @media only screen and (width: 360px) and (height: 740px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 17.6rem;
+    }
+  }
+
+  @media only screen and (width: 360px) and (height: 760px) {
+    .fixed-footer-cart {
+        margin-top: 19rem;
+    }
+  }
+
+  @media only screen and (width: 360px) and (height: 800px) {
+    .fixed-footer-cart {
+        margin-top: 21.5rem;
+    }
+  }
+
+  @media only screen and (width: 375px) and (height: 812px) {
+    .fixed-footer-cart {
+        margin-top: 22.1rem;
+    }
+  }
+
+  @media only screen and (width: 384px) and (height: 854px) {
+    .fixed-footer-cart {
+        margin-top: 25rem;
+    }
+  }
+
+  @media only screen and (width: 390px) and (height: 844px) {
+    .fixed-footer-cart {
+        margin-top: 24.2rem;
+    }
+  }
+
+  @media only screen and (width: 393px) and (height: 786px) {
+    .fixed-footer-cart {
+        margin-top: 20.5rem;
+    }
+  }
+
+  @media only screen and (width: 393px) and (height: 851px) {
+    .fixed-footer-cart {
+        margin-top: 24.6rem;
+    }
+  }
+
+  @media only screen and (width: 411px) and (height: 731px) {
+    .fixed-footer-cart {
+        margin-top: 17.1rem;
+    }
+  }
+
+  @media only screen and (width: 411px) and (height: 823px) {
+    .fixed-footer-cart {
+        margin-top: 22.8rem;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 915px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 28.6rem;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 823px) {
+    .fixed-footer-cart {
+        margin-top: 22.8rem;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 732px) {
+    .fixed-footer-cart {
+        margin-top: 17.2rem;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 914px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 28.5rem;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 892px) {
+    .fixed-footer-cart {
+        margin-top: 27.1rem;
+    }
+  }
+
+  @media only screen and (width: 412px) and (height: 883px) {
+    .fixed-footer-cart {
+        margin-top: 26.6rem;
+    }
+  }
+
+  @media only screen and (width: 414px) and (height: 896px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 27.5rem;
+    }
+  }
+
+  @media only screen and (width: 414px) and (height: 736px) {
+    .fixed-footer-cart {
+        margin-top: 17.4rem;
+    }
+  }
+
+  @media only screen and (width: 414px) and (height: 846px) {
+    .fixed-footer-cart {
+        margin-top: 24.4rem;
+    }
+  }
+
+  @media only screen and (width: 428px) and (height: 926px) {
+    .fixed-footer-cart {
+        margin-top: 29.2rem;
+    }
+  }
+
+  @media only screen and (width: 430px) and (height: 932px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 29.6rem;
+    }
+  }
+
+  @media only screen and (width: 480px) and (height: 854px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 25rem;
+    }
+  }
+
+  @media only screen and (width: 540px) and (height: 720px) {
+    .fixed-footer-cart {
+        margin-top: 16.5rem;
+    }
+  }
+
+  @media only screen and (width: 600px) and (height: 960px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 31.5rem;
+    }
+  }
+
+  @media only screen and (width: 600px) and (height: 1024px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 36rem;
+    }
+  }
+
+  @media only screen and (width: 712px) and (height: 1138px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 42.5rem;
+    }
+  }
+
+  @media only screen and (width: 760px) and (height: 360px) {
     .fixed-footer-allauth {
         position: relative;
         bottom: 0;
     }
   }
 
+
+  @media only screen and (width: 768px) and (height: 1024px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+
+    }
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 35.5rem;
+    }
+  }
+
+  @media only screen and (width: 800px) and (height: 1280px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 810px) and (height: 1080px) {
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        position: fixed;
+        bottom: 0;
+    }
+  }
+
   @media only screen and (width: 820px) and (height: 1180px) {
     .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
         position: fixed;
         bottom: 0;
     }
@@ -545,11 +814,92 @@ input[name='q']::placeholder {
         position: fixed;
         bottom: 0;
     }
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        position: fixed;
+        bottom: 0;
+    }
   }
 
-  @media only screen and (width: 800px) and (height: 1280px) {
+  @media only screen and (width: 853px) and (height: 1280px) {
     .fixed-footer-allauth {
         position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 51.4rem;
+    }
+  }
+
+  @media only screen and (width: 912px) and (height: 1368px) {
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        margin-top: 57rem;
+    }
+  }
+
+  @media only screen and (width: 1024px) and (height: 1366px) {
+    .allauth-form-inner-content {
+        margin-top: 5rem;
+    }
+
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+    .container {
+        margin-top: 1.5rem;
+    }
+
+  }
+
+  @media only screen and (width: 1024px) and (height: 600px) {
+    .fixed-footer-allauth {
+        position: relative;
+        bottom: 0;
+    }
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        position: relative;
+        bottom: 0;
+    }
+    .container {
+        margin-top: 1.5rem;
+    }
+  }
+
+  @media only screen and (width: 1280px) and (height: 720px) {
+    .fixed-footer-allauth {
+        position: relative;
+        bottom: 0;
+    }
+
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+    .fixed-footer-cart {
+        position: relative;
+        bottom: 0;
+    }
+  }
+
+  @media only screen and (width: 1280px) and (height: 950px) {
+    .fixed-footer {
+        position: relative;
         bottom: 0;
     }
   }
@@ -563,126 +913,12 @@ input[name='q']::placeholder {
         position: relative;
         bottom: 0;
     }
-  }
-
-  @media only screen and (width: 1280px) and (height: 720px) {
-    .fixed-footer-allauth {
+    .fixed-footer-cart {
         position: relative;
         bottom: 0;
     }
-  }
-
-  @media only screen and (width: 1280px) and (height: 950px) {
-    .fixed-footer {
-        position: relative;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 600px) and (height: 1024px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 712px) and (height: 1138px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 600px) and (height: 960px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 480px) and (height: 854px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 414px) and (height: 896px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 430px) and (height: 932px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 412px) and (height: 915px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 768px) and (height: 1024px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 1024px) and (height: 1366px) {
-    .allauth-form-inner-content {
-        margin-top: 5rem;
-    }
-
-    .fixed-footer {
-        position: relative;
-        bottom: 0;
-    }
-
-  }
-
-  @media only screen and (width: 912px) and (height: 1368px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-    .fixed-footer {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 344px) and (height: 882px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 853px) and (height: 1280px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 412px) and (height: 914px) {
-    .fixed-footer-allauth {
-        position: fixed;
-        bottom: 0;
-    }
-  }
-
-  @media only screen and (width: 1024px) and (height: 600px) {
-    .fixed-footer {
-        position: relative;
-        bottom: 0;
+    .fixed-footer-cart {
+        margin-top: 17.7rem;
     }
   }
 
@@ -690,5 +926,10 @@ input[name='q']::placeholder {
     .fixed-footer {
         position: relative;
         bottom: 0;
+    }
+    .fixed-footer-cart {
+        position: relative;
+        bottom: 0;
+        margin-top: 24rem; 
     }
   }
