@@ -639,6 +639,12 @@ input[name='q']::placeholder {
     .allauth-form-inner-content {
         margin-top: 5rem;
     }
+
+    .fixed-footer {
+        position: relative;
+        bottom: 0;
+    }
+
   }
 
   @media only screen and (width: 912px) and (height: 1368px) {
