@@ -780,6 +780,9 @@ input[name='q']::placeholder {
         position: fixed;
         bottom: 0;
     }
+    .fixed-footer {
+        margin-top: 19rem;
+    }
   }
 
   @media only screen and (width: 810px) and (height: 1080px) {
@@ -832,6 +835,9 @@ input[name='q']::placeholder {
     .fixed-footer-cart {
         margin-top: 51.4rem;
     }
+    .fixed-footer {
+        margin-top: 19rem;
+    }
   }
 
   @media only screen and (width: 912px) and (height: 1368px) {
@@ -844,7 +850,11 @@ input[name='q']::placeholder {
         bottom: 0;
     }
     .fixed-footer-cart {
-        margin-top: 57rem;
+        margin-bottom: 57rem;
+    }
+    .container {
+        max-height: 1100px;
+        overflow-y: auto;
     }
   }
 
@@ -856,6 +866,7 @@ input[name='q']::placeholder {
     .fixed-footer {
         position: relative;
         bottom: 0;
+        margin-top: 18.3rem;
     }
     .container {
         margin-top: 1.5rem;
