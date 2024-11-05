@@ -903,7 +903,9 @@ input[name='q']::placeholder {
         bottom: 0;
     }
     .fixed-footer-cart {
-        margin-bottom: 57rem;
+        position: fixed;
+        bottom: 0;
+        /*margin-bottom: 57rem;*/
     }
     .container {
         max-height: 1100px;
