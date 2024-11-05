@@ -424,7 +424,7 @@ input[name='q']::placeholder {
     color: #ffcc00;
 }
 
-.footer, .fixed-footer, .fixed-footer-allauth, .fixed-footer-cart {
+.footer, .fixed-footer, .fixed-footer-allauth, .fixed-footer-cart, .fixed-footer-allauth-sm {
     width: 100%;
     background-color: #003366;
     padding: 1rem;
@@ -447,6 +447,11 @@ input[name='q']::placeholder {
 }
 
 .fixed-footer-cart {
+    position: fixed;
+    bottom: 0;
+}
+
+.fixed-footer-allauth-sm {
     position: fixed;
     bottom: 0;
 }
@@ -535,6 +540,35 @@ input[name='q']::placeholder {
     }
 }
 
+@media only screen and (width: 240px) and (height: 320px) {
+    .fixed-footer-allauth-sm {
+        position: relative;
+        bottom: 0;
+    }
+  }
+
+@media only screen and (width: 320px) and (height: 480px) {
+    .allauth-form-inner-content {
+        max-height: 320px;
+        overflow-y: auto;
+        margin-bottom: 6rem;
+    }
+}
+
+@media only screen and (width: 320px) and (height: 533px) {
+    .allauth-form-inner-content {
+        max-height: 320px;
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (width: 320px) and (height: 568px) {
+    .allauth-form-inner-content {
+        max-height: 320px;
+        overflow-y: auto;
+    }
+  }
+
   @media only screen and (width: 344px) and (height: 882px) {
     .fixed-footer-allauth {
         position: fixed;
@@ -564,6 +598,9 @@ input[name='q']::placeholder {
   @media only screen and (width: 360px) and (height: 760px) {
     .fixed-footer-cart {
         margin-top: 19rem;
+    }
+    .fixed-footer-allauth {
+        margin-top: 19.1rem;
     }
   }
 
@@ -690,6 +727,10 @@ input[name='q']::placeholder {
     .fixed-footer-cart {
         margin-top: 29.2rem;
     }
+    .fixed-footer-allauth {
+        position: fixed;
+        bottom: 0;
+    }
   }
 
   @media only screen and (width: 430px) and (height: 932px) {
@@ -735,6 +776,13 @@ input[name='q']::placeholder {
     }
     .fixed-footer-cart {
         margin-top: 36rem;
+    }
+  }
+
+  @media only screen and (width: 640px) and (height: 360px) {
+    .fixed-footer-allauth-sm {
+        position: relative;
+        bottom: 0;
     }
   }
 
@@ -788,6 +836,11 @@ input[name='q']::placeholder {
   @media only screen and (width: 810px) and (height: 1080px) {
     .fixed-footer {
         position: relative;
+        bottom: 0;
+    }
+
+    .fixed-footer-allauth {
+        position: fixed;
         bottom: 0;
     }
     .fixed-footer-cart {
@@ -879,6 +932,10 @@ input[name='q']::placeholder {
         position: relative;
         bottom: 0;
     }
+    .fixed-footer-allauth-sm {
+        position: relative;
+        bottom: 0;
+    }
     .fixed-footer {
         position: relative;
         bottom: 0;
@@ -919,6 +976,7 @@ input[name='q']::placeholder {
     .fixed-footer-allauth {
         position: relative;
         bottom: 0;
+        margin-top: 19.6rem;
     }
     .fixed-footer {
         position: relative;
