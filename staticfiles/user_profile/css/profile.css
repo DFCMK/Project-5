@@ -33,5 +33,6 @@
 @media (max-width: 768px) {
     .profile-container {
         padding: 10px;
+        margin-bottom: 5rem;
     }
 }
