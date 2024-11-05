@@ -552,10 +552,10 @@ input[name='q']::placeholder {
   }
 
   @media only screen and (width: 360px) and (height: 740px) {
-    .fixed-footer-allauth {
+    /*.fixed-footer-allauth {
         position: fixed;
         bottom: 0;
-    }
+    }*/
     .fixed-footer-cart {
         margin-top: 17.6rem;
     }
