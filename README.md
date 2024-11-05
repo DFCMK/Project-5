@@ -1235,6 +1235,13 @@ refer to [Code Validation](<#code-validation>) for more details.
 ![Local Favicon Bug](readme/assets/images/missing-favicon.png)
 </details><br />
 
+**2024-5-02**
+* Bug: There are issues with the sign-up page on a Nexus 5 device. The footer is covering the buttons, and I couldn’t figure out why I couldn’t manipulate the layout. The CSS style rule changes I made were somehow unresponsive and did not update the site to reflect the changes.
+
+<details><summary><b>Nexus 5 Sign Up</b></summary>
+
+![Nexus 5 Bug](readme/assets/images/nexus-5-bug.png)
+</details><br />
 
 # Deployment
 
